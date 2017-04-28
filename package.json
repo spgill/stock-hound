@@ -1,0 +1,39 @@
+{
+    "engines": {
+        "node": "6.5.0"
+    },
+
+    "scripts": {
+        "postinstall": "bower install && gulp all"
+    },
+
+    "dependencies": {
+        "babel-core": "*",
+        "babel-preset-es2015": "*",
+
+        "bower": "*",
+        "browser-sync": "*",
+        "chalk": "*",
+        "coffee-script": "*",
+        "yargs": "*",
+
+        "gulp": "*",
+        "gulp-babel": "*",
+        "gulp-coffee": "*",
+        "gulp-concat": "*",
+        "gulp-cson": "*",
+        "gulp-cssnano": "*",
+        "gulp-flatten": "*",
+        "gulp-image": "*",
+        "gulp-less": "*",
+        "gulp-ng-annotate": "*",
+        "gulp-plumber": "*",
+        "gulp-pug": "*",
+        "gulp-sass": "*",
+        "gulp-sort": "*",
+        "gulp-sourcemaps": "*",
+        "gulp-uglify": "*",
+        "gulp-util": "*",
+        "gulp-watch": "*"
+    }
+}

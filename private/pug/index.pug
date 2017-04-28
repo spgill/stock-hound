@@ -1,0 +1,80 @@
+doctype html
+html
+    head
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title Stöck Høund - IKEA Inventory Alerts
+        link(rel="icon" href="/image/favicon.png")
+        link(rel="stylesheet" href="/css/bower.css")
+        link(rel="stylesheet" href="/css/index.css")
+    body.sweden-yellow-bg(
+        ng-app="com.spgill.StockHound"
+        ng-controller="MainController as main"
+        ng-init="main.init()"
+        layout="column" layout-align="start center"
+        )
+        //- Top spacer
+        span(flex)
+        
+        //- The form
+        h1.md-display-4.swedensans.sweden-blue-fg
+            span Stöck Høund
+            img(src="/image/hound.svg")
+        md-content.md-whiteframe-3dp.content-frame(
+            layout="column" layout-align="start stretch"
+            )
+            //- preamble
+            p.md-subhead.
+                We can notify you the next time a product comes in stock at your
+                local IKEA store. Simply select your store, enter the product
+                information, and enter your email adress to get started. You are
+                allowed up to 5 active product reminders per email address.
+            
+            //- store
+            md-input-container
+                md-select(
+                    placeholder="Select store"
+                    ng-disabled="main.store_list.length == 0"
+                    ng-model="main.store"
+                    )
+                    md-option(
+                        ng-repeat="store in main.store_list"
+                        ng-value="store[1]"
+                        ) {{ store[0] }}
+            
+            //- product
+            md-input-container.skinny
+                input(
+                    placeholder="Product URL or article number"
+                    ng-model="main.product"
+                    )
+            
+            //- email
+            md-input-container.skinny
+                input(
+                    placeholder="Email address"
+                    ng-model="main.email"
+                    )
+            
+            //- captcha
+            div.captcha(layout="row" layout-align="space-around center")
+                span(style="font-size: 32px;") 🚫 🤖
+                div(
+                    vc-recaptcha
+                    key="main.key"
+                    ng-model="main.verification"
+                    )
+            
+            //- submit
+            md-button.md-primary.md-raised(
+                ng-disabled="!main.verification"
+                ) Create Reminder
+        
+        //- Bottom spacer
+        span(flex)
+        
+        //- Footer
+        div.md-caption.md-padding &copy; 2017 Samuel P. Gillispie II, all rights reserved. Works best on <a href="http://www.google.com/chrome/">Google Chrome</a>.
+        
+        script(src="/js/bower.js")
+        //- script(src="https://www.google.com/recaptcha/api.js")
+        script(src="/js/index.js")
