@@ -69,7 +69,8 @@ html
             
             //- submit
             md-button.md-primary.md-raised(
-                ng-disabled="!main.verification"
+                ng-disabled="main.ready()"
+                ng-click="main.submit()"
                 ) Create Reminder
         
         //- Bottom spacer
