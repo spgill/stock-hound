@@ -32,7 +32,7 @@ app.controller('MainController', function($http, $mdDialog, vcRecaptchaService) 
 
     // Determine if the form is ready to submit
     this.ready = () => {
-        return !(this.store && this.product && this.email)// && this.verification)
+        return !(this.store && this.product && this.email && this.verification)
     }
 
     // Submit to the server

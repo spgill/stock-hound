@@ -8,6 +8,7 @@ from flask_mongoengine import MongoEngine
 import requests
 
 import stockhound_helper as helper
+import stockhound_mail as mail
 import stockhound_model as model
 
 # Initialize the app
@@ -71,21 +72,22 @@ def stockhound_submit():
         )
 
     # If they confirm, delete the oldest ticket
+    oldest = None
     if form['confirm']:
-        oldest = model.ReminderTicket.objects(address=form['address']).order_by('created').first()
+        oldest = model.ReminderTicket.objects(closed=False, address=form['address']).order_by('created').first()
         oldest.closed = True
         oldest.save()
 
     # Next, verify the captcha
-    # recaptcha = requests.post(
-    #     url='https://www.google.com/recaptcha/api/siteverify',
-    #     data={
-    #         'secret': app.config['RECAPTCHA_SECRET'],
-    #         'response': form['recaptcha']
-    #     }
-    # ).json()
-    # if not recaptcha['success']:
-    #     helper.api_error(message='Problem with reCAPTCHA verification. Please try again.')
+    recaptcha = requests.post(
+        url='https://www.google.com/recaptcha/api/siteverify',
+        data={
+            'secret': app.config['RECAPTCHA_SECRET'],
+            'response': form['recaptcha']
+        }
+    ).json()
+    if not recaptcha['success']:
+        helper.api_error(message='Problem with reCAPTCHA verification. Please try again.')
 
     # Lastly, create and insert a new ticket
     ticket = model.ReminderTicket(
@@ -97,4 +99,16 @@ def stockhound_submit():
     )
     ticket.save()
 
+    # Send the creation email
+    mail.send_template(
+        to=ticket.address,
+        subject='New Reminder Created',
+        template='create',
+        context={
+            'ticket': ticket,
+            'erased': oldest
+        }
+    )
+
+    # Return success image
     return helper.api_success(payload=articleno, message='Reminder successfully created. Check your email inbox for verification.')
