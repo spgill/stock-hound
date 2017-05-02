@@ -1,5 +1,6 @@
 .env
 public/
+yarn.lock
 
 # Created by https://www.gitignore.io/api/node,bower,python
 
