@@ -119,6 +119,7 @@ def stockhound_submit():
 
 @app.route('/terminate/<ticket_id>')
 def stockhound_terminate(ticket_id):
+    """Deactivate reminders when people click the link in their email"""
     try:
         ticket = model.ReminderTicket.objects(id=ticket_id).get()
         ticket.closed = True

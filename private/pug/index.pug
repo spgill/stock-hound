@@ -69,9 +69,15 @@ html
             
             //- submit
             md-button.md-primary.md-raised(
-                ng-disabled="main.ready()"
+                ng-disabled="main.ready() || main.busy"
                 ng-click="main.submit()"
                 ) Create Reminder
+            
+            //- Loading bar
+            md-progress-linear(
+                md-mode="indeterminate"
+                ng-disabled="!main.busy"
+                )
         
         //- Bottom spacer
         span(flex)

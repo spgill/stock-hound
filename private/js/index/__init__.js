@@ -10,6 +10,7 @@ app.controller('MainController', function($http, $mdDialog, vcRecaptchaService) 
     // VARIABLES
     this.key = '6Lf5Gx8UAAAAAL4CoiBySAXzJRr5KaYSHuNgOZDd'
     this.store_list = []
+    this.busy = false
 
     // FORM VARIABLES
     this.store = ''
@@ -37,6 +38,7 @@ app.controller('MainController', function($http, $mdDialog, vcRecaptchaService) 
 
     // Submit to the server
     this.submit = (confirmed = false) => {
+        this.busy = true
         $http.post('/submit', {
             address: this.email,
             product: this.product,
@@ -59,7 +61,9 @@ app.controller('MainController', function($http, $mdDialog, vcRecaptchaService) 
                         () => {
                             this.submit(true)
                         },
-                        () => {}
+                        () => {
+                            this.busy = false
+                        }
                     )
 
                 } else {
@@ -72,6 +76,8 @@ app.controller('MainController', function($http, $mdDialog, vcRecaptchaService) 
                     $mdDialog.show(alert)
 
                     vcRecaptchaService.reload()
+                    
+                    this.busy = false
                 }
             },
 
@@ -93,6 +99,8 @@ app.controller('MainController', function($http, $mdDialog, vcRecaptchaService) 
                 })
 
                 $mdDialog.show(alert)
+
+                this.busy = false
             }
         )
     }
