@@ -56,6 +56,6 @@ if __name__ == '__main__':
                     }
                 )
 
-                print(f'Ticket #{ticket.id} by {ticket.address} was retired')
+                print(f'Ticket "{ticket.id}" by "{ticket.address}" was fulfilled')
 
-    print('Stock chimp is out of bananas')
+    print('Stock chimp has run out of bananas')
