@@ -53,7 +53,7 @@ def stockhound_submit():
     if not articleno:
         helper.api_error(message='Malformed article number or product URL.')
 
-    if not re.match(r'^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$', form['address']):
+    if not re.match(r'^([A-z0-9_\.-]+)@([\dA-z\.-]+)\.([A-z\.]{2,6})$', form['address']):
         helper.api_error(message='Invalid email address.')
 
     # Check that it's a valid article number (also ensures it isn't one of the new style numbers)
