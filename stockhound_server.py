@@ -115,3 +115,14 @@ def stockhound_submit():
 
     # Return success image
     return helper.api_success(payload=articleno, message='Reminder successfully created. Check your email inbox for verification.')
+
+
+@app.route('/terminate/<ticket_id>')
+def stockhound_terminate(ticket_id):
+    try:
+        ticket = model.ReminderTicket.objects(id=ticket_id).get()
+        ticket.closed = True
+        ticket.save()
+    except db.DoesNotExist:
+        return 'Reminder not found. You must have clicked an invalid link.'
+    return 'Your reminder has been terminated. You will no longer receive emails for this reminder.'

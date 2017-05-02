@@ -1,7 +1,7 @@
 h1 Welcome (or welcome back) to <span style="color: #005293;">Stöck Høund</span>!
 
 p.
-    You have created a new reminder for article number <strong>{{ format(ticket.article) }}</strong>
+    You have created a new reminder for article number {{ link(ticket.article) }}
     at the {{ store_name(ticket.location) }} store. You will be notified at this
     email address if this product comes back in stock within 30 days. If the
     product does not come back in stock within 30 days, this reminder will be
@@ -11,7 +11,7 @@ p.
 p.
     In creating this new reminder, you surpassed your limit of 5 active reminders,
     and by your confirmation your reminder for article number
-    <strong>{{ format(erased.article) }}</strong> created on {{ date(erased.created) }}
+    {{ link(erased.article) }} created on {{ date(erased.created) }}
     was terminated.
 // {% endif %}
 
@@ -19,6 +19,6 @@ p
     small.
         If you believe you received this email in error or you no longer want a
         reminder for this product, you can terminate this reminder by clicking
-        <a href="http://stockhound.spgill.me/terminate/{{ ticket.id }}">here</a>.
+        <a href="{{ host() }}/terminate/{{ ticket.id }}">here</a>.
         Please do not reply to this email; all responses will be ignored with no
         exceptions.
