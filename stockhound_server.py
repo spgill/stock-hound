@@ -26,7 +26,7 @@ db = MongoEngine(app)
 
 def get_article(s):
     if re.match(r'^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$', s):
-        return re.search(r'products/(\d{8})/?', s).group(1)
+        return re.search(r'products/(S?\d{8})/?', s).group(1)
 
     match = re.match(r'^(\d{3})\W?(\d{3})\W?(\d{2})$', s)
 
@@ -56,9 +56,12 @@ def stockhound_submit():
     if not re.match(r'^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$', form['address']):
         helper.api_error(message='Invalid email address.')
 
-    # Check that it's a valid article number
-    if not requests.get(f'http://www.ikea.com/us/en/search/?query={articleno}').history:
+    # Check that it's a valid article number (also ensures it isn't one of the new style numbers)
+    query = requests.get(f'http://www.ikea.com/us/en/search/?query={articleno}')
+    if not query.history:
         helper.api_error(message='Article number or product does not appear to exist.')
+    else:
+        articleno = re.search(r'products/(S?\d{8})/?', query.url).group(1)
 
     # Make sure they don't have a reminder for the same product
     if model.ReminderTicket.objects(closed=False, address=form['address'], article=articleno):

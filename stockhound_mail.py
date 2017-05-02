@@ -26,7 +26,7 @@ def send(to, subject, body):
 
 def send_template(to, subject, template, context={}):
     context.update({
-        'format': lambda s: f'{s[0:3]}.{s[3:6]}.{s[6:8]}',
+        'format': lambda s: f'{s[-8:-5]}.{s[-5:-2]}.{s[-2:]}',
         'store_name': model.store_name,
         'date': lambda d: d.strftime('%x')
     })
