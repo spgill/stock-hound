@@ -25,6 +25,8 @@ def get_stock(product_no):
 
 if __name__ == '__main__':
 
+    print('Starting stock chimp')
+
     # Iterate through the article numbers of active tickets
     for article in model.ReminderTicket.objects(closed=False).distinct('article'):
 
@@ -53,3 +55,7 @@ if __name__ == '__main__':
                         'level': level
                     }
                 )
+
+                print(f'Ticket #{ticket.id} by {ticket.address} was retired')
+
+    print('Stock chimp is out of bananas')
