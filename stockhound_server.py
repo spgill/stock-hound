@@ -61,7 +61,6 @@ def requires_auth(f):
 
 # Index redirect
 @app.route('/')
-@requires_auth
 def index_redirect():
     return flask.redirect('/html/index.html')
 
