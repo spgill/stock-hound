@@ -60,7 +60,9 @@ html
             
             //- captcha
             div.captcha(layout="row" layout-align="space-around center")
-                span(style="font-size: 32px;") 🚫 🤖
+                span(style="font-size: 32px;")
+                    img.emoji(src="/image/emoji_u1f6ab.svg")
+                    img.emoji(src="/image/emoji_u1f916.svg")
                 div(
                     vc-recaptcha
                     key="main.key"

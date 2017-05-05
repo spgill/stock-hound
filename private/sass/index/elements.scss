@@ -5,6 +5,13 @@ h1.swedensans {
     }
 }
 
+img.emoji {
+    height: 1em;
+    &:not(:first-child) {
+        padding-left: 1ch;
+    }
+}
+
 .content-frame {
     max-width: 512px;
     background-color: #fff;
