@@ -6,6 +6,7 @@ html
         link(rel="icon" href="/image/favicon.png")
         link(rel="stylesheet" href="/css/bower.css")
         link(rel="stylesheet" href="/css/index.css")
+        link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
     
     body.sweden-yellow-bg(
         ng-app="com.spgill.StockHound"
@@ -16,8 +17,12 @@ html
         //- Top spacer
         span(flex)
         
-        //- The jumbo
-        h1.md-display-4.swedensans.sweden-blue-fg
+        //- The jumbo(s)
+        h1.md-display-4.swedensans.sweden-blue-fg(show-gt-sm hide-sm hide-xs)
+            span Stöck Høund
+            img(src="/image/hound.svg")
+        
+        h1.md-display-2.swedensans.sweden-blue-fg(hide-gt-sm)
             span Stöck Høund
             img(src="/image/hound.svg")
         
@@ -60,7 +65,9 @@ html
             
             //- captcha
             div.captcha(layout="row" layout-align="space-around center")
-                span(style="font-size: 32px;") 🚫 🤖
+                span(style="font-size: 32px;" hide-xs)
+                    img.emoji(src="/image/emoji_u1f6ab.svg")
+                    img.emoji(src="/image/emoji_u1f916.svg")
                 div(
                     vc-recaptcha
                     key="main.key"
@@ -83,10 +90,13 @@ html
         span(flex)
         
         //- Footer
-        div.md-caption.md-padding &copy; 2017 Samuel P. Gillispie II, all rights reserved. Works best on <a href="http://www.google.com/chrome/">Google Chrome</a>.
+        div.md-caption.md-padding.
+            &copy; 2017 Samuel P. Gillispie II, all rights reserved.<br>
+            <a href="" ng-click="main.popup()">Attributions and Disclaimers</a>.
+            Works best on <a href="http://www.google.com/chrome/">Google Chrome</a>.
+        
         
         script(src="/js/bower.js")
-        //- script(src="https://www.google.com/recaptcha/api.js")
         script(src="/js/index.js")
         
         //- Google Analytics

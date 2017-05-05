@@ -105,4 +105,16 @@ app.controller('MainController', function($http, $mdDialog, vcRecaptchaService) 
         )
     }
 
+    // Open the attributions and disclaimers popup
+    this.popup = (ev) => {
+        $mdDialog.show({
+            templateUrl: '/html/attdis.html',
+            autoWrap: false,
+            targetEvent: ev,
+            controller: function ($scope, $mdDialog) {
+                $scope.close = $mdDialog.cancel
+            }
+        })
+    }
+
 })
