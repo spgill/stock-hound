@@ -8,7 +8,7 @@ let app = angular.module('com.spgill.StockHound', [
 app.controller('MainController', function($http, $mdDialog, vcRecaptchaService) {
 
     // VARIABLES
-    this.key = '6Lf5Gx8UAAAAAL4CoiBySAXzJRr5KaYSHuNgOZDd'
+    this.key = ''
     this.store_list = []
     this.busy = false
 
@@ -27,6 +27,13 @@ app.controller('MainController', function($http, $mdDialog, vcRecaptchaService) 
             },
             (response) => {
                 alert('An error occurred fetching store list. Try reloading page.')
+            }
+        )
+
+        // Fetch the recaptcha key
+        $http.get('/key').then(
+            (response) => {
+                this.key = response.data
             }
         )
     }
@@ -76,7 +83,7 @@ app.controller('MainController', function($http, $mdDialog, vcRecaptchaService) 
                     $mdDialog.show(alert)
 
                     vcRecaptchaService.reload()
-                    
+
                     this.busy = false
                 }
             },

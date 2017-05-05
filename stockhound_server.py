@@ -65,6 +65,11 @@ def index_redirect():
     return flask.redirect('/html/index.html')
 
 
+@app.route('/key')
+def stockhound_key():
+    return os.environ.get('RECAPTCHA_KEY')
+
+
 # Submit reminders
 @app.route('/submit', methods=['POST'])
 def stockhound_submit():
