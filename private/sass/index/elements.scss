@@ -39,3 +39,14 @@ img.emoji {
 md-input-container.skinny {
     height: 30px;
 }
+
+md-dialog.attdis {
+    div.toolbar {
+        background-color: #005293;
+        color: #fff;
+
+        md-icon {
+            color: #fff;
+        }
+    }
+}
