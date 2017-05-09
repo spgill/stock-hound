@@ -5,7 +5,7 @@ let app = angular.module('com.spgill.StockHound', [
     'com.spgill.StockHound.config'
 ])
 
-app.controller('MainController', function($http, $mdDialog, vcRecaptchaService) {
+app.controller('MainController', function($location, $http, $mdDialog, vcRecaptchaService) {
 
     // VARIABLES
     this.key = ''
@@ -20,6 +20,11 @@ app.controller('MainController', function($http, $mdDialog, vcRecaptchaService) 
 
 
     this.init = () => {
+        // Check for disclaimer hash
+        if ($location.hash() == 'disclaimers') {
+            this.popup()
+        }
+
         // Fetch the list of stores
         $http.get('/json/store_list.json').then(
             (response) => {
