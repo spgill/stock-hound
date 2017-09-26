@@ -12,7 +12,7 @@ def get_stock(product_no):
     stocklist = {}
     url = f'http://www.ikea.com/us/en/iows/catalog/availability/{product_no}'
     response = requests.get(url)
-    root = xml.etree.ElementTree.fromstring(html.unescape(response.text))
+    root = xml.etree.ElementTree.fromstring(response.text)
     for store in root.findall('.//localStore'):
         code = store.attrib['buCode']
         level = store.find('./stock/inStockProbabilityCode')
