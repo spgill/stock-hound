@@ -76,7 +76,7 @@ if __name__ == '__main__':
                     template='notify',
                     context={
                         'ticket': ticket,
-                        'level': level
+                        'level': level,
                     }
                 )
 
