@@ -13,8 +13,11 @@ class ReminderTicket(me.Document):
     location = me.StringField()
 
 
-store_list = json.load(open('./public/json/store_list.json', 'r'))
+# Load the json list of stores
+store_list = json.load(open('./data/store_list.json', 'r'))
 
+
+# Resolve a code to a store name
 def store_name(code):
     for store in store_list:
         if store[1] == code:

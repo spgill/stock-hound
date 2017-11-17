@@ -36,39 +36,29 @@ def get_article(s):
 
     return False
 
-def check_auth(username, password):
-    """This function is called to check if a username /
-    password combination is valid.
-    """
-    return username == 'guest' and password == 'secret'
-
-def authenticate():
-    """Sends a 401 response that enables basic auth"""
-    return flask.Response(
-    'Could not verify your access level for that URL.\n'
-    'You have to login with proper credentials', 401,
-    {'WWW-Authenticate': 'Basic realm="Login Required"'})
-
-def requires_auth(f):
-    @functools.wraps(f)
-    def decorated(*args, **kwargs):
-        auth = flask.request.authorization
-        if not auth or not check_auth(auth.username, auth.password):
-            return authenticate()
-        return f(*args, **kwargs)
-    return decorated
-
 
 # Index redirect
 @app.route('/')
 def index_redirect():
-    return flask.redirect('/html/index.html')
+    return flask.redirect('/index.html')
 
 
 @app.route('/key')
 def stockhound_key():
     return os.environ.get('RECAPTCHA_KEY')
 
+
+@app.route('/stores')
+def stockhound_stores():
+    return flask.jsonify(model.store_list)
+
+
+@app.route('/submitfake', methods=['POST'])
+def sdfsdfsdf():
+    form = flask.request.get_json()
+    if form.get('confirm', False):
+        return helper.api_success()
+    return helper.api_success(payload='confirm')
 
 # Submit reminders
 @app.route('/submit', methods=['POST'])

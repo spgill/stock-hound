@@ -1,9 +1,0 @@
-{
-    "name": "stock-hound",
-    "private": true,
-    "dependencies": {
-        "angular": "latest",
-        "angular-material": "latest",
-        "angular-recaptcha": "latest"
-    }
-}
