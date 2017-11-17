@@ -4,7 +4,7 @@ export default class Footer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            modalOpen: true,
+            modalOpen: false,
         };
     }
 
@@ -14,7 +14,7 @@ export default class Footer extends React.Component {
                 &copy; 2017 Samuel P. Gillispie II &#8226;
                 Made with <img src={require('../../image/noun_96615_cc.svg')} /> in Austin, Texas<br/>
                 <a href="#" onClick={() => this.setState({modalOpen: true})}>Attributions and Disclaimers</a>.
-                Works best on <a href="http://www.google.com/chrome/">Google Chrome</a>.
+                Works best on <a href="http://www.google.com/chrome/" target="_blank" rel="noopener noreferrer">Google Chrome</a>.
             </p>
 
             {/* Attributions modal dialog */}

@@ -258,8 +258,8 @@ export default class App extends React.Component {
     formReady = () => {
         // return true;
         return this.state.email.length
-            && this.state.article.length;
-            // && this.state.recaptchaResponse.length;
+            && this.state.article.length
+            && this.state.recaptchaResponse.length;
     }
 
     startLoading = () => {
