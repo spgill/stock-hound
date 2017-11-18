@@ -36,38 +36,29 @@ def get_article(s):
 
     return False
 
-def check_auth(username, password):
-    """This function is called to check if a username /
-    password combination is valid.
-    """
-    return username == 'guest' and password == 'secret'
-
-def authenticate():
-    """Sends a 401 response that enables basic auth"""
-    return flask.Response(
-    'Could not verify your access level for that URL.\n'
-    'You have to login with proper credentials', 401,
-    {'WWW-Authenticate': 'Basic realm="Login Required"'})
-
-def requires_auth(f):
-    @functools.wraps(f)
-    def decorated(*args, **kwargs):
-        auth = flask.request.authorization
-        if not auth or not check_auth(auth.username, auth.password):
-            return authenticate()
-        return f(*args, **kwargs)
-    return decorated
-
 
 # Index redirect
 @app.route('/')
 def index_redirect():
-    return flask.redirect('/html/index.html')
+    return flask.redirect('/index.html')
 
 
 @app.route('/key')
 def stockhound_key():
     return os.environ.get('RECAPTCHA_KEY')
+
+
+@app.route('/stores')
+def stockhound_stores():
+    return flask.jsonify(model.store_list)
+
+
+@app.route('/submitfake', methods=['POST'])
+def sdfsdfsdf():
+    form = flask.request.get_json()
+    if form.get('confirm', False):
+        return helper.api_success()
+    return helper.api_success(payload='confirm')
 
 
 # Submit reminders
@@ -85,8 +76,11 @@ def stockhound_submit():
     if not re.match(r'^([A-z0-9_\.-]+)@([\dA-z\.-]+)\.([A-z\.]{2,6})$', form['address']):
         helper.api_error(message='Invalid email address.')
 
+    # Now we need the country code too
+    country = form['country']
+
     # Check that it's a valid article number (also ensures it isn't one of the new style numbers)
-    query = requests.get(f'http://www.ikea.com/us/en/search/?query={articleno}')
+    query = requests.get(f'http://www.ikea.com/{country}/en/search/?query={articleno}')
     if not query.history:
         helper.api_error(message='Article number or product does not appear to exist.')
     else:
@@ -127,6 +121,7 @@ def stockhound_submit():
         origin=flask.request.access_route[-1],
         address=form['address'],
         article=articleno,
+        country=country,
         location=form['location']
     )
     ticket.save()
@@ -142,8 +137,8 @@ def stockhound_submit():
         }
     )
 
-    # Return success image
-    return helper.api_success(payload=articleno, message='Reminder successfully created. Check your email inbox for verification.')
+    # Return success message
+    return helper.api_success(payload=articleno)
 
 
 @app.route('/terminate/<ticket_id>')
@@ -154,5 +149,5 @@ def stockhound_terminate(ticket_id):
         ticket.closed = True
         ticket.save()
     except db.DoesNotExist:
-        return 'Reminder not found. You must have clicked an invalid link.'
-    return 'Your reminder has been terminated. You will no longer receive emails for this reminder.'
+        return 'Reminder not found. You must have clicked an inactive link.'
+    return 'Your reminder has been terminated! You will no longer receive emails for this reminder.'

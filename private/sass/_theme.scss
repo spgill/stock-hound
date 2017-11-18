@@ -1,0 +1,8 @@
+// Custom colors
+$swedish-yellow: #fecb00;
+$swedish-blue: #005293;
+
+// Carbon theme overrides
+$brand-01: $swedish-blue;
+$brand-02: lighten($swedish-blue, 15%);
+$brand-03: #000;

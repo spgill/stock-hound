@@ -1,0 +1,27 @@
+.swedensans {
+    font-family: 'Sweden Sans' !important;
+}
+
+@font-face {
+    font-family: 'Sweden Sans';
+    src: url('../fonts/swedensans-webfont.woff2') format('woff2'),
+         url('../fonts/swedensans-webfont.woff') format('woff'),
+         url('../fonts/swedensans-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.swedensans-bold {
+    font-family: 'Sweden Sans Bold' !important;
+}
+
+@font-face {
+    font-family: 'Sweden Sans Bold';
+    src: url('../fonts/swedensansbold-webfont.woff2') format('woff2'),
+         url('../fonts/swedensansbold-webfont.woff') format('woff'),
+         url('../fonts/swedensansbold-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+
+}
