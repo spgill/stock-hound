@@ -97,7 +97,7 @@ export default class App extends React.Component {
 
                         {/* Informational blurb */}
                         <p className='sh-Card__blurb'>
-                            We can notify you the next time a product comes in stock at your
+                            This app can notify you the next time a product comes in stock at your
                             local IKEA store. To get started, just choose your local store,
                             provide the product's article number, and then fill in your
                             email address. You are allowed up to 5 active product
@@ -142,7 +142,7 @@ export default class App extends React.Component {
                                 id={randId()}
                                 disabled={this.state.loadingRequest}
                                 hideLabel={true}
-                                placeholder='Product URL or article number'
+                                placeholder='Article number or product URL'
                                 value={this.state.article}
                                 onChange={ev => this.setState({article: ev.target.value})}
                             />
