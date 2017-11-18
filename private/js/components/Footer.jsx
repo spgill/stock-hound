@@ -12,7 +12,7 @@ export default class Footer extends React.Component {
         return <div className='sh-Footer'>
             <p>
                 Made with <img src={require('../../image/noun_96615_cc.svg')} /> in Austin, Texas<br/>
-                <a href="#" onClick={() => this.setState({modalOpen: true})}>Disclaimers and Attributions</a>
+                <a href="#" onClick={() => this.setState({modalOpen: true})}>Attributions and Disclaimers</a>
             </p>
 
             {/* Attributions modal dialog */}
