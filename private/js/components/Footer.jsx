@@ -12,8 +12,7 @@ export default class Footer extends React.Component {
         return <div className='sh-Footer'>
             <p>
                 Made with <img src={require('../../image/noun_96615_cc.svg')} /> in Austin, Texas<br/>
-                <a href="#" onClick={() => this.setState({modalOpen: true})}>Attributions and Disclaimers</a>.
-                Works best on <a href="http://www.google.com/chrome/" target="_blank" rel="noopener noreferrer">Google Chrome</a>.
+                <a href="#" onClick={() => this.setState({modalOpen: true})}>Disclaimers and Attributions</a>
             </p>
 
             {/* Attributions modal dialog */}
