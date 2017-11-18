@@ -1,39 +1,46 @@
 {
+    "name": "stock-hound",
+    "repository": "https://github.com/spgill/stock-hound",
+    "author": "Samuel P. Gillispie II <samuel@spgill.me>",
     "engines": {
-        "node": "6.5.0"
+        "node": "6.11.1"
     },
-
     "scripts": {
-        "postinstall": "bower install && gulp all"
+        "postinstall": "webpack -p"
     },
-
     "dependencies": {
-        "babel-core": "*",
-        "babel-preset-es2015": "*",
-
-        "bower": "*",
-        "browser-sync": "*",
-        "chalk": "*",
-        "coffee-script": "*",
-        "yargs": "*",
-
-        "gulp": "*",
-        "gulp-babel": "*",
-        "gulp-coffee": "*",
-        "gulp-concat": "*",
-        "gulp-cson": "*",
-        "gulp-cssnano": "*",
-        "gulp-flatten": "*",
-        "gulp-image": "*",
-        "gulp-less": "*",
-        "gulp-ng-annotate": "*",
-        "gulp-plumber": "*",
-        "gulp-pug": "*",
-        "gulp-sass": "*",
-        "gulp-sort": "*",
-        "gulp-sourcemaps": "*",
-        "gulp-uglify": "*",
-        "gulp-util": "*",
-        "gulp-watch": "*"
+        "axios": "^0.16.2",
+        "babel-core": "^6.26.0",
+        "babel-eslint": "^8.0.2",
+        "babel-loader": "^7.1.2",
+        "babel-preset-env": "^1.6.0",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-1": "^6.24.1",
+        "browser-sync": "^2.18.13",
+        "browser-sync-webpack-plugin": "^1.2.0",
+        "carbon-components": "^7.22.1",
+        "carbon-components-react": "^3.10.5",
+        "carbon-icons": "^6.1.0",
+        "classnames": "^2.2.5",
+        "css-loader": "^0.28.7",
+        "eslint": "^4.6.1",
+        "eslint-plugin-react": "^7.3.0",
+        "file-loader": "^1.1.5",
+        "html-loader": "^0.5.1",
+        "html-webpack-plugin": "^2.30.1",
+        "image-webpack-loader": "^3.4.2",
+        "lodash": "^4.17.4",
+        "node-sass": "^4.5.3",
+        "path": "^0.12.7",
+        "postcss-loader": "^2.0.6",
+        "promise.prototype.finally": "^3.1.0",
+        "react": "^15.6.1",
+        "react-async-script": "^0.9.1",
+        "react-dom": "^15.6.1",
+        "react-google-recaptcha": "^0.9.7",
+        "react-recaptcha": "^2.3.5",
+        "sass-loader": "^6.0.6",
+        "style-loader": "^0.18.2",
+        "webpack": "^3.5.6"
     }
 }

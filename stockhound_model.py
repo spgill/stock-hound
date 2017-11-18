@@ -10,12 +10,9 @@ class ReminderTicket(me.Document):
     origin = me.StringField()
     address = me.StringField()
     article = me.StringField()
+    country = me.StringField(default='us')
     location = me.StringField()
 
 
-store_list = json.load(open('./public/json/store_list.json', 'r'))
-
-def store_name(code):
-    for store in store_list:
-        if store[1] == code:
-            return store[0]
+# Load the json list of stores
+store_list = json.load(open('./data/store_list.json', 'r'))
