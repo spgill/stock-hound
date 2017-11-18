@@ -39,9 +39,6 @@ export default class App extends React.Component {
             recaptchaKey: '',
             recaptchaResponse: '',
 
-            // Attributions modal values
-            modalAttributionOpen: true,
-
             // Confirm modal values
             modalConfirmOpen: false,
 
@@ -269,6 +266,7 @@ export default class App extends React.Component {
     }
 
     stopLoading = () => {
+        this.recaptchaNode.reset();
         setTimeout(() => {
             this.setState({
                 loadingRequest: false,
@@ -302,7 +300,7 @@ export default class App extends React.Component {
         // setTimeout(() => this.setState({loadingRequest: false}), 1618);
 
         //Make the api request
-        const req = axios.post('/submitfake', {
+        const req = axios.post('/submit', {
             address: this.state.email,
             product: this.state.article,
             country: this.state.country,

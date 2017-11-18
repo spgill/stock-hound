@@ -60,6 +60,7 @@ def sdfsdfsdf():
         return helper.api_success()
     return helper.api_success(payload='confirm')
 
+
 # Submit reminders
 @app.route('/submit', methods=['POST'])
 def stockhound_submit():
@@ -75,8 +76,11 @@ def stockhound_submit():
     if not re.match(r'^([A-z0-9_\.-]+)@([\dA-z\.-]+)\.([A-z\.]{2,6})$', form['address']):
         helper.api_error(message='Invalid email address.')
 
+    # Now we need the country code too
+    country = form['country']
+
     # Check that it's a valid article number (also ensures it isn't one of the new style numbers)
-    query = requests.get(f'http://www.ikea.com/us/en/search/?query={articleno}')
+    query = requests.get(f'http://www.ikea.com/{country}/en/search/?query={articleno}')
     if not query.history:
         helper.api_error(message='Article number or product does not appear to exist.')
     else:
@@ -117,6 +121,7 @@ def stockhound_submit():
         origin=flask.request.access_route[-1],
         address=form['address'],
         article=articleno,
+        country=country,
         location=form['location']
     )
     ticket.save()
@@ -132,8 +137,8 @@ def stockhound_submit():
         }
     )
 
-    # Return success image
-    return helper.api_success(payload=articleno, message='Reminder successfully created. Check your email inbox for verification.')
+    # Return success message
+    return helper.api_success(payload=articleno)
 
 
 @app.route('/terminate/<ticket_id>')
@@ -144,5 +149,5 @@ def stockhound_terminate(ticket_id):
         ticket.closed = True
         ticket.save()
     except db.DoesNotExist:
-        return 'Reminder not found. You must have clicked an invalid link.'
-    return 'Your reminder has been terminated. You will no longer receive emails for this reminder.'
+        return 'Reminder not found. You must have clicked an inactive link.'
+    return 'Your reminder has been terminated! You will no longer receive emails for this reminder.'

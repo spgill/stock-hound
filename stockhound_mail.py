@@ -24,18 +24,31 @@ def send(to, subject, body):
     )
 
 
+def store_name(tick):
+    """Resolve a ticket to its store's name."""
+    for name, code in model.store_list[tick.country].items():
+        if code == tick.location:
+            return name
+
+
+def ticket_link(tick):
+    """Create a URL to a ticket's article."""
+    text = f'{tick.article[-8:-5]}.{tick.article[-5:-2]}.{tick.article[-2:]}'
+    return f'<strong><a href="http://www.ikea.com/{tick.country}/en/search/?query={tick.article}">{text}</a></strong>'
+
+
 def send_template(to, subject, template, context={}):
     context.update({
         'format': lambda s: f'{s[-8:-5]}.{s[-5:-2]}.{s[-2:]}',
-        'store_name': model.store_name,
-        'date': lambda d: d.strftime('%x'),
+        'store_name': store_name,
+        'date': lambda d: d.created.strftime('%x'),
         'host': lambda: os.environ['PUBLIC_HOST'],
-        'link': lambda s: f'<strong><a href="http://www.ikea.com/us/en/search/?query={s}">{s[-8:-5]}.{s[-5:-2]}.{s[-2:]}</a></strong>'
+        'link': ticket_link,
     })
     send(
         to=to,
         subject=subject,
         body=jinja2.Template(
-            open(f'./public/html/template/{template}.html', 'rb').read().decode()
+            open(f'./templates/{template}.html', 'r').read()
         ).render(**context)
     )
