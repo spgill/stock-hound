@@ -20,7 +20,13 @@ html, body, #sh-App {
 
 // Body background style
 body {
-    background-color: $swedish-yellow;
+    $background-blend: #f6f3f3;
+    background: linear-gradient(
+        to bottom,
+        mix($background-blend, $swedish-yellow, 0%) 0%,
+        mix($background-blend, $swedish-yellow, 0%) 61.8%,
+        mix($background-blend, $swedish-yellow, 38.2%) 100%
+    );
 }
 
 // App container needs gradient and flex properties
@@ -30,13 +36,4 @@ body {
     align-items: center;
 
     display: flex;
-
-    // padding-bottom: 3em;
-
-    background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.0) 0%,
-        rgba(255, 255, 255, 0.0) 61.8%,
-        rgba(255, 255, 255, 0.382) 100%
-    );
 }
