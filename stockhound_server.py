@@ -104,6 +104,8 @@ def stockhound_submit():
         oldest.closed = True
         oldest.save()
 
+        model.log(oldest, f'{oldest.address} closed ticket on confirmation')
+
     # Next, verify the captcha
     recaptcha = requests.post(
         url='https://www.google.com/recaptcha/api/siteverify',
@@ -125,6 +127,8 @@ def stockhound_submit():
         location=form['location']
     )
     ticket.save()
+
+    model.log(ticket, f'{ticket.address} created new ticket')
 
     # Send the creation email
     mail.send_template(
@@ -148,6 +152,8 @@ def stockhound_terminate(ticket_id):
         ticket = model.ReminderTicket.objects(id=ticket_id).get()
         ticket.closed = True
         ticket.save()
+
+        model.log(ticket, 'Ticket terminated by email link')
     except db.DoesNotExist:
         return 'Reminder not found. You must have clicked an inactive link.'
     return 'Your reminder has been terminated! You will no longer receive emails for this reminder.'
