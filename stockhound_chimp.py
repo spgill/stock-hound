@@ -1,3 +1,4 @@
+import datetime
 import html
 import re
 import requests
@@ -26,6 +27,7 @@ def get_stock(country, product_no):
 if __name__ == '__main__':
 
     print('Starting stock chimp')
+    model.log(None, 'Worker started...')
 
     # Iterate through the two support countries
     for countryCode in ['us', 'ca']:
@@ -39,6 +41,21 @@ if __name__ == '__main__':
             # Iterate through tickets that are looking at the particular article
             for ticket in model.ReminderTicket.objects(closed=False, country=countryCode, article=article):
 
+                # Check if the ticket has expired
+                age = datetime.datetime.now() - ticket.created
+                print('AGE', age)
+                if age > datetime.timedelta(days=31):
+                    ticket.closed = True
+                    ticket.save()
+
+                    model.log(
+                        ticket,
+                        f'{ticket.address} had a ticket expire'
+                    )
+
+                    print(f'Ticket "{ticket.id}" by "{ticket.address}" expired')
+                    continue
+
                 # If the stock_levels dict is EMPTY, that means the product has
                 #   been removed from the IKEA catalog. In this instance, send an
                 #   email to the user and close their ticket.
@@ -48,6 +65,11 @@ if __name__ == '__main__':
                     ticket.closed = True
                     ticket.completed = False
                     ticket.save()
+
+                    model.log(
+                        ticket,
+                        f'{ticket.address} had a ticket discontinue'
+                    )
 
                     # Send the bad news :(
                     mail.send_template(
@@ -72,6 +94,11 @@ if __name__ == '__main__':
                     ticket.completed = True
                     ticket.save()
 
+                    model.log(
+                        ticket,
+                        f'{ticket.address} had a ticket successfully complete'
+                    )
+
                     # Send the email notification
                     mail.send_template(
                         to=ticket.address,
@@ -86,3 +113,4 @@ if __name__ == '__main__':
                     print(f'Ticket "{ticket.id}" by "{ticket.address}" was fulfilled')
 
     print('Stock chimp has run out of bananas')
+    model.log(None, 'Worker stopped')
