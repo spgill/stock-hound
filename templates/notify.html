@@ -1,9 +1,12 @@
 <h1>Get 'em while they're <span style="color: #fecb00;">hot</span>!</h1>
 
 <p>
-    This is your reminder for article number {{ link(ticket) }}.
-    Your selected IKEA store has indicated that the product is in
-    <em>{{ level.lower() }}</em> stock as of today. You will receive no
+    This is your reminder for
+    <a href="{{ url(ticket) }}">
+        <em>{{ info['title'] }}</em>
+    </a>, article number {{ article(ticket) }} at the {{ store_name(ticket) }} store.
+    The selected IKEA store has indicated that the product is in
+    <strong>{{ level.upper() }}</strong> stock as of today. You will receive no
     further notifications for this product.
 </p>
 
