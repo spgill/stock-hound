@@ -1,7 +1,11 @@
 <h1>Welcome to <span style="color: #005293;">Stöck Høund</span>!</h1>
 
 <p>
-    You have created a new reminder for article number {{ link(ticket) }}
+    You have created a new reminder for
+    <a href="{{ url(ticket) }}">
+        <em>{{ info['title'] }}</em>
+    </a>
+    , article number {{ article(ticket) }}
     at the {{ store_name(ticket) }} store. You will be notified at this
     email address if this product comes back in stock within 31 days. If the
     product does not come back in stock within 31 days, this reminder will be
@@ -12,7 +16,7 @@
 <p>
     In creating this new reminder, you surpassed your limit of 5 active reminders,
     and by your confirmation your reminder for article number
-    {{ link(erased) }} created on {{ date(erased) }}
+    {{ article(erased) }} created on {{ date(erased) }}
     was terminated.
 </p>
 {% endif %}
