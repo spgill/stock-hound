@@ -27,7 +27,7 @@ def get_stock(country, product_no):
 if __name__ == '__main__':
 
     print('Starting stock chimp')
-    model.log(None, 'Worker started...')
+    # model.log(None, 'Worker started...')
 
     # Iterate through the two support countries
     for countryCode in ['us', 'ca']:
@@ -113,4 +113,4 @@ if __name__ == '__main__':
                     print(f'Ticket "{ticket.id}" by "{ticket.address}" was fulfilled')
 
     print('Stock chimp has run out of bananas')
-    model.log(None, 'Worker stopped')
+    # model.log(None, 'Worker stopped')
