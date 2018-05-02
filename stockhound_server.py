@@ -84,7 +84,9 @@ def stockhound_submit():
     if not query.history:
         helper.api_error(message='Article number or product does not appear to exist.')
     else:
-        articleno = re.search(r'products/(S?\d{8})/?', query.url).group(1)
+        match = re.search(r'products/(S?\d{8})/?', query.url)
+        if match:
+            articleno = match.group(1)
 
     # Make sure they don't have a reminder for the same product
     if model.ReminderTicket.objects(closed=False, address=form['address'], article=articleno):
