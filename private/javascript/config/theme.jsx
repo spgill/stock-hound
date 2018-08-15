@@ -18,5 +18,15 @@ export default createMuiTheme({
 
     shape: {
         borderRadius: 2
+    },
+
+    layout: {
+        breakpoints: {
+            xs: 12,
+            sm: 8,
+            md: 6,
+            lg: 4,
+            xl: 4,
+        }
     }
 });

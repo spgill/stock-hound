@@ -1,5 +1,6 @@
 import axios from 'axios';
 import classNames from 'classnames';
+import React from 'react';
 
 // import {
 //     Button,
@@ -15,6 +16,8 @@ import {
     CardContent,
     CircularProgress,
     FormControl,
+    Grid,
+    Hidden,
     Icon,
     IconButton,
     InputLabel,
@@ -34,21 +37,6 @@ import colors from '../config/colors';
 import theme from '../config/theme';
 
 
-
-const randId = () => _.sampleSize('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', 8).join('')
-
-
-const noop = () => <div />;
-
-// const Button = noop;
-// const Card = noop;
-const Loading = noop;
-const Modal = noop;
-// const Select = noop;
-const SelectItem = noop;
-const TextInput = noop;
-
-
 // Inject global styles
 injectGlobal`
     html, body, #sh-App {
@@ -60,19 +48,9 @@ injectGlobal`
 
 
 const AppContainer = styled.div`
-    grid-template-columns: auto 0.5fr auto;
-    grid-template-rows: auto 128px [hull-start] 0.75fr [hull-end] auto 32px;
-    grid-template-areas:
-        "spacer-top spacer-top spacer-top"
-        ". header ."
-        ". hull ."
-        "spacer-bottom spacer-bottom spacer-bottom"
-        "footer footer footer";
-    justify-items: center;
-    align-items: center;
+    display: flex;
 
-    display: grid;
-    overflow: hidden;
+    flex-direction: column;
 
     width: 100%;
     height: 100%;
@@ -85,56 +63,33 @@ const AppContainer = styled.div`
     );
 `;
 
-const AlignedSpinner = styled.div`
-    grid-area: hull;
+const AlignedProgress = styled(CircularProgress)`
+    align-self: center;
 `;
 
-const AppHeader = styled.div`
-    grid-area: header;
-    align-self: end;
-
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    display: flex;
-
-    width: 100%;
-    height: 100%;
-
-    > h1 {
-        margin: 0 12px 0 0;
-
-        font-family: 'Sweden Sans';
-        font-size: 40pt;
-        white-space: nowrap;
-        color: ${colors.swedishBlue};
-    }
-
-    > img {
-        height: 40pt;
-    }
+const SwedishTypography = styled(Typography)`
+    font-family: 'Sweden Sans' !important;
 `;
 
-const AppCard = styled(Card)`
-    display: flex;
-
-    grid-area: hull;
-
-    width: 100%;
-    height: 100%;
+const AppLogo = styled.img.attrs({
+    src: require('../../image/hound.svg')
+})`
+    margin-left: ${theme.spacing.unit}px;
+    height: 0.75em;
 `;
 
 const AppFooter = styled.div`
     grid-area: footer;
 `;
 
-const CardFormContent = styled(CardContent)`
+const FormContent = styled(CardContent)`
     display: flex;
 
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
+
+    overflow: auto;
 `;
 
 const FormRow = styled.div`
@@ -151,24 +106,12 @@ const FormRow = styled.div`
     }
 `
 
-const TooltipWrapper = styled.div`
-    align-self: stretch;
-`;
-
 const ButtonCaption = styled(Typography)`
     padding-top: ${theme.spacing.unit}px;
 `;
 
-const FakeCaptcha = styled.div`
-    margin: ${theme.spacing.unit}px 0;
-    width: 304px;
-    height: 78px;
-`;
-
-const RealCaptcha = styled(Recaptcha)`
-    margin: ${theme.spacing.unit}px 0;
-    width: 304px;
-    height: 78px;
+const Flexer = styled.div`
+    flex-grow: 1;
 `;
 
 const CarouselButtonRow = styled.div`
@@ -204,7 +147,7 @@ export default class App extends React.Component {
 
             // Form values
             article: '',
-            email: 'samuel@spgill.me',
+            email: '',
             recaptchaKey: '',
 
             // Submission carousel
@@ -214,7 +157,7 @@ export default class App extends React.Component {
         };
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         // Fetch the list of stores
         axios.get('/stores').then(resp => {
             const newStoreId = Object.keys(resp.data[this.state.country])[0];
@@ -225,159 +168,202 @@ export default class App extends React.Component {
             });
         });
 
-        // Fetch the captcha key
-        // axios.get('/key').then(resp => {
-        //     this.setState({
-        //         loadingKey: false,
-        //         recaptchaKey: resp.data,
-        //     });
-        // });
-        axios.get('/key').then(this.recaptchaLoad);
+        // axios.get('/key').then(this.recaptchaLoad);
+        this.recaptchaLoad(await axios.get('/key'));
     }
 
     render() {
-        // If loading globally, only render a loading wheel
-        // if (this.state.loadingStores || this.state.loadingKey) {
-        //     return <Loading withOverlay={false} />;
-        // }
-
         if (this.state.loadingStores || this.state.loadingKey) {
             return <AppContainer>
-                <AlignedSpinner
-                    intent='primary'
+                <Flexer />
+                <AlignedProgress
+                    color='primary'
                     size={100}
                 />
+                <Flexer />
             </AppContainer>
         }
 
         // Else render the app itself
         return <AppContainer>
-            <AppHeader>
-                <h1>Stöck Høund</h1>
-                <img src={require('../../image/hound.svg')} />
-            </AppHeader>
-            <AppCard>
-                <CardFormContent>
-                    <Typography>
-                        This app can notify you the next time a product comes in stock at your
-                        local IKEA store. To get started, just choose your local store,
-                        provide the product&#39;s article number, and then fill in your
-                        email address. You are allowed up to 5 active product
-                        reminders per email address.
-                    </Typography>
+            <Flexer />
 
-                    <FormRow>
-                        <FormControl>
-                            <InputLabel>Country</InputLabel>
-                            <Select
-                                value={this.state.country}
-                                onChange={this.changeCountry}
-                                disabled={this.state.stage > 0}
-                            >
-                                <MenuItem value='us'>USA</MenuItem>
-                                <MenuItem value='ca'>Canada</MenuItem>
-                            </Select>
-                        </FormControl>
+            <Grid container>
+                <Grid item xs />
 
-                        <FormControl>
-                            <InputLabel>Local Store</InputLabel>
-                            <Select
-                                value={this.state.store}
-                                onChange={ev => this.setState({store: ev.target.value})}
-                                disabled={this.state.stage > 0}
-                            >
-                                {Object.keys(this.state.storeList[this.state.country]).map(storeName => {
-                                    const storeId = this.state.storeList[this.state.country][storeName];
-                                    return <MenuItem
-                                        key={storeId}
-                                        value={storeId}
-                                    >{storeName}</MenuItem>;
-                                })}
-                            </Select>
-                        </FormControl>
-                    </FormRow>
+                <Hidden xsDown>
+                    <SwedishTypography
+                        variant='display3'
+                        color='primary'
+                    >
+                        Stöck Høund
+                        <AppLogo />
+                    </SwedishTypography>
+                </Hidden>
 
-                    <FormRow>
-                        <TextField
-                            label='Article number or product URL'
-                            value={this.state.article}
-                            onChange={ev => this.setState({article: ev.target.value})}
-                            disabled={this.state.stage > 0}
-                        />
-                    </FormRow>
+                <Hidden smUp>
+                    <SwedishTypography
+                        variant='display2'
+                        color='primary'
+                    >
+                        Stöck Høund
+                    </SwedishTypography>
+                </Hidden>
 
-                    <FormRow>
-                        <TextField
-                            label='Email address'
-                            value={this.state.email}
-                            onChange={ev => this.setState({email: ev.target.value})}
-                            disabled={this.state.stage > 0}
-                        />
-                    </FormRow>
+                <Grid item xs />
+            </Grid>
 
-                    <Carousel frame={this.state.stage} style={{flexGrow: '1'}}>
-                        <React.Fragment>
-                            <Button
-                                color='primary'
-                                size='large'
-                                variant='contained'
-                                fullWidth={true}
-                                onClick={this.clickSubmit}
-                                disabled={!this.formReady()}
-                            >
-                                Submit
-                                <Icon style={{marginLeft: theme.spacing.unit}}>send</Icon>
-                            </Button>
-                            <ButtonCaption
-                                variant='caption'
-                                color='error'
-                            >{this.state.submitErrorText}</ButtonCaption>
-                        </React.Fragment>
+            <Grid container>
+                <Grid item xs />
+                <Grid item {...theme.layout.breakpoints}>
+                    <Card>
+                        <FormContent>
+                            <Typography>
+                                This app can notify you the next time a product comes in stock at your
+                                local IKEA store. To get started, just choose your local store,
+                                provide the product&#39;s article number, and then fill in your
+                                email address. You are allowed up to 5 active product
+                                reminders per email address.
+                            </Typography>
 
-                        <CircularProgress color='primary' />
-
-                        <React.Fragment>
-                            <CarouselButtonRow>
-                                <Tooltip
-                                    title="Go back"
-                                    disableFocusListener={true}
-                                >
-                                    <IconButton
-                                        onClick={this.clickConfirmCancel}
+                            <FormRow>
+                                <FormControl>
+                                    <InputLabel>Country</InputLabel>
+                                    <Select
+                                        value={this.state.country}
+                                        onChange={this.changeCountry}
+                                        disabled={this.state.stage > 0}
                                     >
-                                        <Icon>undo</Icon>
-                                    </IconButton>
-                                </Tooltip>
-                                <Button
-                                    color='secondary'
-                                    size='small'
-                                    variant='outlined'
-                                    onClick={this.clickConfirm}
-                                >
-                                    Continue
-                                    <Icon style={{marginLeft: theme.spacing.unit}}>check</Icon>
-                                </Button>
-                            </CarouselButtonRow>
-                            <ButtonCaption
-                                // variant='caption'
-                                // color='error'
-                            >{this.state.confirmText}</ButtonCaption>
-                        </React.Fragment>
+                                        <MenuItem value='us'>USA</MenuItem>
+                                        <MenuItem value='ca'>Canada</MenuItem>
+                                    </Select>
+                                </FormControl>
 
-                        <CircularProgress color='primary' />
+                                <FormControl>
+                                    <InputLabel>Local Store</InputLabel>
+                                    <Select
+                                        value={this.state.store}
+                                        onChange={ev => this.setState({store: ev.target.value})}
+                                        disabled={this.state.stage > 0}
+                                    >
+                                        {Object.keys(this.state.storeList[this.state.country]).map(storeName => {
+                                            const storeId = this.state.storeList[this.state.country][storeName];
+                                            return <MenuItem
+                                                key={storeId}
+                                                value={storeId}
+                                            >{storeName}</MenuItem>;
+                                        })}
+                                    </Select>
+                                </FormControl>
+                            </FormRow>
 
-                        <React.Fragment>
-                            <Typography
-                                variant='headline'
-                            >Success!</Typography>
-                            <Typography
-                                variant='caption'
-                            >Check your email inbox for verification</Typography>
-                        </React.Fragment>
-                    </Carousel>
-                </CardFormContent>
-            </AppCard>
-            <AppFooter>footer</AppFooter>
+                            <FormRow>
+                                <TextField
+                                    label='Article number or product URL'
+                                    value={this.state.article}
+                                    onChange={ev => this.setState({article: ev.target.value})}
+                                    disabled={this.state.stage > 0}
+                                />
+                            </FormRow>
+
+                            <FormRow>
+                                <TextField
+                                    label='Email address'
+                                    value={this.state.email}
+                                    onChange={ev => this.setState({email: ev.target.value})}
+                                    disabled={this.state.stage > 0}
+                                />
+                            </FormRow>
+
+                            <Carousel frame={this.state.stage}>
+                                <React.Fragment>
+                                    <Button
+                                        color='primary'
+                                        size='large'
+                                        variant='contained'
+                                        fullWidth={true}
+                                        onClick={this.clickSubmit}
+                                        disabled={!this.formReady()}
+                                    >
+                                        Submit
+                                        <Icon style={{marginLeft: theme.spacing.unit}}>send</Icon>
+                                    </Button>
+                                    <ButtonCaption
+                                        variant='caption'
+                                        color='error'
+                                    >{this.state.submitErrorText}</ButtonCaption>
+                                </React.Fragment>
+
+                                <CircularProgress color='primary' />
+
+                                <React.Fragment>
+                                    <CarouselButtonRow>
+                                        <Tooltip
+                                            title="Go back"
+                                            disableFocusListener={true}
+                                        >
+                                            <IconButton
+                                                onClick={this.clickConfirmCancel}
+                                            >
+                                                <Icon>undo</Icon>
+                                            </IconButton>
+                                        </Tooltip>
+                                        <Button
+                                            color='secondary'
+                                            size='small'
+                                            variant='outlined'
+                                            onClick={this.clickConfirm}
+                                        >
+                                            Continue
+                                            <Icon style={{marginLeft: theme.spacing.unit}}>check</Icon>
+                                        </Button>
+                                    </CarouselButtonRow>
+                                    <ButtonCaption
+                                        // variant='caption'
+                                        // color='error'
+                                    >{this.state.confirmText}</ButtonCaption>
+                                </React.Fragment>
+
+                                <CircularProgress color='primary' />
+
+                                <React.Fragment>
+                                    <Typography
+                                        variant='headline'
+                                    >Success!</Typography>
+                                    <Typography
+                                        variant='caption'
+                                    >Check your email inbox for verification</Typography>
+                                </React.Fragment>
+
+                                {/* <Button>test</Button> */}
+                            </Carousel>
+                        </FormContent>
+                    </Card>
+                </Grid>
+                <Grid item xs />
+            </Grid>
+
+            <Flexer />
+
+            <Grid container>
+                <Grid item xs />
+                <Grid item {...theme.layout.breakpoints}>
+                    <Typography
+                        align='center'
+                        variant='caption'
+                    >
+                        Made with <Icon fontSize='inherit' color='primary'>favorite</Icon> in Austin, TX.
+                        Works best on <a href='https://www.google.com/chrome/'>Google Chrome</a>.
+                    </Typography>
+                    <Typography
+                        align='center'
+                        variant='caption'
+                    >
+                        By using this application, you agree to our <a href=''>Privacy Policy</a>.
+                    </Typography>
+                </Grid>
+                <Grid item xs />
+            </Grid>
         </AppContainer>;
     }
 
@@ -445,17 +431,11 @@ export default class App extends React.Component {
     }
 
     clickSubmit = async (ev, confirmed=false) => {
-        // If (somehow) they haven't provided everything, show an error
-        // if (!this.formReady()) {
-        //     this.setState({
-        //         modalErrorOpen: true,
-        //         modalErrorText: 'You have not filled out all the form fields, or have not completed the recaptcha.'
-        //     });
-        //     return;
-        // }
-
         // Move the stage carousel
-        this.setState({stage: confirmed ? 3 : 1});
+        this.setState({
+            stage: confirmed ? 3 : 1,
+            submitErrorText: '',
+        });
 
         // Request recaptcha token
         const token = await grecaptcha.execute(this.state.recaptchaKey, {
@@ -501,43 +481,5 @@ export default class App extends React.Component {
             });
             this.timedStageReset();
         }
-
-
-        // this.setState({
-        //     stage: 2,
-        //     confirmText: 'You have reached your limit of 5 reminders. If you continue, your oldest reminder will be terminated.'
-        // });
-
-        // // On success
-        // req.then((resp) => {
-        //     // If the response's payload is 'confirm', then we need confirmation
-        //     if (resp.data.payload == 'confirm') {
-        //         this.setState({
-        //             modalConfirmOpen: true,
-        //         });
-        //     }
-
-        //     // Else, the reminder was successfully created
-        //     else {
-        //         this.setState({
-        //             modalSuccessOpen: true,
-        //         });
-        //         this.stopLoading();
-        //     }
-        // });
-
-        // // On failure :(
-        // req.catch(err => {
-        //     // If this is an api error, then there will be a specific message
-        //     const message = 'message' in err.response.data ?
-        //         err.response.data.message : err.response.statusText;
-
-        //     // Activate the modal
-        //     this.setState({
-        //         modalErrorOpen: true,
-        //         modalErrorText: message,
-        //     });
-        //     this.stopLoading();
-        // });
     }
 }

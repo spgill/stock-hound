@@ -32,6 +32,7 @@ const CarouselContainer = styled.div`
     overflow-x: hidden;
 
     margin-top: ${theme.spacing.unit}px;
+    min-height: 128px;
 
     > ${CarouselItem}:first-child {
         margin-left: ${props => `calc(-${100 * props.frame}% - ${theme.spacing.unit * props.frame}px)`};
