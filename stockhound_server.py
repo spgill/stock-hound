@@ -116,8 +116,9 @@ def stockhound_submit():
             'response': form['recaptcha']
         }
     ).json()
-    if not recaptcha['success']:
-        helper.api_error(message='Problem with reCAPTCHA verification. Please try again.')
+    print('RECAPTCHA SCORE', recaptcha['score'])
+    if recaptcha['score'] < 0.5:
+        helper.api_error(message='Failed reCAPTCHA verification.')
 
     # Lastly, create and insert a new ticket
     ticket = model.ReminderTicket(
