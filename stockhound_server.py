@@ -90,13 +90,13 @@ def stockhound_submit():
 
     # Make sure they don't have a reminder for the same product
     if model.ReminderTicket.objects(closed=False, address=form['address'], article=articleno):
-        helper.api_error(message='You already have a reminder for this product.')
+        helper.api_error(message='You already have an active reminder for this product.')
 
     # Make sure they haven't hit their limit
     if not form['confirm'] and len(model.ReminderTicket.objects(closed=False, address=form['address'])) >= 5:
         return helper.api_success(
             payload='confirm',
-            message='You have reached your limit of 5 reminders. If you continue, your oldest reminder will be terminated. Continue?'
+            message='You have reached your limit of 5 reminders. If you continue, your oldest reminder will be terminated.'
         )
 
     # If they confirm, delete the oldest ticket
