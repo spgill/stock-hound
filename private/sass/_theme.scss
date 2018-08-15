@@ -1,8 +1,20 @@
+
+
 // Custom colors
 $swedish-yellow: #fecb00;
 $swedish-blue: #005293;
 
-// Carbon theme overrides
-$brand-01: $swedish-blue;
-$brand-02: lighten($swedish-blue, 15%);
-$brand-03: #000;
+// Blueprint JS overrides
+// $brand-01: $swedish-blue;
+// $brand-02: lighten($swedish-blue, 15%);
+// $brand-03: #000;
+$blue1: #002c4f;
+$blue2: #003f71;
+$blue3: $swedish-blue;
+$blue4: #0065b5;
+$blue5: #0078d7;
+
+$pt-outline-color: transparent;
+
+$pt-font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+$pt-font-family-monospace: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;

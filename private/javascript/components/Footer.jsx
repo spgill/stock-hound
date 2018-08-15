@@ -1,4 +1,5 @@
-import { Modal } from 'carbon-components-react';
+// import { Modal } from 'carbon-components-react';
+const Modal = () => <div />;
 
 export default class Footer extends React.Component {
     constructor(props) {
