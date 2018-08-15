@@ -6,7 +6,7 @@ import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import webpack from 'webpack';
 
 
-const app_port = Number(process.env.PORT) || 6000;
+const app_port = Number(process.env.PORT) || 5000;
 const dev_port = app_port + 10;
 const gui_port = dev_port + 10;
 
@@ -33,8 +33,6 @@ const babelOptions = {
             }
         ], 'stage-1', 'react'
     ],
-
-    plugins: ['syntax-async-functions', 'transform-regenerator'],
 };
 
 // Loader to use for loose files
@@ -43,17 +41,17 @@ const fileHash = 'file-loader?hash=sha512&digest=hex&name=[hash].[ext]';
 
 export default {
     // Sometimes you have to tell webpack to SHUT UP
-    stats: 'minimal',
+    // stats: 'minimal',
 
     mode: PROD ? 'production' : 'development',
-    entry: {
-        admin: './private/javascript/entry--admin.jsx',
-        index: './private/javascript/entry--index.jsx',
-    },
+
+    entry: './private/__entry__',
+
     output: {
         path: path.resolve('./public'),
         filename: '[name].[chunkhash].js',
     },
+
     resolve: {
         extensions: ['.js', '.es6', '.jsx'],
     },
@@ -85,26 +83,14 @@ export default {
             proxy: `http://localhost:${app_port}`,
         }),
 
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'commons',
-        }),
-
-        new HtmlWebpackPlugin({
-            filename: 'admin.html',
-            chunks: ['commons', 'admin'],
-            template: './private/html/webpackTemplate.html',
-        }),
-
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            chunks: ['commons', 'index'],
-            template: './private/html/webpackTemplate.html',
+            template: './private/html/index.html',
         }),
 
         new webpack.ProvidePlugin({
             '_': 'lodash',
             'React': 'react',
-            'regeneratorRuntime': 'regenerator-runtime',
         }),
 
     ].filter(Boolean),  // Remove the empty entries
