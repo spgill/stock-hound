@@ -34,6 +34,7 @@ import Footer from './Footer.jsx';
 import { setTimeout } from 'core-js/library/web/timers';
 import colors from '../config/colors';
 import theme from '../config/theme';
+import { sorted } from '../util/array';
 
 // JSON store data
 import corpus from '../../../data/corpus.json';
@@ -80,10 +81,6 @@ const AppLogo = styled.img.attrs({
     height: 0.75em;
 `;
 
-const AppFooter = styled.div`
-    grid-area: footer;
-`;
-
 const FormContent = styled(CardContent)`
     display: flex;
 
@@ -99,13 +96,16 @@ const FormRow = styled.div`
 
     margin-top: 12px;
 
+    > * {
+        flex-grow: 1;
+    }
+
     > *:not(:first-of-type) {
+        flex-grow: 3;
+
         margin-left: 12px;
     }
 
-    > *:last-of-type {
-        flex-grow: 1;
-    }
 `
 
 const ButtonCaption = styled(Typography)`
@@ -139,12 +139,10 @@ export default class App extends React.Component {
 
         this.state = {
             // Loading states
-            loadingStores: true,
-            loadingKey: true,
+            preloading: true,
 
             // Store selection values
-            storeList: null,
-            country: 'us',
+            country: '',
             store: '',
 
             // Form values
@@ -160,22 +158,12 @@ export default class App extends React.Component {
     }
 
     async componentDidMount() {
-        // Fetch the list of stores
-        axios.get('/stores').then(resp => {
-            const newStoreId = Object.keys(resp.data[this.state.country])[0];
-            this.setState({
-                loadingStores: false,
-                storeList: resp.data,
-                store: resp.data[this.state.country][newStoreId],
-            });
-        });
-
-        // axios.get('/key').then(this.recaptchaLoad);
+        // Load the recaptcha key
         this.recaptchaLoad(await axios.get('/key'));
     }
 
     render() {
-        if (this.state.loadingStores || this.state.loadingKey) {
+        if (this.state.preloading) {
             return <AppContainer>
                 <Flexer />
                 <AlignedProgress
@@ -236,8 +224,12 @@ export default class App extends React.Component {
                                         onChange={this.changeCountry}
                                         disabled={this.state.stage > 0}
                                     >
-                                        <MenuItem value='us'>USA</MenuItem>
-                                        <MenuItem value='ca'>Canada</MenuItem>
+                                        {sorted(Object.keys(corpus)).map(countryCode => {
+                                            return <MenuItem
+                                                key={countryCode}
+                                                value={countryCode}
+                                            >{corpus[countryCode].label}</MenuItem>;
+                                        })}
                                     </Select>
                                 </FormControl>
 
@@ -246,14 +238,13 @@ export default class App extends React.Component {
                                     <Select
                                         value={this.state.store}
                                         onChange={ev => this.setState({store: ev.target.value})}
-                                        disabled={this.state.stage > 0}
+                                        disabled={!this.state.country || this.state.stage > 0}
                                     >
-                                        {Object.keys(this.state.storeList[this.state.country]).map(storeName => {
-                                            const storeId = this.state.storeList[this.state.country][storeName];
+                                        {this.state.country && sorted(Object.keys(corpus[this.state.country].stores)).map(storeName => {
                                             return <MenuItem
-                                                key={storeId}
-                                                value={storeId}
-                                            >{storeName}</MenuItem>;
+                                                key={storeName}
+                                                value={corpus[this.state.country].stores[storeName]}
+                                            >{storeName}</MenuItem>
                                         })}
                                     </Select>
                                 </FormControl>
@@ -355,13 +346,10 @@ export default class App extends React.Component {
         </AppContainer>;
     }
 
-    changeCountry = (ev) => {
-        const newCountry = ev.target.value;
-        const newStoreId = Object.keys(this.state.storeList[newCountry])[0];
-
+    changeCountry = ev => {
         this.setState({
-            country: newCountry,
-            store: this.state.storeList[newCountry][newStoreId],
+            country: ev.target.value,
+            store: '',
         });
     }
 
@@ -375,7 +363,7 @@ export default class App extends React.Component {
 
         // Update the application state
         this.setState({
-            loadingKey: false,
+            preloading: false,
             recaptchaKey: key,
         });
     }
@@ -390,9 +378,10 @@ export default class App extends React.Component {
     }
 
     formReady = () => {
-        // return true;
         return Boolean(
-            this.state.email.length
+            this.state.country
+            && this.state.store
+            && this.state.email.length
             && this.state.article.length
         );
     }
