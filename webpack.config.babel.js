@@ -167,6 +167,15 @@ export default {
                     },
                 ],
             },
+
+            // Markdown loader
+            {
+                test: /\.md$/,
+                use: [
+                    'html-loader',
+                    'markdown-loader',
+                ],
+            }
         ],
     },
 };

@@ -27,7 +27,6 @@ import {
     Tooltip,
     Typography,
 } from '@material-ui/core';
-import Recaptcha from 'react-google-recaptcha';
 import styled, { injectGlobal } from 'styled-components';
 
 import Carousel from './Carousel';
@@ -35,6 +34,9 @@ import Footer from './Footer.jsx';
 import { setTimeout } from 'core-js/library/web/timers';
 import colors from '../config/colors';
 import theme from '../config/theme';
+
+// JSON store data
+import corpus from '../../../data/corpus.json';
 
 
 // Inject global styles
@@ -347,21 +349,7 @@ export default class App extends React.Component {
 
             <Grid container>
                 <Grid item xs />
-                <Grid item {...theme.layout.breakpoints}>
-                    <Typography
-                        align='center'
-                        variant='caption'
-                    >
-                        Made with <Icon fontSize='inherit' color='primary'>favorite</Icon> in Austin, TX.
-                        Works best on <a href='https://www.google.com/chrome/'>Google Chrome</a>.
-                    </Typography>
-                    <Typography
-                        align='center'
-                        variant='caption'
-                    >
-                        By using this application, you agree to our <a href=''>Privacy Policy</a>.
-                    </Typography>
-                </Grid>
+                <Grid item {...theme.layout.breakpoints}><Footer /></Grid>
                 <Grid item xs />
             </Grid>
         </AppContainer>;

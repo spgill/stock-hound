@@ -1,7 +1,120 @@
-// import { Modal } from 'carbon-components-react';
-const Modal = () => <div />;
+import {
+    Dialog,
+    DialogContent,
+    DialogTitle,
+    Icon,
+    Slide,
+    Typography,
+    withMobileDialog,
+} from '@material-ui/core';
+import React from 'react';
+
+import theme from '../config/theme';
+
+import aboutCopy from '../../copy/about.md';
+import privacyCopy from '../../copy/privacy-policy.md';
+
+
+function DialogTransition(props) {
+    return <Slide direction='up' {...props} />;
+}
+
+
+function AboutDialog(props) {
+    return <Dialog
+        {...props}
+        TransitionComponent={DialogTransition}
+    >
+        <DialogTitle>About ${theme.title}</DialogTitle>
+        <DialogContent>
+            <Typography dangerouslySetInnerHTML={{__html: aboutCopy}} />
+        </DialogContent>
+    </Dialog>;
+}
+const ResponsiveAboutDialog = withMobileDialog()(AboutDialog);
+
+
+function PrivacyDialog(props) {
+    return <Dialog
+        {...props}
+        TransitionComponent={DialogTransition}
+    >
+        <DialogTitle>Use of private information policy (GDPR)</DialogTitle>
+        <DialogContent>
+            <Typography dangerouslySetInnerHTML={{__html: privacyCopy}} />
+        </DialogContent>
+    </Dialog>;
+}
+const ResponsivePrivacyDialog = withMobileDialog()(PrivacyDialog);
+
 
 export default class Footer extends React.Component {
+    constructor(...args) {
+        super(...args);
+
+        this.state = {
+            dialogAboutIsOpen: false,
+            dialogPrivacyIsOpen: false,
+        };
+    }
+
+    render() {
+        return <React.Fragment>
+            <Typography
+                align='center'
+                variant='caption'
+            >
+                Made with <Icon fontSize='inherit' color='primary'>favorite</Icon> in Austin, TX. <a
+                    href='#'
+                    onClick={this.dialogAboutOpen}
+                >About this application</a>.
+            </Typography>
+            <Typography
+                align='center'
+                variant='caption'
+            >
+                By using this application, you agree to our <a
+                    href='#'
+                    onClick={this.dialogPrivacyOpen}
+                >Privacy Policy</a> .
+            </Typography>
+            <ResponsiveAboutDialog
+                open={this.state.dialogAboutIsOpen}
+                onClose={this.dialogAboutClose}
+            />
+            <ResponsivePrivacyDialog
+                open={this.state.dialogPrivacyIsOpen}
+                onClose={this.dialogPrivacyClose}
+            />
+        </React.Fragment>;
+    }
+
+    dialogAboutOpen = () => {
+        this.setState({
+            dialogAboutIsOpen: true,
+        });
+    }
+
+    dialogAboutClose = () => {
+        this.setState({
+            dialogAboutIsOpen: false,
+        });
+    }
+
+    dialogPrivacyOpen = () => {
+        this.setState({
+            dialogPrivacyIsOpen: true,
+        });
+    }
+
+    dialogPrivacyClose = () => {
+        this.setState({
+            dialogPrivacyIsOpen: false,
+        });
+    }
+}
+
+class OldFooter extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

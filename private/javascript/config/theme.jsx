@@ -5,6 +5,8 @@ import shColors from './colors';
 
 
 export default createMuiTheme({
+    title: 'Stöck Høund',
+
     palette: {
         primary: {
             main: shColors.swedishBlue
