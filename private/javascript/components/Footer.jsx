@@ -1,5 +1,7 @@
 import {
+    Button,
     Dialog,
+    DialogActions,
     DialogContent,
     DialogTitle,
     Icon,
@@ -25,10 +27,17 @@ function AboutDialog(props) {
         {...props}
         TransitionComponent={DialogTransition}
     >
-        <DialogTitle>About ${theme.title}</DialogTitle>
+        <DialogTitle>About <em>{theme.title}</em></DialogTitle>
         <DialogContent>
             <Typography dangerouslySetInnerHTML={{__html: aboutCopy}} />
         </DialogContent>
+        <DialogActions>
+            <Button
+                color='primary'
+                variant='outlined'
+                onClick={props.onClose}
+            >Dismiss</Button>
+        </DialogActions>
     </Dialog>;
 }
 const ResponsiveAboutDialog = withMobileDialog()(AboutDialog);
@@ -39,10 +48,17 @@ function PrivacyDialog(props) {
         {...props}
         TransitionComponent={DialogTransition}
     >
-        <DialogTitle>Use of private information policy (GDPR)</DialogTitle>
+        <DialogTitle>Privacy Policy</DialogTitle>
         <DialogContent>
             <Typography dangerouslySetInnerHTML={{__html: privacyCopy}} />
         </DialogContent>
+        <DialogActions>
+            <Button
+                color='primary'
+                variant='outlined'
+                onClick={props.onClose}
+            >Dismiss</Button>
+        </DialogActions>
     </Dialog>;
 }
 const ResponsivePrivacyDialog = withMobileDialog()(PrivacyDialog);
