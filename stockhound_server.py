@@ -48,11 +48,6 @@ def stockhound_key():
     return os.environ.get('RECAPTCHA_KEY')
 
 
-@app.route('/stores')
-def stockhound_stores():
-    return flask.jsonify(model.store_list)
-
-
 @app.route('/submitfake', methods=['POST'])
 def sdfsdfsdf():
     form = flask.request.get_json()

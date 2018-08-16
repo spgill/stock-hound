@@ -31,4 +31,4 @@ def log(tick, text):
 
 
 # Load the json list of stores
-store_list = json.load(open('./data/store_list.json', 'r'))
+corpus = json.load(open('./data/corpus.json', 'r'))

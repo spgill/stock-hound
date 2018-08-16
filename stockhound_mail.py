@@ -27,7 +27,7 @@ def send(to, subject, body):
 
 def store_name(tick):
     """Resolve a ticket to its store's name."""
-    for name, code in model.store_list[tick.country].items():
+    for name, code in model.corpus[tick.country]['stores'].items():
         if code == tick.location:
             return name
 
