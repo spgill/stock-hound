@@ -56,7 +56,7 @@ export default {
         extensions: ['.js', '.es6', '.jsx'],
     },
 
-    devtool: PROD ? 'nosources-source-map' : 'eval',
+    devtool: PROD ? 'nosources-source-map' : 'cheap-eval-source-map',
 
     plugins: [
         PROD && new UglifyJsPlugin({
