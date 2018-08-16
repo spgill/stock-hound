@@ -8,7 +8,6 @@ import theme from './javascript/config/theme';
 
 // Style imports
 import './sass/master.scss';
-console.warn('THEME', theme)
 
 // Render the App into the DOM
 ReactDOM.render(

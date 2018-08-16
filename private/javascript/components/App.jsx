@@ -1,15 +1,6 @@
+// vendor imports
 import axios from 'axios';
-import classNames from 'classnames';
 import React from 'react';
-
-// import {
-//     Button,
-//     Card,
-//     Loading,
-//     Modal,
-//     Select, SelectItem,
-//     TextInput,
-// } from 'carbon-components-react';
 import {
     Button,
     Card,
@@ -29,6 +20,7 @@ import {
 } from '@material-ui/core';
 import styled, { injectGlobal } from 'styled-components';
 
+// local imports
 import Carousel from './Carousel';
 import Footer from './Footer.jsx';
 import { setTimeout } from 'core-js/library/web/timers';
@@ -36,7 +28,7 @@ import colors from '../config/colors';
 import theme from '../config/theme';
 import { sorted } from '../util/array';
 
-// JSON store data
+// asset imports
 import corpus from '../../../data/corpus.json';
 
 
