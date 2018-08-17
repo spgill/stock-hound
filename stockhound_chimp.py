@@ -1,18 +1,16 @@
 import datetime
-import html
-import re
 import requests
 import xml.etree.ElementTree
 
 import stockhound_mail as mail
 import stockhound_model as model
-import stockhound_server as server
 
 
 def get_stock(country, product_no):
     stocklist = {}
     lang = model.corpus[country]['language']
-    url = f'http://www.ikea.com/{country}/{lang}/iows/catalog/availability/{product_no}'
+    url = f'http://www.ikea.com/{country}/{lang}/\
+        iows/catalog/availability/{product_no}'
     response = requests.get(url)
     root = xml.etree.ElementTree.fromstring(response.text)
     for store in root.findall('.//localStore'):
@@ -34,13 +32,20 @@ if __name__ == '__main__':
     for countryCode in model.corpus.keys():
 
         # Iterate through the article numbers of active tickets
-        for article in model.ReminderTicket.objects(closed=False, country=countryCode).distinct('article'):
+        for article in model.ReminderTicket.objects(
+            closed=False,
+            country=countryCode
+        ).distinct('article'):
 
             # Get the stock levels for the article number
             stock_levels = get_stock(countryCode, article)
 
-            # Iterate through tickets that are looking at the particular article
-            for ticket in model.ReminderTicket.objects(closed=False, country=countryCode, article=article):
+            # Iterate through tickets that are looking at the article
+            for ticket in model.ReminderTicket.objects(
+                closed=False,
+                country=countryCode,
+                article=article
+            ):
 
                 # Check if the ticket has expired
                 age = datetime.datetime.now() - ticket.created
@@ -54,12 +59,12 @@ if __name__ == '__main__':
                         f'{ticket.address} had a ticket expire'
                     )
 
-                    print(f'Ticket "{ticket.id}" by "{ticket.address}" expired')
+                    print(f'"{ticket.id}" by "{ticket.address}" expired')
                     continue
 
                 # If the stock_levels dict is EMPTY, that means the product has
-                #   been removed from the IKEA catalog. In this instance, send an
-                #   email to the user and close their ticket.
+                #   been removed from the IKEA catalog. In this instance, send
+                #   an email to the user and close their ticket.
                 if not any(stock_levels):
 
                     # Close out the ticket
@@ -83,7 +88,7 @@ if __name__ == '__main__':
                     )
 
                     # We can skip this ticket now
-                    print(f'Ticket "{ticket.id}" by "{ticket.address}" was cancelled')
+                    print(f'"{ticket.id}" by "{ticket.address}" was cancelled')
                     continue
 
                 # If the stock level is above low, notify the user
@@ -111,7 +116,7 @@ if __name__ == '__main__':
                         }
                     )
 
-                    print(f'Ticket "{ticket.id}" by "{ticket.address}" was fulfilled')
+                    print(f'"{ticket.id}" by "{ticket.address}" was fulfilled')
 
     print('Stock chimp has run out of bananas')
     # model.log(None, 'Worker stopped')

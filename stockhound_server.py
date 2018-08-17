@@ -1,8 +1,6 @@
 import datetime
-import functools
 import os
 import re
-import secrets
 
 import flask
 from flask_mongoengine import MongoEngine
@@ -26,7 +24,10 @@ db = MongoEngine(app)
 
 
 def get_article(s):
-    if re.match(r'^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$', s):
+    if re.match(
+        r'^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$',
+        s
+    ):
         return re.search(r'products/(S?\d{8})/?', s).group(1)
 
     match = re.match(r'^(\d{3})\W?(\d{3})\W?(\d{2})$', s)
@@ -68,37 +69,57 @@ def stockhound_submit():
         helper.api_error(message='Malformed article number or product URL.')
 
     form['address'] = form['address'].lower()
-    if not re.match(r'^([A-z0-9_\.-]+)@([\dA-z\.-]+)\.([A-z\.]{2,6})$', form['address']):
+    if not re.match(
+        r'^([A-z0-9_\.-]+)@([\dA-z\.-]+)\.([A-z\.]{2,6})$',
+        form['address']
+    ):
         helper.api_error(message='Invalid email address.')
 
     # Now we need the country code too
     country = form['country']
     lang = model.corpus[country]['language']
 
-    # Check that it's a valid article number (also ensures it isn't one of the new style numbers)
-    query = requests.get(f'http://www.ikea.com/{country}/{lang}/search/?query={articleno}')
+    # Check that it's a valid article number
+    # (also ensures it isn't one of the new style numbers)
+    query = requests.get(f'http://www.ikea.com/{country}/{lang}/\
+        search/?query={articleno}')
     if not query.history:
-        helper.api_error(message='Article number or product does not appear to exist.')
+        helper.api_error(
+            message='Article number or product does not appear to exist.'
+        )
     else:
         match = re.search(r'products/(S?\d{8})/?', query.url)
         if match:
             articleno = match.group(1)
 
     # Make sure they don't have a reminder for the same product
-    if model.ReminderTicket.objects(closed=False, address=form['address'], article=articleno):
-        helper.api_error(message='You already have an active reminder for this product.')
+    if model.ReminderTicket.objects(
+        closed=False,
+        address=form['address'],
+        article=articleno
+    ):
+        helper.api_error(
+            message='You already have an active reminder for this product.'
+        )
 
     # Make sure they haven't hit their limit
-    if not form['confirm'] and len(model.ReminderTicket.objects(closed=False, address=form['address'])) >= 5:
+    if not form['confirm'] and len(model.ReminderTicket.objects(
+        closed=False,
+        address=form['address']
+    )) >= 5:
         return helper.api_success(
             payload='confirm',
-            message='You have reached your limit of 5 reminders. If you continue, your oldest reminder will be terminated.'
+            message='You have reached your limit of 5 reminders. If \
+                you continue, your oldest reminder will be terminated.'
         )
 
     # If they confirm, delete the oldest ticket
     oldest = None
     if form['confirm']:
-        oldest = model.ReminderTicket.objects(closed=False, address=form['address']).order_by('created').first()
+        oldest = model.ReminderTicket.objects(
+            closed=False,
+            address=form['address']
+        ).order_by('created').first()
         oldest.closed = True
         oldest.save()
 
@@ -155,4 +176,5 @@ def stockhound_terminate(ticket_id):
         model.log(ticket, 'Ticket terminated by email link')
     except db.DoesNotExist:
         return 'Reminder not found. You must have clicked an inactive link.'
-    return 'Your reminder has been terminated! You will no longer receive emails for this reminder.'
+    return 'Your reminder has been terminated! \
+        You will no longer receive emails for this reminder.'

@@ -38,7 +38,8 @@ def article_text(tick):
 
 def article_url(tick):
     lang = model.corpus[tick.country]['language']
-    return f'http://www.ikea.com/{tick.country}/{lang}/catalog/products/{tick.article}/'
+    return f'http://www.ikea.com/{tick.country}/{lang}/\
+        catalog/products/{tick.article}/'
 
 
 def article_info(tick):
@@ -89,7 +90,8 @@ def send_template(to, subject, template, context={}):
         'host': lambda: os.environ['PUBLIC_HOST'],
         'url': article_url,
         'article': article_text,
-        'info': None if 'ticket' not in context else article_info(context['ticket']),
+        'info': None if 'ticket' not in context
+        else article_info(context['ticket']),
     })
     send(
         to=to,
