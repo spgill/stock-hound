@@ -11,7 +11,8 @@ import stockhound_server as server
 
 def get_stock(country, product_no):
     stocklist = {}
-    url = f'http://www.ikea.com/{country}/en/iows/catalog/availability/{product_no}'
+    lang = model.corpus[country]['language']
+    url = f'http://www.ikea.com/{country}/{lang}/iows/catalog/availability/{product_no}'
     response = requests.get(url)
     root = xml.etree.ElementTree.fromstring(response.text)
     for store in root.findall('.//localStore'):
@@ -30,7 +31,7 @@ if __name__ == '__main__':
     # model.log(None, 'Worker started...')
 
     # Iterate through the two support countries
-    for countryCode in ['us', 'ca']:
+    for countryCode in model.corpus.keys():
 
         # Iterate through the article numbers of active tickets
         for article in model.ReminderTicket.objects(closed=False, country=countryCode).distinct('article'):

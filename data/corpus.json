@@ -1,6 +1,7 @@
 {
     "us": {
         "label": "United States",
+        "language": "en",
         "stores": {
             "AZ, Tempe": "209",
             "CA, Burbank": "399",
@@ -50,6 +51,7 @@
 
     "ca": {
         "label": "Canada",
+        "language": "en",
         "stores": {
             "AB, Calgary": "216",
             "AB, Edmonton": "349",
@@ -69,6 +71,7 @@
 
     "no": {
         "label": "Norway",
+        "language": "no",
         "stores": {
             "Forus": "126",
             "Furuset": "095",

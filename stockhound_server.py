@@ -73,9 +73,10 @@ def stockhound_submit():
 
     # Now we need the country code too
     country = form['country']
+    lang = model.corpus[country]['language']
 
     # Check that it's a valid article number (also ensures it isn't one of the new style numbers)
-    query = requests.get(f'http://www.ikea.com/{country}/en/search/?query={articleno}')
+    query = requests.get(f'http://www.ikea.com/{country}/{lang}/search/?query={articleno}')
     if not query.history:
         helper.api_error(message='Article number or product does not appear to exist.')
     else:
