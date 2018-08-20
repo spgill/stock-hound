@@ -26,7 +26,6 @@ import Footer from './Footer.jsx';
 import { setTimeout } from 'core-js/library/web/timers';
 import colors from '../config/colors';
 import theme from '../config/theme';
-import { sorted } from '../util/array';
 
 // asset imports
 import corpus from '../../../data/corpus.json';
@@ -70,6 +69,13 @@ const AppLogo = styled.img.attrs({
     src: require('../../image/hound.svg')
 })`
     margin-left: ${theme.spacing.unit}px;
+    height: 0.75em;
+`;
+
+const CountryFlag = styled.img.attrs({
+    src: props => `https://www.countryflags.io/${props.code}/flat/64.png`,
+})`
+    margin-right: ${theme.spacing.unit}px;
     height: 0.75em;
 `;
 
@@ -136,6 +142,7 @@ export default class App extends React.Component {
             // Store selection values
             country: '',
             store: '',
+            storeLocked: false,
 
             // Form values
             article: '',
@@ -216,11 +223,13 @@ export default class App extends React.Component {
                                         onChange={this.changeCountry}
                                         disabled={this.state.stage > 0}
                                     >
-                                        {sorted(Object.keys(corpus)).map(countryCode => {
+                                        {Object.entries(corpus).sort(this.compareCorpusEntry).map(country => {
                                             return <MenuItem
-                                                key={countryCode}
-                                                value={countryCode}
-                                            >{corpus[countryCode].label}</MenuItem>;
+                                                key={country[0]}
+                                                value={country[0]}
+                                            >
+                                                <CountryFlag code={country[0]} />{country[1].label}
+                                            </MenuItem>;
                                         })}
                                     </Select>
                                 </FormControl>
@@ -230,13 +239,13 @@ export default class App extends React.Component {
                                     <Select
                                         value={this.state.store}
                                         onChange={ev => this.setState({store: ev.target.value})}
-                                        disabled={!this.state.country || this.state.stage > 0}
+                                        disabled={!this.state.country || this.state.stage > 0 || this.state.storeLocked}
                                     >
-                                        {this.state.country && sorted(Object.keys(corpus[this.state.country].stores)).map(storeName => {
+                                        {this.state.country && Object.entries(corpus[this.state.country].stores).sort(this.compareCorpusEntry).map(store => {
                                             return <MenuItem
-                                                key={storeName}
-                                                value={corpus[this.state.country].stores[storeName]}
-                                            >{storeName}</MenuItem>
+                                                key={store[0]}
+                                                value={store[0]}
+                                            >{store[1].label}</MenuItem>
                                         })}
                                     </Select>
                                 </FormControl>
@@ -338,10 +347,30 @@ export default class App extends React.Component {
         </AppContainer>;
     }
 
+    compareCorpusEntry = (a, b) => {
+        if (a[1].label < b[1].label) {
+            return -1;
+        }
+
+        if (a[1].label > b[1].label) {
+            return 1;
+        }
+
+        return 0;
+    }
+
     changeCountry = ev => {
+        const country = ev.target.value;
+
+        // If the country has only one store, lock the selector to that store
+        const storeKeys = Object.keys(corpus[country].stores);
+        const storeLocked = storeKeys.length === 1;
+        const store = storeLocked ? storeKeys[0] : '';
+
         this.setState({
-            country: ev.target.value,
-            store: '',
+            country,
+            store,
+            storeLocked,
         });
     }
 
