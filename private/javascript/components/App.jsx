@@ -73,7 +73,7 @@ const AppLogo = styled.img.attrs({
 `;
 
 const CountryFlag = styled.img.attrs({
-    src: props => `https://www.countryflags.io/${props.code}/flat/64.png`,
+    src: props => `https://www.countryflags.io/${props.code}/flat/24.png`,
 })`
     margin-right: ${theme.spacing.unit}px;
     height: 0.75em;
