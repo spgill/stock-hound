@@ -27,9 +27,7 @@ def send(to, subject, body):
 
 def store_name(tick):
     """Resolve a ticket to its store's name."""
-    for name, code in model.store_list[tick.country].items():
-        if code == tick.location:
-            return name
+    return model.corpus[tick.country]['stores'][tick.location]['label']
 
 
 def article_text(tick):
@@ -37,7 +35,9 @@ def article_text(tick):
 
 
 def article_url(tick):
-    return f'http://www.ikea.com/{tick.country}/en/catalog/products/{tick.article}/'
+    lang = model.corpus[tick.country]['language']
+    return f'http://www.ikea.com/{tick.country}/{lang}/\
+catalog/products/{tick.article}/'
 
 
 def article_info(tick):
@@ -88,7 +88,8 @@ def send_template(to, subject, template, context={}):
         'host': lambda: os.environ['PUBLIC_HOST'],
         'url': article_url,
         'article': article_text,
-        'info': None if 'ticket' not in context else article_info(context['ticket']),
+        'info': None if 'ticket' not in context
+        else article_info(context['ticket']),
     })
     send(
         to=to,
