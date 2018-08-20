@@ -1,4 +1,4 @@
-_Last updated: August 16, 2018_
+_Last updated: August 19, 2018_
 
 ### Summary:
 We respect the EU’s __General Data Protection Regulations (GDPR)__ and this policy explains how we collect and treat any information you give us. You won’t find any complicated legal terms or long passages of unreadable text. We’ve no desire to trick you into agreeing to something you might later regret.
