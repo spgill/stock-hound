@@ -14,7 +14,8 @@
 
     "globals": {
         "_": true,
-        "React": true
+        "React": true,
+        "grecaptcha": true
     },
 
     "rules": {
