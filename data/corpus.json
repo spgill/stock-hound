@@ -3,293 +3,663 @@
         "label": "United Arab Emirates",
         "language": "en",
         "stores": {
-            "Abu Dhabi": "055",
-            "Dubai": "218"
+            "055": {
+                "label": "Abu Dhabi"
+            },
+            "218": {
+                "label": "Dubai"
+            }
         }
     },
     "at": {
         "label": "Austria",
         "language": "de",
         "stores": {
-            "IKEA Graz": "387",
-            "IKEA Haid": "388",
-            "IKEA Innsbruck": "273",
-            "IKEA Klagenfurt": "155",
-            "IKEA Salzburg": "386",
-            "IKEA Wien Nord": "090",
-            "IKEA Wien V\u00f6sendorf": "085"
+            "085": {
+                "label": "IKEA Wien V\u00f6sendorf"
+            },
+            "090": {
+                "label": "IKEA Wien Nord"
+            },
+            "155": {
+                "label": "IKEA Klagenfurt"
+            },
+            "273": {
+                "label": "IKEA Innsbruck"
+            },
+            "386": {
+                "label": "IKEA Salzburg"
+            },
+            "387": {
+                "label": "IKEA Graz"
+            },
+            "388": {
+                "label": "IKEA Haid"
+            }
         }
     },
     "au": {
         "label": "Australia",
         "language": "en",
         "stores": {
-            "Adelaide": "557",
-            "Canberra": "451",
-            "Logan": "919",
-            "Marsden Park": "377",
-            "North Lakes": "460",
-            "Perth": "556",
-            "Rhodes": "385",
-            "Richmond": "384",
-            "Springvale": "006",
-            "Tempe": "446"
+            "006": {
+                "label": "Springvale"
+            },
+            "377": {
+                "label": "Marsden Park"
+            },
+            "384": {
+                "label": "Richmond"
+            },
+            "385": {
+                "label": "Rhodes"
+            },
+            "446": {
+                "label": "Tempe"
+            },
+            "451": {
+                "label": "Canberra"
+            },
+            "460": {
+                "label": "North Lakes"
+            },
+            "556": {
+                "label": "Perth"
+            },
+            "557": {
+                "label": "Adelaide"
+            },
+            "919": {
+                "label": "Logan"
+            }
         }
     },
     "ca": {
         "label": "Canada",
         "language": "en",
         "stores": {
-            "IKEA Boucherville, QC": "414",
-            "IKEA Burlington, ON": "040",
-            "IKEA Calgary, AB": "216",
-            "IKEA Coquitlam, BC": "313",
-            "IKEA Edmonton, AB": "349",
-            "IKEA Etobicoke, ON": "256",
-            "IKEA Halifax, NS": "529",
-            "IKEA Montreal, QC": "039",
-            "IKEA North York, ON": "149",
-            "IKEA Ottawa, ON": "004",
-            "IKEA Qu\u00e9bec - Opens Aug. 22nd!": "559",
-            "IKEA Richmond, BC": "003",
-            "IKEA Vaughan, ON": "372",
-            "IKEA Winnipeg, MB": "249"
+            "003": {
+                "label": "IKEA Richmond, BC"
+            },
+            "004": {
+                "label": "IKEA Ottawa, ON"
+            },
+            "039": {
+                "label": "IKEA Montreal, QC"
+            },
+            "040": {
+                "label": "IKEA Burlington, ON"
+            },
+            "149": {
+                "label": "IKEA North York, ON"
+            },
+            "216": {
+                "label": "IKEA Calgary, AB"
+            },
+            "249": {
+                "label": "IKEA Winnipeg, MB"
+            },
+            "256": {
+                "label": "IKEA Etobicoke, ON"
+            },
+            "313": {
+                "label": "IKEA Coquitlam, BC"
+            },
+            "349": {
+                "label": "IKEA Edmonton, AB"
+            },
+            "372": {
+                "label": "IKEA Vaughan, ON"
+            },
+            "414": {
+                "label": "IKEA Boucherville, QC"
+            },
+            "529": {
+                "label": "IKEA Halifax, NS"
+            },
+            "559": {
+                "label": "IKEA Qu\u00e9bec - Opens Aug. 22nd!"
+            }
         }
     },
     "ch": {
         "label": "Switzerland",
         "language": "en",
         "stores": {
-            "IKEA Aubonne VD (fr)": "078",
-            "IKEA Dietlikon ZH (de)": "291",
-            "IKEA Grancia TI (it)": "101",
-            "IKEA Lyssach BE (de)": "290",
-            "IKEA Pratteln BL (de)": "292",
-            "IKEA Rothenburg LU (de)": "275",
-            "IKEA Spreitenbach AG (de)": "079",
-            "IKEA St. Gallen SG (de)": "917",
-            "IKEA Vernier GE (fr)": "918"
+            "078": {
+                "label": "IKEA Aubonne VD (fr)"
+            },
+            "079": {
+                "label": "IKEA Spreitenbach AG (de)"
+            },
+            "101": {
+                "label": "IKEA Grancia TI (it)"
+            },
+            "275": {
+                "label": "IKEA Rothenburg LU (de)"
+            },
+            "290": {
+                "label": "IKEA Lyssach BE (de)"
+            },
+            "291": {
+                "label": "IKEA Dietlikon ZH (de)"
+            },
+            "292": {
+                "label": "IKEA Pratteln BL (de)"
+            },
+            "917": {
+                "label": "IKEA St. Gallen SG (de)"
+            },
+            "918": {
+                "label": "IKEA Vernier GE (fr)"
+            }
         }
     },
     "cz": {
         "label": "Czech Republic",
         "language": "cs",
         "stores": {
-            "Brno": "278",
-            "Ostrava": "309",
-            "Praha \u010cern\u00fd Most": "408",
-            "Praha-Zli\u010d\u00edn": "178"
+            "178": {
+                "label": "Praha-Zli\u010d\u00edn"
+            },
+            "278": {
+                "label": "Brno"
+            },
+            "309": {
+                "label": "Ostrava"
+            },
+            "408": {
+                "label": "Praha \u010cern\u00fd Most"
+            }
         }
     },
     "de": {
         "label": "Germany",
         "language": "de",
         "stores": {
-            "IKEA Augsburg": "066",
-            "IKEA Berlin-Lichtenberg": "324",
-            "IKEA Berlin-Spandau": "394",
-            "IKEA Berlin-Tempelhof": "421",
-            "IKEA Berlin-Waltersdorf": "129",
-            "IKEA Bielefeld": "119",
-            "IKEA Braunschweig": "117",
-            "IKEA Bremerhaven": "412",
-            "IKEA Brinkum": "228",
-            "IKEA Chemnitz": "118",
-            "IKEA Dortmund": "223",
-            "IKEA Dresden": "221",
-            "IKEA Duisburg": "425",
-            "IKEA D\u00fcsseldorf": "321",
-            "IKEA Erfurt": "396",
-            "IKEA Essen": "148",
-            "IKEA Frankfurt": "393",
-            "IKEA Freiburg": "320",
-            "IKEA Gro\u00dfburgwedel": "226",
-            "IKEA Halle/Leipzig": "139",
-            "IKEA Hamburg-Altona": "245",
-            "IKEA Hamburg-Moorfleet": "325",
-            "IKEA Hamburg-Schnelsen": "146",
-            "IKEA Hanau": "222",
-            "IKEA Hannover EXPO-Park": "187",
-            "IKEA Kaarst": "494",
-            "IKEA Kaiserslautern": "430",
-            "IKEA Kamen": "323",
-            "IKEA Kassel": "174",
-            "IKEA Kiel": "333",
-            "IKEA Koblenz": "332",
-            "IKEA K\u00f6ln-Butzweilerhof": "102",
-            "IKEA K\u00f6ln-Godorf": "147",
-            "IKEA Ludwigsburg": "225",
-            "IKEA L\u00fcbeck": "289",
-            "IKEA Magdeburg": "520",
-            "IKEA Mannheim": "397",
-            "IKEA M\u00fcnchen-Brunnthal": "343",
-            "IKEA M\u00fcnchen-Eching": "063",
-            "IKEA N\u00fcrnberg/F\u00fcrth": "326",
-            "IKEA Oldenburg": "069",
-            "IKEA Osnabr\u00fcck": "184",
-            "IKEA Regensburg": "229",
-            "IKEA Rostock": "092",
-            "IKEA Saarlouis": "227",
-            "IKEA Siegen": "369",
-            "IKEA Sindelfingen": "224",
-            "IKEA Ulm": "328",
-            "IKEA Wallau": "322",
-            "IKEA Walldorf": "075",
-            "IKEA Wetzlar": "493",
-            "IKEA Wuppertal": "492",
-            "IKEA W\u00fcrzburg": "124"
+            "063": {
+                "label": "IKEA M\u00fcnchen-Eching"
+            },
+            "066": {
+                "label": "IKEA Augsburg"
+            },
+            "069": {
+                "label": "IKEA Oldenburg"
+            },
+            "075": {
+                "label": "IKEA Walldorf"
+            },
+            "092": {
+                "label": "IKEA Rostock"
+            },
+            "102": {
+                "label": "IKEA K\u00f6ln-Butzweilerhof"
+            },
+            "117": {
+                "label": "IKEA Braunschweig"
+            },
+            "118": {
+                "label": "IKEA Chemnitz"
+            },
+            "119": {
+                "label": "IKEA Bielefeld"
+            },
+            "124": {
+                "label": "IKEA W\u00fcrzburg"
+            },
+            "129": {
+                "label": "IKEA Berlin-Waltersdorf"
+            },
+            "139": {
+                "label": "IKEA Halle/Leipzig"
+            },
+            "146": {
+                "label": "IKEA Hamburg-Schnelsen"
+            },
+            "147": {
+                "label": "IKEA K\u00f6ln-Godorf"
+            },
+            "148": {
+                "label": "IKEA Essen"
+            },
+            "174": {
+                "label": "IKEA Kassel"
+            },
+            "184": {
+                "label": "IKEA Osnabr\u00fcck"
+            },
+            "187": {
+                "label": "IKEA Hannover EXPO-Park"
+            },
+            "221": {
+                "label": "IKEA Dresden"
+            },
+            "222": {
+                "label": "IKEA Hanau"
+            },
+            "223": {
+                "label": "IKEA Dortmund"
+            },
+            "224": {
+                "label": "IKEA Sindelfingen"
+            },
+            "225": {
+                "label": "IKEA Ludwigsburg"
+            },
+            "226": {
+                "label": "IKEA Gro\u00dfburgwedel"
+            },
+            "227": {
+                "label": "IKEA Saarlouis"
+            },
+            "228": {
+                "label": "IKEA Brinkum"
+            },
+            "229": {
+                "label": "IKEA Regensburg"
+            },
+            "245": {
+                "label": "IKEA Hamburg-Altona"
+            },
+            "289": {
+                "label": "IKEA L\u00fcbeck"
+            },
+            "320": {
+                "label": "IKEA Freiburg"
+            },
+            "321": {
+                "label": "IKEA D\u00fcsseldorf"
+            },
+            "322": {
+                "label": "IKEA Wallau"
+            },
+            "323": {
+                "label": "IKEA Kamen"
+            },
+            "324": {
+                "label": "IKEA Berlin-Lichtenberg"
+            },
+            "325": {
+                "label": "IKEA Hamburg-Moorfleet"
+            },
+            "326": {
+                "label": "IKEA N\u00fcrnberg/F\u00fcrth"
+            },
+            "328": {
+                "label": "IKEA Ulm"
+            },
+            "332": {
+                "label": "IKEA Koblenz"
+            },
+            "333": {
+                "label": "IKEA Kiel"
+            },
+            "343": {
+                "label": "IKEA M\u00fcnchen-Brunnthal"
+            },
+            "369": {
+                "label": "IKEA Siegen"
+            },
+            "393": {
+                "label": "IKEA Frankfurt"
+            },
+            "394": {
+                "label": "IKEA Berlin-Spandau"
+            },
+            "396": {
+                "label": "IKEA Erfurt"
+            },
+            "397": {
+                "label": "IKEA Mannheim"
+            },
+            "412": {
+                "label": "IKEA Bremerhaven"
+            },
+            "421": {
+                "label": "IKEA Berlin-Tempelhof"
+            },
+            "425": {
+                "label": "IKEA Duisburg"
+            },
+            "430": {
+                "label": "IKEA Kaiserslautern"
+            },
+            "492": {
+                "label": "IKEA Wuppertal"
+            },
+            "493": {
+                "label": "IKEA Wetzlar"
+            },
+            "494": {
+                "label": "IKEA Kaarst"
+            },
+            "520": {
+                "label": "IKEA Magdeburg"
+            }
         }
     },
     "dk": {
         "label": "Denmark",
         "language": "da",
         "stores": {
-            "Aalborg": "005",
-            "Aarhus": "298",
-            "Gentofte": "121",
-            "Odense": "172",
-            "Taastrup": "094"
+            "005": {
+                "label": "Aalborg"
+            },
+            "094": {
+                "label": "Taastrup"
+            },
+            "121": {
+                "label": "Gentofte"
+            },
+            "172": {
+                "label": "Odense"
+            },
+            "298": {
+                "label": "Aarhus"
+            }
         }
     },
     "fi": {
         "label": "Finland",
         "language": "fi",
         "stores": {
-            "Espoo": "202",
-            "Kuopio": "208",
-            "Raisio": "301",
-            "Tampere": "008",
-            "Vantaa": "422"
+            "008": {
+                "label": "Tampere"
+            },
+            "202": {
+                "label": "Espoo"
+            },
+            "208": {
+                "label": "Kuopio"
+            },
+            "301": {
+                "label": "Raisio"
+            },
+            "422": {
+                "label": "Vantaa"
+            }
         }
     },
     "fr": {
         "label": "France",
         "language": "fr",
         "stores": {
-            "Avignon": "018",
-            "Bayonne Ametzondo": "310",
-            "Bordeaux": "134",
-            "Brest": "060",
-            "Caen Fleury-sur-Orne": "199",
-            "Clermont-Ferrand": "345",
-            "Dijon": "086",
-            "Grenoble": "435",
-            "H\u00e9nin-Beaumont": "051",
-            "Lille": "133",
-            "Marseille - La Valentine": "433",
-            "Marseille - Vitrolles": "130",
-            "Metz": "260",
-            "Montpellier": "402",
-            "Mulhouse": "444",
-            "Nantes": "316",
-            "Orl\u00e9ans Ardon": "487",
-            "Paris Est, Villiers sur Marne": "240",
-            "Paris N-O, Franconville": "389",
-            "Paris Nord, Roissy": "131",
-            "Paris Ouest, Plaisir": "083",
-            "Paris Ouest, V\u00e9lizy": "285",
-            "Paris Sud,  Thiais": "432",
-            "Paris Sud, Evry": "082",
-            "Reims": "198",
-            "Rennes": "177",
-            "Rouen": "163",
-            "St Etienne": "431",
-            "St Priest": "132",
-            "Strasbourg": "239",
-            "Toulon": "315",
-            "Toulouse": "242",
-            "Tours": "434"
+            "018": {
+                "label": "Avignon"
+            },
+            "051": {
+                "label": "H\u00e9nin-Beaumont"
+            },
+            "060": {
+                "label": "Brest"
+            },
+            "082": {
+                "label": "Paris Sud, Evry"
+            },
+            "083": {
+                "label": "Paris Ouest, Plaisir"
+            },
+            "086": {
+                "label": "Dijon"
+            },
+            "130": {
+                "label": "Marseille - Vitrolles"
+            },
+            "131": {
+                "label": "Paris Nord, Roissy"
+            },
+            "132": {
+                "label": "St Priest"
+            },
+            "133": {
+                "label": "Lille"
+            },
+            "134": {
+                "label": "Bordeaux"
+            },
+            "163": {
+                "label": "Rouen"
+            },
+            "177": {
+                "label": "Rennes"
+            },
+            "198": {
+                "label": "Reims"
+            },
+            "199": {
+                "label": "Caen Fleury-sur-Orne"
+            },
+            "239": {
+                "label": "Strasbourg"
+            },
+            "240": {
+                "label": "Paris Est, Villiers sur Marne"
+            },
+            "242": {
+                "label": "Toulouse"
+            },
+            "260": {
+                "label": "Metz"
+            },
+            "285": {
+                "label": "Paris Ouest, V\u00e9lizy"
+            },
+            "310": {
+                "label": "Bayonne Ametzondo"
+            },
+            "315": {
+                "label": "Toulon"
+            },
+            "316": {
+                "label": "Nantes"
+            },
+            "345": {
+                "label": "Clermont-Ferrand"
+            },
+            "389": {
+                "label": "Paris N-O, Franconville"
+            },
+            "402": {
+                "label": "Montpellier"
+            },
+            "431": {
+                "label": "St Etienne"
+            },
+            "432": {
+                "label": "Paris Sud,  Thiais"
+            },
+            "433": {
+                "label": "Marseille - La Valentine"
+            },
+            "434": {
+                "label": "Tours"
+            },
+            "435": {
+                "label": "Grenoble"
+            },
+            "444": {
+                "label": "Mulhouse"
+            },
+            "487": {
+                "label": "Orl\u00e9ans Ardon"
+            }
         }
     },
     "hk": {
         "label": "Hong Kong",
         "language": "en",
         "stores": {
-            "Causeway Bay": "062",
-            "Kowloon Bay": "071",
-            "Shatin": "052",
-            "Tsuen Wan": "532",
-            "Warehouse": "538"
+            "052": {
+                "label": "Shatin"
+            },
+            "062": {
+                "label": "Causeway Bay"
+            },
+            "071": {
+                "label": "Kowloon Bay"
+            },
+            "532": {
+                "label": "Tsuen Wan"
+            },
+            "538": {
+                "label": "Warehouse"
+            }
         }
     },
     "hr": {
         "label": "Croatia",
         "language": "hr",
         "stores": {
-            "Zagreb": "021"
+            "021": {
+                "label": "Zagreb"
+            }
         }
     },
     "hu": {
         "label": "Hungary",
         "language": "hu",
         "stores": {
-            "IKEA Buda\u00f6rs": "182",
-            "IKEA Soroks\u00e1r, Budapest": "507",
-            "IKEA \u00d6rs vez\u00e9r tere, Budapest": "180"
+            "180": {
+                "label": "IKEA \u00d6rs vez\u00e9r tere, Budapest"
+            },
+            "182": {
+                "label": "IKEA Buda\u00f6rs"
+            },
+            "507": {
+                "label": "IKEA Soroks\u00e1r, Budapest"
+            }
         }
     },
     "it": {
         "label": "Italy",
         "language": "it",
         "stores": {
-            "Ancona": "457",
-            "Bari": "356",
-            "Bologna Casalecchio": "231",
-            "Brescia Roncadelle": "354",
-            "Catania": "098",
-            "Chieti S.G. Teatino": "029",
-            "Firenze Sesto F.no": "352",
-            "Genova": "232",
-            "Gorizia_Villesse": "116",
-            "Milano Carugate": "233",
-            "Milano Corsico": "455",
-            "Milano San Giuliano": "295",
-            "Napoli Afragola": "353",
-            "Padova": "355",
-            "Parma": "303",
-            "Pisa": "314",
-            "Rimini": "111",
-            "Roma Anagnina": "234",
-            "Roma Porta di Roma": "427",
-            "Salerno Baronissi": "458",
-            "Torino Collegno": "456"
+            "029": {
+                "label": "Chieti S.G. Teatino"
+            },
+            "098": {
+                "label": "Catania"
+            },
+            "111": {
+                "label": "Rimini"
+            },
+            "116": {
+                "label": "Gorizia_Villesse"
+            },
+            "231": {
+                "label": "Bologna Casalecchio"
+            },
+            "232": {
+                "label": "Genova"
+            },
+            "233": {
+                "label": "Milano Carugate"
+            },
+            "234": {
+                "label": "Roma Anagnina"
+            },
+            "295": {
+                "label": "Milano San Giuliano"
+            },
+            "303": {
+                "label": "Parma"
+            },
+            "314": {
+                "label": "Pisa"
+            },
+            "352": {
+                "label": "Firenze Sesto F.no"
+            },
+            "353": {
+                "label": "Napoli Afragola"
+            },
+            "354": {
+                "label": "Brescia Roncadelle"
+            },
+            "355": {
+                "label": "Padova"
+            },
+            "356": {
+                "label": "Bari"
+            },
+            "427": {
+                "label": "Roma Porta di Roma"
+            },
+            "455": {
+                "label": "Milano Corsico"
+            },
+            "456": {
+                "label": "Torino Collegno"
+            },
+            "457": {
+                "label": "Ancona"
+            },
+            "458": {
+                "label": "Salerno Baronissi"
+            }
         }
     },
     "jo": {
         "label": "Jordan",
         "language": "en",
         "stores": {
-            "Amman": "237"
+            "237": {
+                "label": "Amman"
+            }
         }
     },
     "jp": {
         "label": "Japan",
         "language": "ja",
         "stores": {
-            "Tokyo-Bay": "447",
-            "\u4ed9\u53f0": "392",
-            "\u65b0\u4e09\u90f7": "887",
-            "\u6e2f\u5317": "448",
-            "\u795e\u6238": "486",
-            "\u798f\u5ca1\u65b0\u5bae": "189",
-            "\u7acb\u5ddd": "359",
-            "\u9577\u4e45\u624b": "509",
-            "\u9db4\u6d5c": "496"
+            "189": {
+                "label": "\u798f\u5ca1\u65b0\u5bae"
+            },
+            "359": {
+                "label": "\u7acb\u5ddd"
+            },
+            "392": {
+                "label": "\u4ed9\u53f0"
+            },
+            "447": {
+                "label": "Tokyo-Bay"
+            },
+            "448": {
+                "label": "\u6e2f\u5317"
+            },
+            "486": {
+                "label": "\u795e\u6238"
+            },
+            "496": {
+                "label": "\u9db4\u6d5c"
+            },
+            "509": {
+                "label": "\u9577\u4e45\u624b"
+            },
+            "887": {
+                "label": "\u65b0\u4e09\u90f7"
+            }
         }
     },
     "kr": {
         "label": "South Korea",
         "language": "en",
         "stores": {
-            "Goyang": "522",
-            "Gwangmyeong": "373"
+            "373": {
+                "label": "Gwangmyeong"
+            },
+            "522": {
+                "label": "Goyang"
+            }
         }
     },
     "kw": {
         "label": "Kuwait",
         "language": "en",
         "stores": {
-            "Kuwait": "219"
+            "219": {
+                "label": "Kuwait"
+            }
         }
     },
     "ma": {
@@ -301,234 +671,510 @@
         "label": "Malaysia",
         "language": "en",
         "stores": {
-            "IKEA Cheras": "362",
-            "IKEA Damansara": "438",
-            "IKEA Tebrau": "477"
+            "362": {
+                "label": "IKEA Cheras"
+            },
+            "438": {
+                "label": "IKEA Damansara"
+            },
+            "477": {
+                "label": "IKEA Tebrau"
+            }
         }
     },
     "nl": {
         "label": "Netherlands",
         "language": "nl",
         "stores": {
-            "Amersfoort": "415",
-            "Amsterdam": "088",
-            "Barendrecht (Rotterdam)": "274",
-            "Breda": "403",
-            "Delft": "151",
-            "Duiven": "272",
-            "Eindhoven": "087",
-            "Groningen": "404",
-            "Haarlem": "378",
-            "Heerlen": "089",
-            "Hengelo": "312",
-            "Utrecht": "270",
-            "Zwolle": "391"
+            "087": {
+                "label": "Eindhoven"
+            },
+            "088": {
+                "label": "Amsterdam"
+            },
+            "089": {
+                "label": "Heerlen"
+            },
+            "151": {
+                "label": "Delft"
+            },
+            "270": {
+                "label": "Utrecht"
+            },
+            "272": {
+                "label": "Duiven"
+            },
+            "274": {
+                "label": "Barendrecht (Rotterdam)"
+            },
+            "312": {
+                "label": "Hengelo"
+            },
+            "378": {
+                "label": "Haarlem"
+            },
+            "391": {
+                "label": "Zwolle"
+            },
+            "403": {
+                "label": "Breda"
+            },
+            "404": {
+                "label": "Groningen"
+            },
+            "415": {
+                "label": "Amersfoort"
+            }
         }
     },
     "no": {
         "label": "Norway",
         "language": "no",
         "stores": {
-            "Forus": "126",
-            "Furuset": "095",
-            "Leangen": "371",
-            "Ringsaker": "390",
-            "Slependen": "091",
-            "S\u00f8rlandet": "007",
-            "\u00c5sane": "441"
+            "007": {
+                "label": "S\u00f8rlandet"
+            },
+            "091": {
+                "label": "Slependen"
+            },
+            "095": {
+                "label": "Furuset"
+            },
+            "126": {
+                "label": "Forus"
+            },
+            "371": {
+                "label": "Leangen"
+            },
+            "390": {
+                "label": "Ringsaker"
+            },
+            "441": {
+                "label": "\u00c5sane"
+            }
         }
     },
     "pl": {
         "label": "Poland",
         "language": "pl",
         "stores": {
-            "Bydgoszcz": "429",
-            "Gda\u0144sk": "203",
-            "Katowice": "306",
-            "Krak\u00f3w": "204",
-            "Lublin": "311",
-            "Pozna\u0144": "205",
-            "Warszawa / Janki": "188",
-            "Warszawa / Targ\u00f3wek": "307",
-            "Wroc\u0142aw": "294",
-            "\u0141\u00f3d\u017a": "329"
+            "188": {
+                "label": "Warszawa / Janki"
+            },
+            "203": {
+                "label": "Gda\u0144sk"
+            },
+            "204": {
+                "label": "Krak\u00f3w"
+            },
+            "205": {
+                "label": "Pozna\u0144"
+            },
+            "294": {
+                "label": "Wroc\u0142aw"
+            },
+            "306": {
+                "label": "Katowice"
+            },
+            "307": {
+                "label": "Warszawa / Targ\u00f3wek"
+            },
+            "311": {
+                "label": "Lublin"
+            },
+            "329": {
+                "label": "\u0141\u00f3d\u017a"
+            },
+            "429": {
+                "label": "Bydgoszcz"
+            }
         }
     },
     "pt": {
         "label": "Portugal",
         "language": "en",
         "stores": {
-            "Alfragide": "367",
-            "Braga": "499",
-            "Loul\u00e9": "453",
-            "Loures": "001",
-            "Matosinhos": "009"
+            "001": {
+                "label": "Loures"
+            },
+            "009": {
+                "label": "Matosinhos"
+            },
+            "367": {
+                "label": "Alfragide"
+            },
+            "453": {
+                "label": "Loul\u00e9"
+            },
+            "499": {
+                "label": "Braga"
+            }
         }
     },
     "qa": {
         "label": "Qatar",
         "language": "en",
         "stores": {
-            "Qatar": "244"
+            "244": {
+                "label": "Qatar"
+            }
         }
     },
     "ro": {
         "label": "Romania",
         "language": "ro",
         "stores": {
-            "Bucuresti": "059"
+            "059": {
+                "label": "Bucuresti"
+            }
         }
     },
     "rs": {
         "label": "Serbia",
         "language": "sr",
         "stores": {
-            "Beograd": "050"
+            "050": {
+                "label": "Beograd"
+            }
         }
     },
     "ru": {
         "label": "Russia",
         "language": "ru",
         "stores": {
-            "\u0410\u0434\u044b\u0433\u0435\u044f-\u041a\u0443\u0431\u0430\u043d\u044c": "480",
-            "\u0411\u0435\u043b\u0430\u044f \u0414\u0430\u0447\u0430": "344",
-            "\u0414\u044b\u0431\u0435\u043d\u043a\u043e": "426",
-            "\u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0431\u0443\u0440\u0433": "342",
-            "\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442-\u043c\u0430\u0433\u0430\u0437\u0438\u043d": "524",
-            "\u041a\u0430\u0437\u0430\u043d\u044c": "341",
-            "\u041d\u0438\u0436\u043d\u0438\u0439 \u041d\u043e\u0432\u0433\u043e\u0440\u043e\u0434": "437",
-            "\u041d\u043e\u0432\u043e\u0441\u0438\u0431\u0438\u0440\u0441\u043a": "338",
-            "\u041e\u043c\u0441\u043a": "351",
-            "\u041f\u0430\u0440\u043d\u0430\u0441": "464",
-            "\u0420\u043e\u0441\u0442\u043e\u0432-\u043d\u0430-\u0414\u043e\u043d\u0443": "443",
-            "\u0421\u0430\u043c\u0430\u0440\u0430": "442",
-            "\u0422\u0435\u043f\u043b\u044b\u0439 \u0421\u0442\u0430\u043d": "336",
-            "\u0423\u0444\u0430": "346",
-            "\u0425\u0438\u043c\u043a\u0438": "335"
+            "335": {
+                "label": "\u0425\u0438\u043c\u043a\u0438"
+            },
+            "336": {
+                "label": "\u0422\u0435\u043f\u043b\u044b\u0439 \u0421\u0442\u0430\u043d"
+            },
+            "338": {
+                "label": "\u041d\u043e\u0432\u043e\u0441\u0438\u0431\u0438\u0440\u0441\u043a"
+            },
+            "341": {
+                "label": "\u041a\u0430\u0437\u0430\u043d\u044c"
+            },
+            "342": {
+                "label": "\u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0431\u0443\u0440\u0433"
+            },
+            "344": {
+                "label": "\u0411\u0435\u043b\u0430\u044f \u0414\u0430\u0447\u0430"
+            },
+            "346": {
+                "label": "\u0423\u0444\u0430"
+            },
+            "351": {
+                "label": "\u041e\u043c\u0441\u043a"
+            },
+            "426": {
+                "label": "\u0414\u044b\u0431\u0435\u043d\u043a\u043e"
+            },
+            "437": {
+                "label": "\u041d\u0438\u0436\u043d\u0438\u0439 \u041d\u043e\u0432\u0433\u043e\u0440\u043e\u0434"
+            },
+            "442": {
+                "label": "\u0421\u0430\u043c\u0430\u0440\u0430"
+            },
+            "443": {
+                "label": "\u0420\u043e\u0441\u0442\u043e\u0432-\u043d\u0430-\u0414\u043e\u043d\u0443"
+            },
+            "464": {
+                "label": "\u041f\u0430\u0440\u043d\u0430\u0441"
+            },
+            "480": {
+                "label": "\u0410\u0434\u044b\u0433\u0435\u044f-\u041a\u0443\u0431\u0430\u043d\u044c"
+            },
+            "524": {
+                "label": "\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442-\u043c\u0430\u0433\u0430\u0437\u0438\u043d"
+            }
         }
     },
     "sa": {
         "label": "Saudi Arabia",
         "language": "en",
         "stores": {
-            "IKEA Dhahran": "065",
-            "IKEA Jeddah, Al Salam Mall": "503",
-            "IKEA Jeddah, Al Tahlyah": "110",
-            "IKEA Riyadh": "197"
+            "065": {
+                "label": "IKEA Dhahran"
+            },
+            "110": {
+                "label": "IKEA Jeddah, Al Tahlyah"
+            },
+            "197": {
+                "label": "IKEA Riyadh"
+            },
+            "503": {
+                "label": "IKEA Jeddah, Al Salam Mall"
+            }
         }
     },
     "se": {
         "label": "Sweden",
         "language": "sv",
         "stores": {
-            "Borl\u00e4nge": "248",
-            "G\u00e4vle": "122",
-            "G\u00f6teborg B\u00e4ckebol": "398",
-            "G\u00f6teborg K\u00e5llered": "014",
-            "HaparandaTornio": "470",
-            "Helsingborg": "468",
-            "J\u00f6nk\u00f6ping": "109",
-            "Kalmar": "469",
-            "Karlstad": "471",
-            "Link\u00f6ping": "017",
-            "Malm\u00f6": "445",
-            "Stockholm Barkarby": "019",
-            "Stockholm Kungens Kurva": "012",
-            "Sundsvall": "467",
-            "Uddevalla": "053",
-            "Ume\u00e5": "416",
-            "Uppsala": "070",
-            "V\u00e4ster\u00e5s": "020",
-            "\u00c4lmhult": "268",
-            "\u00d6rebro": "106"
+            "012": {
+                "label": "Stockholm Kungens Kurva"
+            },
+            "014": {
+                "label": "G\u00f6teborg K\u00e5llered"
+            },
+            "017": {
+                "label": "Link\u00f6ping"
+            },
+            "019": {
+                "label": "Stockholm Barkarby"
+            },
+            "020": {
+                "label": "V\u00e4ster\u00e5s"
+            },
+            "053": {
+                "label": "Uddevalla"
+            },
+            "070": {
+                "label": "Uppsala"
+            },
+            "106": {
+                "label": "\u00d6rebro"
+            },
+            "109": {
+                "label": "J\u00f6nk\u00f6ping"
+            },
+            "122": {
+                "label": "G\u00e4vle"
+            },
+            "248": {
+                "label": "Borl\u00e4nge"
+            },
+            "268": {
+                "label": "\u00c4lmhult"
+            },
+            "398": {
+                "label": "G\u00f6teborg B\u00e4ckebol"
+            },
+            "416": {
+                "label": "Ume\u00e5"
+            },
+            "445": {
+                "label": "Malm\u00f6"
+            },
+            "467": {
+                "label": "Sundsvall"
+            },
+            "468": {
+                "label": "Helsingborg"
+            },
+            "469": {
+                "label": "Kalmar"
+            },
+            "470": {
+                "label": "HaparandaTornio"
+            },
+            "471": {
+                "label": "Karlstad"
+            }
         }
     },
     "sg": {
         "label": "Singapore",
         "language": "en",
         "stores": {
-            "IKEA Alexandra": "045",
-            "IKEA Tampines": "022"
+            "022": {
+                "label": "IKEA Tampines"
+            },
+            "045": {
+                "label": "IKEA Alexandra"
+            }
         }
     },
     "sk": {
         "label": "Slovakia",
         "language": "sk",
         "stores": {
-            "IKEA Bratislava": "489"
+            "489": {
+                "label": "IKEA Bratislava"
+            }
         }
     },
     "th": {
         "label": "Thailand",
         "language": "en",
         "stores": {
-            "IKEA Bang Yai": "479",
-            "IKEA Bangna": "057"
+            "057": {
+                "label": "IKEA Bangna"
+            },
+            "479": {
+                "label": "IKEA Bang Yai"
+            }
         }
     },
     "tw": {
         "label": "Taiwan",
         "language": "zh",
         "stores": {
-            "\u53f0\u4e2d\u5e97": "305",
-            "\u6566\u5317\u5e97": "350",
-            "\u65b0\u838a\u5e97": "363",
-            "\u6843\u5712\u5e97": "361",
-            "\u9ad8\u96c4\u5e97": "879"
+            "305": {
+                "label": "\u53f0\u4e2d\u5e97"
+            },
+            "350": {
+                "label": "\u6566\u5317\u5e97"
+            },
+            "361": {
+                "label": "\u6843\u5712\u5e97"
+            },
+            "363": {
+                "label": "\u65b0\u838a\u5e97"
+            },
+            "879": {
+                "label": "\u9ad8\u96c4\u5e97"
+            }
         }
     },
     "us": {
         "label": "United States",
         "language": "en",
         "stores": {
-            "AZ, Tempe": "209",
-            "CA, Burbank": "399",
-            "CA, Carson": "162",
-            "CA, Costa Mesa": "167",
-            "CA, Covina": "413",
-            "CA, East Palo Alto": "347",
-            "CA, Emeryville": "165",
-            "CA, San Diego": "166",
-            "CA, West Sacramento": "157",
-            "CO, Centennial": "064",
-            "CT, New Haven": "213",
-            "FL, Jacksonville": "537",
-            "FL, Miami": "327",
-            "FL, Orlando": "145",
-            "FL, Sunrise": "207",
-            "FL, Tampa": "042",
-            "GA, Atlanta": "257",
-            "IL, Bolingbrook": "170",
-            "IL, Schaumburg": "210",
-            "IN, Fishers": "536",
-            "KS, Merriam": "374",
-            "MA, Stoughton": "158",
-            "MD, Baltimore": "152",
-            "MD, College Park": "411",
-            "MI, Canton": "026",
-            "MN, Twin Cities": "212",
-            "MO, St. Louis ": "410",
-            "NC, Charlotte": "067",
-            "NJ, Elizabeth": "154",
-            "NJ, Paramus": "409",
-            "NV, Las Vegas": "462",
-            "NY, Brooklyn": "921",
-            "NY, Long Island": "156",
-            "OH, Columbus": "511",
-            "OH, West Chester": "175",
-            "OR, Portland": "028",
-            "PA, Conshohocken": "211",
-            "PA, Pittsburgh": "153",
-            "PA, South Philadelphia": "215",
-            "TN, Memphis": "508",
-            "TX, Frisco": "183",
-            "TX, Grand Prairie": "535",
-            "TX, Houston": "379",
-            "TX, Round Rock": "027",
-            "UT, Draper": "103",
-            "VA, Woodbridge": "168",
-            "WA, Renton": "488",
-            "WI, Oak Creek": "560"
+            "026": {
+                "label": "MI, Canton"
+            },
+            "027": {
+                "label": "TX, Round Rock"
+            },
+            "028": {
+                "label": "OR, Portland"
+            },
+            "042": {
+                "label": "FL, Tampa"
+            },
+            "064": {
+                "label": "CO, Centennial"
+            },
+            "067": {
+                "label": "NC, Charlotte"
+            },
+            "103": {
+                "label": "UT, Draper"
+            },
+            "145": {
+                "label": "FL, Orlando"
+            },
+            "152": {
+                "label": "MD, Baltimore"
+            },
+            "153": {
+                "label": "PA, Pittsburgh"
+            },
+            "154": {
+                "label": "NJ, Elizabeth"
+            },
+            "156": {
+                "label": "NY, Long Island"
+            },
+            "157": {
+                "label": "CA, West Sacramento"
+            },
+            "158": {
+                "label": "MA, Stoughton"
+            },
+            "162": {
+                "label": "CA, Carson"
+            },
+            "165": {
+                "label": "CA, Emeryville"
+            },
+            "166": {
+                "label": "CA, San Diego"
+            },
+            "167": {
+                "label": "CA, Costa Mesa"
+            },
+            "168": {
+                "label": "VA, Woodbridge"
+            },
+            "170": {
+                "label": "IL, Bolingbrook"
+            },
+            "175": {
+                "label": "OH, West Chester"
+            },
+            "183": {
+                "label": "TX, Frisco"
+            },
+            "207": {
+                "label": "FL, Sunrise"
+            },
+            "209": {
+                "label": "AZ, Tempe"
+            },
+            "210": {
+                "label": "IL, Schaumburg"
+            },
+            "211": {
+                "label": "PA, Conshohocken"
+            },
+            "212": {
+                "label": "MN, Twin Cities"
+            },
+            "213": {
+                "label": "CT, New Haven"
+            },
+            "215": {
+                "label": "PA, South Philadelphia"
+            },
+            "257": {
+                "label": "GA, Atlanta"
+            },
+            "327": {
+                "label": "FL, Miami"
+            },
+            "347": {
+                "label": "CA, East Palo Alto"
+            },
+            "374": {
+                "label": "KS, Merriam"
+            },
+            "379": {
+                "label": "TX, Houston"
+            },
+            "399": {
+                "label": "CA, Burbank"
+            },
+            "409": {
+                "label": "NJ, Paramus"
+            },
+            "410": {
+                "label": "MO, St. Louis "
+            },
+            "411": {
+                "label": "MD, College Park"
+            },
+            "413": {
+                "label": "CA, Covina"
+            },
+            "462": {
+                "label": "NV, Las Vegas"
+            },
+            "488": {
+                "label": "WA, Renton"
+            },
+            "508": {
+                "label": "TN, Memphis"
+            },
+            "511": {
+                "label": "OH, Columbus"
+            },
+            "535": {
+                "label": "TX, Grand Prairie"
+            },
+            "536": {
+                "label": "IN, Fishers"
+            },
+            "537": {
+                "label": "FL, Jacksonville"
+            },
+            "560": {
+                "label": "WI, Oak Creek"
+            },
+            "921": {
+                "label": "NY, Brooklyn"
+            }
         }
     }
 }

@@ -114,7 +114,9 @@ for countryCode in master:
         for storeCode, storeName in storeList:
             if storeCode not in dedupe:
                 dedupe.add(storeCode)
-                master[countryCode]['stores'][storeName] = storeCode
+                master[countryCode]['stores'][storeCode] = {
+                    'label': storeName
+                }
 
         # We can break this loop then
         break
