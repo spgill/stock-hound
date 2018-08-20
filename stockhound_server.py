@@ -82,7 +82,7 @@ def stockhound_submit():
     # Check that it's a valid article number
     # (also ensures it isn't one of the new style numbers)
     query = requests.get(f'http://www.ikea.com/{country}/{lang}/\
-        search/?query={articleno}')
+search/?query={articleno}')
     if not query.history:
         helper.api_error(
             message='Article number or product does not appear to exist.'
@@ -110,7 +110,7 @@ def stockhound_submit():
         return helper.api_success(
             payload='confirm',
             message='You have reached your limit of 5 reminders. If \
-                you continue, your oldest reminder will be terminated.'
+you continue, your oldest reminder will be terminated.'
         )
 
     # If they confirm, delete the oldest ticket
@@ -177,4 +177,4 @@ def stockhound_terminate(ticket_id):
     except db.DoesNotExist:
         return 'Reminder not found. You must have clicked an inactive link.'
     return 'Your reminder has been terminated! \
-        You will no longer receive emails for this reminder.'
+You will no longer receive emails for this reminder.'

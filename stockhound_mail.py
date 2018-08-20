@@ -37,7 +37,7 @@ def article_text(tick):
 def article_url(tick):
     lang = model.corpus[tick.country]['language']
     return f'http://www.ikea.com/{tick.country}/{lang}/\
-        catalog/products/{tick.article}/'
+catalog/products/{tick.article}/'
 
 
 def article_info(tick):

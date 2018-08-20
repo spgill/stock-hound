@@ -11,9 +11,10 @@ def get_stock(country, product_no):
     stocklist = {}
     lang = model.corpus[country]['language']
     url = f'http://www.ikea.com/{country}/{lang}/\
-        iows/catalog/availability/{product_no}'
+iows/catalog/availability/{product_no}'
     response = requests.get(url)
     root = xml.etree.ElementTree.fromstring(response.text)
+
     for store in root.findall('.//localStore'):
         code = store.attrib['buCode']
         level = store.find('./stock/inStockProbabilityCode')
