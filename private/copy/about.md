@@ -1,3 +1,14 @@
+> This application was developed by myself, Samuel P. Gillispie II. I'm a junior
+> front-end web developer at IBM Design in Austin, working on this and other side
+> projects in my spare time.
+>
+> At a high level; this project is built using [React](https://reactjs.org/) and
+> [Material-UI](https://material-ui.com/), hosted on [Heroku](https://heroku.com/),
+> with a [Python](https://www.python.org/)-powered backend and [MongoDB](https://www.mongodb.com/)
+> database.
+
+---
+
 Neither I, Samuel P. Gillispie II (the creator and principal developer), nor
 this web application, "Stöck Høund," are affiliated in any way with IKEA
 USA or Inter IKEA Systems B.V. This is a purely not-for-profit
