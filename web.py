@@ -7,7 +7,7 @@ the builtin development server.
 
 import os
 
-from gevent.wsgi import WSGIServer
+from gevent.pywsgi import WSGIServer
 from werkzeug.serving import run_simple
 
 from stockhound_server import app
