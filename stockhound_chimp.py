@@ -1,5 +1,6 @@
 import datetime
 import requests
+import sys
 import xml.etree.ElementTree
 
 import stockhound_mail as mail
@@ -13,7 +14,10 @@ def get_stock(country, product_no):
     url = f'http://www.ikea.com/{country}/{lang}/\
 iows/catalog/availability/{product_no}'
     response = requests.get(url)
-    root = xml.etree.ElementTree.fromstring(response.text)
+    try:
+        root = xml.etree.ElementTree.fromstring(response.text)
+    except xml.etree.ElementTree.ParseError:
+        return None
 
     for store in root.findall('.//localStore'):
         code = store.attrib['buCode']
@@ -26,18 +30,27 @@ iows/catalog/availability/{product_no}'
 
 
 if __name__ == '__main__':
+    # Simulation mode for debugging purposes
+    simulation = len(sys.argv) > 1 and sys.argv[1] == 'simulation'
+    if simulation:
+        print('SIMULATION!!!')
 
     print('Starting stock chimp')
-    # model.log(None, 'Worker started...')
 
     # Iterate through the two support countries
-    for countryCode in model.corpus.keys():
+    for countryCode in model.ReminderTicket.objects(
+        closed=False
+    ).distinct('country'):
+        if simulation:
+            print('COUNTRY', countryCode)
 
         # Iterate through the article numbers of active tickets
         for article in model.ReminderTicket.objects(
             closed=False,
             country=countryCode
         ).distinct('article'):
+            if simulation:
+                print('    ARTICLE', article)
 
             # Get the stock levels for the article number
             stock_levels = get_stock(countryCode, article)
@@ -48,18 +61,26 @@ if __name__ == '__main__':
                 country=countryCode,
                 article=article
             ):
+                if simulation:
+                    print(
+                        '        TICKET',
+                        ticket.id,
+                        ticket.country,
+                        ticket.article,
+                    )
 
                 # Check if the ticket has expired
-                age = datetime.datetime.now() - ticket.created
-                print('AGE', age)
+                age = datetime.datetime.utcnow() - ticket.created
+                if simulation:
+                    print('            AGE', age)
                 if age > datetime.timedelta(days=31):
                     ticket.closed = True
-                    ticket.save()
-
-                    model.log(
-                        ticket,
-                        f'{ticket.address} had a ticket expire'
-                    )
+                    if not simulation:
+                        ticket.save()
+                        model.log(
+                            ticket,
+                            f'{ticket.address} had a ticket expire'
+                        )
 
                     print(f'"{ticket.id}" by "{ticket.address}" expired')
                     continue
@@ -67,27 +88,28 @@ if __name__ == '__main__':
                 # If the stock_levels dict is EMPTY, that means the product has
                 #   been removed from the IKEA catalog. In this instance, send
                 #   an email to the user and close their ticket.
-                if not any(stock_levels):
+                if stock_levels is None or not any(stock_levels):
 
                     # Close out the ticket
                     ticket.closed = True
                     ticket.completed = False
-                    ticket.save()
 
-                    model.log(
-                        ticket,
-                        f'{ticket.address} had a ticket discontinue'
-                    )
+                    if not simulation:
+                        ticket.save()
+                        model.log(
+                            ticket,
+                            f'{ticket.address} had a ticket discontinue'
+                        )
 
-                    # Send the bad news :(
-                    mail.send_template(
-                        to=ticket.address,
-                        subject='Your product has been discontinued',
-                        template='discontinued',
-                        context={
-                            'ticket': ticket,
-                        }
-                    )
+                        # Send the bad news :(
+                        mail.send_template(
+                            to=ticket.address,
+                            subject='Your product has been discontinued',
+                            template='discontinued',
+                            context={
+                                'ticket': ticket,
+                            }
+                        )
 
                     # We can skip this ticket now
                     print(f'"{ticket.id}" by "{ticket.address}" was cancelled')
@@ -100,23 +122,24 @@ if __name__ == '__main__':
                     # Close out the ticket
                     ticket.closed = True
                     ticket.completed = True
-                    ticket.save()
 
-                    model.log(
-                        ticket,
-                        f'{ticket.address} had a ticket successfully complete'
-                    )
+                    if not simulation:
+                        ticket.save()
+                        model.log(
+                            ticket,
+                            f'{ticket.address} had a ticket complete'
+                        )
 
-                    # Send the email notification
-                    mail.send_template(
-                        to=ticket.address,
-                        subject='Your product is in stock!',
-                        template='notify',
-                        context={
-                            'ticket': ticket,
-                            'level': level,
-                        }
-                    )
+                        # Send the email notification
+                        mail.send_template(
+                            to=ticket.address,
+                            subject='Your product is in stock!',
+                            template='notify',
+                            context={
+                                'ticket': ticket,
+                                'level': level,
+                            }
+                        )
 
                     print(f'"{ticket.id}" by "{ticket.address}" was fulfilled')
 
