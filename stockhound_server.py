@@ -133,7 +133,7 @@ you continue, your oldest reminder will be terminated.'
             'response': form['recaptcha']
         }
     ).json()
-    print('RECAPTCHA SCORE', recaptcha['score'])
+
     if recaptcha['score'] < 0.5:
         helper.api_error(message='Failed reCAPTCHA verification.')
 
