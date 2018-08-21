@@ -22,20 +22,49 @@ app.config['RECAPTCHA_SECRET'] = os.environ.get('RECAPTCHA_SECRET')
 # Setup the db interface
 db = MongoEngine(app)
 
+# URL root
+root = 'https://www.ikea.com'
 
-def get_article(s):
+
+def parse_article(form):
+    match = None
+
+    # If given a product URL, parse it for an article
     if re.match(
         r'^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$',
-        s
+        form
     ):
-        return re.search(r'products/(S?\d{8})/?', s).group(1)
+        match = re.search(r'products/(S?\d{8})/?', form)
 
-    match = re.match(r'^(\d{3})\W?(\d{3})\W?(\d{2})$', s)
+    # Else, parse it as a plaintext article number
+    else:
+        match = re.match(r'^(\d{3})\W?(\d{3})\W?(\d{2})$', form)
 
+    # If a match is found, return it
     if match:
         return ''.join(match.groups())
 
+    # Else return a negative
     return False
+
+
+def resolve_article(countryCode, languageCode, product):
+    """Resolve form parsed article number to a VALID article number"""
+    # Try to directly load the product page
+    resp = requests.get(
+        f'{root}/{countryCode}/{languageCode}/catalog/products/{product}/',
+    )
+
+    # If it's a 404, try prefixing it with an 'S'
+    if resp.status_code == 404 and not product.startswith('S'):
+        return resolve_article(countryCode, languageCode, 'S' + product)
+
+    # Else it just doesn't exist
+    if resp.status_code == 404:
+        return False
+
+    # The artcile number is juuuuuuuust right
+    return product
 
 
 # Index redirect
@@ -64,7 +93,7 @@ def stockhound_submit():
     form = flask.request.get_json()
 
     # Verify the other form arguments
-    articleno = get_article(form['product'])
+    articleno = parse_article(form['product'])
     if not articleno:
         helper.api_error(message='Malformed article number or product URL.')
 
@@ -81,22 +110,27 @@ def stockhound_submit():
 
     # Check that it's a valid article number
     # (also ensures it isn't one of the new style numbers)
-    query = requests.get(f'http://www.ikea.com/{country}/{lang}/\
-search/?query={articleno}')
-    if not query.history:
+#     query = requests.get(f'http://www.ikea.com/{country}/{lang}/\
+# search/?query={articleno}')
+
+#     else:
+#         match = re.search(r'products/(S?\d{8})/?', query.url)
+#         if match:
+#             articleno = match.group(1)
+
+    # Check the inputted article number for validity
+    resolved = resolve_article(country, lang, articleno)
+    # return f'break! "{resolved}"'
+    if not resolved:
         helper.api_error(
             message='Article number or product does not appear to exist.'
         )
-    else:
-        match = re.search(r'products/(S?\d{8})/?', query.url)
-        if match:
-            articleno = match.group(1)
 
     # Make sure they don't have a reminder for the same product
     if model.ReminderTicket.objects(
         closed=False,
         address=form['address'],
-        article=articleno
+        article=resolved
     ):
         helper.api_error(
             message='You already have an active reminder for this product.'
@@ -133,7 +167,7 @@ you continue, your oldest reminder will be terminated.'
             'response': form['recaptcha']
         }
     ).json()
-    print('RECAPTCHA SCORE', recaptcha['score'])
+
     if recaptcha['score'] < 0.5:
         helper.api_error(message='Failed reCAPTCHA verification.')
 
@@ -142,7 +176,7 @@ you continue, your oldest reminder will be terminated.'
         created=datetime.datetime.utcnow(),
         origin=flask.request.access_route[-1],
         address=form['address'],
-        article=articleno,
+        article=resolved,
         country=country,
         location=form['location']
     )
@@ -162,7 +196,7 @@ you continue, your oldest reminder will be terminated.'
     )
 
     # Return success message
-    return helper.api_success(payload=articleno)
+    return helper.api_success(payload=resolved)
 
 
 @app.route('/terminate/<ticket_id>')
