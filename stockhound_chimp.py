@@ -13,7 +13,6 @@ def get_stock(country, product_no):
     url = f'http://www.ikea.com/{country}/{lang}/\
 iows/catalog/availability/{product_no}'
     response = requests.get(url)
-    print(country, product_no, url, response)
     root = xml.etree.ElementTree.fromstring(response.text)
 
     for store in root.findall('.//localStore'):
