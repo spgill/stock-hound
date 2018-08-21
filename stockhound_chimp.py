@@ -4,7 +4,7 @@ import xml.etree.ElementTree
 
 import stockhound_mail as mail
 import stockhound_model as model
-import stockhound_server as server  # Necessary to get mongodb connection
+import stockhound_server as server  # noqa: F401
 
 
 def get_stock(country, product_no):
