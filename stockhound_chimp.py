@@ -79,10 +79,10 @@ if __name__ == '__main__':
                         ticket.save()
                         model.log(
                             ticket,
-                            f'{ticket.address} had a ticket expire'
+                            f'expired'
                         )
 
-                    print(f'"{ticket.id}" by "{ticket.address}" expired')
+                    print(f'{ticket.id} expired')
                     continue
 
                 # If the stock_levels dict is EMPTY, that means the product has
@@ -98,7 +98,7 @@ if __name__ == '__main__':
                         ticket.save()
                         model.log(
                             ticket,
-                            f'{ticket.address} had a ticket discontinue'
+                            f'discontinued'
                         )
 
                         # Send the bad news :(
@@ -112,7 +112,7 @@ if __name__ == '__main__':
                         )
 
                     # We can skip this ticket now
-                    print(f'"{ticket.id}" by "{ticket.address}" was cancelled')
+                    print(f'{ticket.id} was discontinued')
                     continue
 
                 # If the stock level is above low, notify the user
@@ -127,7 +127,7 @@ if __name__ == '__main__':
                         ticket.save()
                         model.log(
                             ticket,
-                            f'{ticket.address} had a ticket complete'
+                            f'fulfilled'
                         )
 
                         # Send the email notification
@@ -141,7 +141,7 @@ if __name__ == '__main__':
                             }
                         )
 
-                    print(f'"{ticket.id}" by "{ticket.address}" was fulfilled')
+                    print(f'{ticket.id} was fulfilled')
 
     print('Stock chimp has run out of bananas')
     # model.log(None, 'Worker stopped')
