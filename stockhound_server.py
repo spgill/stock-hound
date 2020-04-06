@@ -73,12 +73,17 @@ def index_redirect():
     return flask.redirect('/index.html')
 
 
-@app.route('/key')
+@app.route('/api/key')
 def stockhound_key():
     return os.environ.get('RECAPTCHA_KEY')
 
 
-@app.route('/submitfake', methods=['POST'])
+@app.route('/api/corpus')
+def stockhound_corpus():
+    return model.corpus
+
+
+@app.route('/api/submitfake', methods=['POST'])
 def sdfsdfsdf():
     form = flask.request.get_json()
     if form.get('confirm', False):
@@ -87,7 +92,7 @@ def sdfsdfsdf():
 
 
 # Submit reminders
-@app.route('/submit', methods=['POST'])
+@app.route('/api/submit', methods=['POST'])
 def stockhound_submit():
     # Extract all the form args
     form = flask.request.get_json()
@@ -199,7 +204,7 @@ you continue, your oldest reminder will be terminated.'
     return helper.api_success(payload=resolved)
 
 
-@app.route('/terminate/<ticket_id>')
+@app.route('/api/terminate/<ticket_id>')
 def stockhound_terminate(ticket_id):
     """Deactivate reminders when people click the link in their email"""
     try:

@@ -1,5 +1,8 @@
+// vendor imports
+import React from 'react';
 import styled from 'styled-components';
 
+// local import
 import theme from '../config/theme';
 
 

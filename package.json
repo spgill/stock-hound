@@ -2,56 +2,46 @@
     "name": "stock-hound",
     "repository": "https://github.com/spgill/stock-hound",
     "author": "Samuel P. Gillispie II <samuel@spgill.me>",
-    "engines": {
-        "node": "8.11.3"
-    },
-    "scripts": {
-        "postinstall": "webpack -p"
-    },
-    "devDependencies": {
+    "private": true,
+    "dependencies": {
         "@ibm/plex": "^1.0.2",
         "@material-ui/core": "^1.4.3",
-        "axios": "^0.16.2",
-        "babel-core": "^6.26.0",
-        "babel-eslint": "^8.0.2",
-        "babel-loader": "^7.1.2",
-        "babel-preset-env": "^1.6.0",
-        "babel-preset-react": "^6.24.1",
-        "babel-preset-stage-1": "^6.24.1",
-        "babel-runtime": "^6.26.0",
-        "browser-sync": "^2.18.13",
-        "browser-sync-webpack-plugin": "^1.2.0",
+        "axios": "^0.19.2",
         "classnames": "^2.2.5",
-        "clean-webpack-plugin": "^0.1.19",
-        "css-loader": "^0.28.7",
-        "eslint": "^4.6.1",
-        "eslint-plugin-react": "^7.3.0",
-        "file-loader": "^1.1.5",
         "history": "^4.7.2",
-        "html-loader": "^0.5.1",
-        "html-webpack-plugin": "^3.2.0",
-        "image-webpack-loader": "^4.3.1",
-        "lodash": "^4.17.4",
-        "markdown-loader": "^3.0.0",
+        "http-proxy-middleware": "^1.0.3",
+        "lodash": "^4.17.15",
         "material-design-icons": "^3.0.1",
-        "node-sass": "^4.5.3",
-        "path": "^0.12.7",
-        "postcss-loader": "^2.0.6",
-        "react": "^16.4.2",
-        "react-async-script": "^0.9.1",
-        "react-dom": "^16.4.2",
+        "node-sass": "^4.13.1",
+        "react": "^16.13.1",
+        "react-async-script": "^1.1.1",
+        "react-dom": "^16.13.1",
         "react-google-recaptcha": "^0.9.7",
         "react-recaptcha": "^2.3.5",
-        "react-redux": "^5.0.7",
-        "react-router": "^4.2.0",
-        "react-router-redux": "^5.0.0-alpha.9",
-        "redux": "^3.7.2",
+        "react-scripts": "3.4.1",
         "rmwc": "^1.6.2",
-        "sass-loader": "^6.0.6",
-        "style-loader": "^0.18.2",
-        "styled-components": "^3.1.6",
-        "uglifyjs-webpack-plugin": "^1.2.4",
-        "webpack": "^4.16.5",
-        "webpack-cli": "^3.1.0"
-    }
+        "styled-components": "^3.1.6"
+    },
+    "scripts": {
+        "start": "PORT=3000 react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "proxy": "http://127.0.0.1:5000"
 }

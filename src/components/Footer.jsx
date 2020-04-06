@@ -16,8 +16,8 @@ import React from 'react';
 import theme from '../config/theme';
 
 // asset imports
-import aboutCopy from '../../copy/about.md';
-import privacyCopy from '../../copy/privacy-policy.md';
+import aboutCopy from '../copy/about.md';
+import privacyCopy from '../copy/privacy-policy.md';
 
 
 // Transition element for the dialogs

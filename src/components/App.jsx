@@ -27,13 +27,10 @@ import { setTimeout } from 'core-js/library/web/timers';
 import colors from '../config/colors';
 import theme from '../config/theme';
 
-// asset imports
-import corpus from '../../../data/corpus.json';
-
 
 // Inject global styles
 injectGlobal`
-    html, body, #sh-App {
+    html, body, #root {
         margin: 0;
         width: 100%;
         height: 100%;
@@ -66,7 +63,7 @@ const SwedishTypography = styled(Typography)`
 `;
 
 const AppLogo = styled.img.attrs({
-    src: require('../../image/hound.svg')
+    src: require('../image/hound.svg')
 })`
     margin-left: ${theme.spacing.unit}px;
     height: 0.75em;
@@ -140,6 +137,7 @@ export default class App extends React.Component {
             preloading: true,
 
             // Store selection values
+            corpus: {},
             country: '',
             store: '',
             storeLocked: false,
@@ -158,7 +156,24 @@ export default class App extends React.Component {
 
     async componentDidMount() {
         // Load the recaptcha key
-        this.recaptchaLoad(await axios.get('/key'));
+        const recaptchaResponse = await axios.get('/api/key');
+        const recaptchaKey = recaptchaResponse.data;
+
+        // Inject the recaptcha script (rendered with the key) into the DOM
+        const script = document.createElement("script");
+        script.src = `https://www.google.com/recaptcha/api.js?render=${recaptchaKey}`;
+        document.body.appendChild(script);
+
+        // Load the corpus of data
+        const corpusResponse = await axios.get('/api/corpus');
+        const corpus = corpusResponse.data;
+
+        // Update the application state
+        this.setState({
+            preloading: false,
+            recaptchaKey,
+            corpus
+        });
     }
 
     render() {
@@ -223,7 +238,7 @@ export default class App extends React.Component {
                                         onChange={this.changeCountry}
                                         disabled={this.state.stage > 0}
                                     >
-                                        {Object.entries(corpus).sort(this.compareCorpusEntry).map(country => {
+                                        {Object.entries(this.state.corpus).sort(this.compareCorpusEntry).map(country => {
                                             return <MenuItem
                                                 key={country[0]}
                                                 value={country[0]}
@@ -241,7 +256,7 @@ export default class App extends React.Component {
                                         onChange={ev => this.setState({store: ev.target.value})}
                                         disabled={!this.state.country || this.state.stage > 0 || this.state.storeLocked}
                                     >
-                                        {this.state.country && Object.entries(corpus[this.state.country].stores).sort(this.compareCorpusEntry).map(store => {
+                                        {this.state.country && Object.entries(this.state.corpus[this.state.country].stores).sort(this.compareCorpusEntry).map(store => {
                                             return <MenuItem
                                                 key={store[0]}
                                                 value={store[0]}
@@ -363,7 +378,7 @@ export default class App extends React.Component {
         const country = ev.target.value;
 
         // If the country has only one store, lock the selector to that store
-        const storeKeys = Object.keys(corpus[country].stores);
+        const storeKeys = Object.keys(this.state.corpus[country].stores);
         const storeLocked = storeKeys.length === 1;
         const store = storeLocked ? storeKeys[0] : '';
 
@@ -371,21 +386,6 @@ export default class App extends React.Component {
             country,
             store,
             storeLocked,
-        });
-    }
-
-    recaptchaLoad = resp => {
-        const key = resp.data;
-
-        // Inject the recaptcha script (rendered with the key) into the DOM
-        const script = document.createElement("script");
-        script.src = `https://www.google.com/recaptcha/api.js?render=${key}`;
-        document.body.appendChild(script);
-
-        // Update the application state
-        this.setState({
-            preloading: false,
-            recaptchaKey: key,
         });
     }
 
@@ -436,6 +436,7 @@ export default class App extends React.Component {
         });
 
         // Request recaptcha token
+        // eslint-disable-next-line no-undef
         const token = await grecaptcha.execute(this.state.recaptchaKey, {
             action: 'submit'
         })
@@ -443,7 +444,7 @@ export default class App extends React.Component {
         // Make the api request to create the reminder
         let response;
         try {
-            response = await axios.post('/submit', {
+            response = await axios.post('/api/submit', {
                 address: this.state.email,
                 product: this.state.article,
                 country: this.state.country,
