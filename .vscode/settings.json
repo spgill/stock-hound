@@ -1,0 +1,35 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#ffd632",
+    "activityBar.activeBorder": "#009f7f",
+    "activityBar.background": "#ffd632",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#009f7f",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "statusBar.background": "#fecb00",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#cba200",
+    "titleBar.activeBackground": "#fecb00",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#fecb0099",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#fecb00",
+
+  "editor.formatOnSave": true,
+  "editor.detectIndentation": false,
+  "javascript.validate.enable": false,
+  "python.formatting.provider": "black",
+
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+
+  "[python]": {
+    "editor.tabSize": 4
+  },
+  "python.linting.flake8Enabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.enabled": true
+}
