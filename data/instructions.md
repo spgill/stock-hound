@@ -19,3 +19,5 @@ To get a list of stores for a country:
 3. Open this file, pretty print the code, and search for the data structure where the stores are defined (is usually preceded by `allStores =`).
 
 4. Done! You can copy this data structure into the console and JSONify it.
+
+_A maintained list of stores ready for import can be found [here](https://github.com/Ephigenia/ikea-availability-checker/blob/master/source/data/stores.json)_
