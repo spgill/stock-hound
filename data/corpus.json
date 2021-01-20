@@ -1,1180 +1,1778 @@
 {
-    "ae": {
-        "label": "United Arab Emirates",
-        "language": "en",
-        "stores": {
-            "055": {
-                "label": "Abu Dhabi"
-            },
-            "218": {
-                "label": "Dubai"
-            }
-        }
+  "at": {
+    "label": "\u00d6sterreich",
+    "language": "de",
+    "site": "ikea.at",
+    "stores": {
+      "085": {
+        "coord": [16.317959, 48.108692],
+        "label": "Wien V\u00f6sendorf"
+      },
+      "090": {
+        "coord": [16.47254, 48.255641],
+        "label": "Wien Nord"
+      },
+      "155": {
+        "coord": [14.369097, 46.639934],
+        "label": "Klagenfurt"
+      },
+      "273": {
+        "coord": [11.431081, 47.261961],
+        "label": "Innsbruck"
+      },
+      "386": {
+        "coord": [13.006268, 47.819494],
+        "label": "Salzburg"
+      },
+      "387": {
+        "coord": [15.421565, 47.033689],
+        "label": "Graz"
+      },
+      "388": {
+        "coord": [14.250512, 48.198076],
+        "label": "Haid"
+      }
     },
-    "at": {
-        "label": "Austria",
-        "language": "de",
-        "stores": {
-            "085": {
-                "label": "IKEA Wien V\u00f6sendorf"
-            },
-            "090": {
-                "label": "IKEA Wien Nord"
-            },
-            "155": {
-                "label": "IKEA Klagenfurt"
-            },
-            "273": {
-                "label": "IKEA Innsbruck"
-            },
-            "386": {
-                "label": "IKEA Salzburg"
-            },
-            "387": {
-                "label": "IKEA Graz"
-            },
-            "388": {
-                "label": "IKEA Haid"
-            }
-        }
+    "url": "https://www.ikea.com/at/de/"
+  },
+  "au": {
+    "label": "Australia",
+    "language": "en",
+    "site": "ikea.com.au",
+    "stores": {
+      "451": {
+        "coord": [149.194606, -35.277174],
+        "label": "Canberra"
+      },
+      "460": {
+        "coord": [153.015589, -27.243452],
+        "label": "North Lakes"
+      },
+      "919": {
+        "coord": [153.135828, -27.636166],
+        "label": "Logan"
+      }
     },
-    "au": {
-        "label": "Australia",
-        "language": "en",
-        "stores": {
-            "006": {
-                "label": "Springvale"
-            },
-            "377": {
-                "label": "Marsden Park"
-            },
-            "384": {
-                "label": "Richmond"
-            },
-            "385": {
-                "label": "Rhodes"
-            },
-            "446": {
-                "label": "Tempe"
-            },
-            "451": {
-                "label": "Canberra"
-            },
-            "460": {
-                "label": "North Lakes"
-            },
-            "556": {
-                "label": "Perth"
-            },
-            "557": {
-                "label": "Adelaide"
-            },
-            "919": {
-                "label": "Logan"
-            }
-        }
+    "url": "https://www.ikea.com/au/en/"
+  },
+  "ca": {
+    "label": "Canada",
+    "language": "en",
+    "site": "ikea.ca",
+    "stores": {
+      "003": {
+        "coord": [-123.080224, 49.182896],
+        "label": "Richmond"
+      },
+      "004": {
+        "coord": [-75.78691, 45.348617],
+        "label": "Ottawa"
+      },
+      "039": {
+        "coord": [-73.691912, 45.490494],
+        "label": "Montreal"
+      },
+      "040": {
+        "coord": [-79.827991, 43.326177],
+        "label": "Burlington"
+      },
+      "149": {
+        "coord": [-79.367723, 43.768367],
+        "label": "North York"
+      },
+      "216": {
+        "coord": [-114.044523, 50.980128],
+        "label": "Calgary"
+      },
+      "249": {
+        "coord": [-97.212181, 49.840197],
+        "label": "Winnipeg"
+      },
+      "256": {
+        "coord": [-79.536016, 43.618726],
+        "label": "Etobicoke"
+      },
+      "313": {
+        "coord": [-122.865129, 49.235156],
+        "label": "Coquitlam"
+      },
+      "349": {
+        "coord": [-113.489682, 53.442766],
+        "label": "Edmonton"
+      },
+      "414": {
+        "coord": [-73.402963, 45.573287],
+        "label": "Boucherville"
+      },
+      "529": {
+        "coord": [-63.55767, 44.71293],
+        "label": "Halifax"
+      },
+      "559": {
+        "coord": [-71.350216, 46.77725],
+        "label": "Qu\u00e9bec"
+      }
     },
-    "ca": {
-        "label": "Canada",
-        "language": "en",
-        "stores": {
-            "003": {
-                "label": "IKEA Richmond, BC"
-            },
-            "004": {
-                "label": "IKEA Ottawa, ON"
-            },
-            "039": {
-                "label": "IKEA Montreal, QC"
-            },
-            "040": {
-                "label": "IKEA Burlington, ON"
-            },
-            "149": {
-                "label": "IKEA North York, ON"
-            },
-            "216": {
-                "label": "IKEA Calgary, AB"
-            },
-            "249": {
-                "label": "IKEA Winnipeg, MB"
-            },
-            "256": {
-                "label": "IKEA Etobicoke, ON"
-            },
-            "313": {
-                "label": "IKEA Coquitlam, BC"
-            },
-            "349": {
-                "label": "IKEA Edmonton, AB"
-            },
-            "372": {
-                "label": "IKEA Vaughan, ON"
-            },
-            "414": {
-                "label": "IKEA Boucherville, QC"
-            },
-            "529": {
-                "label": "IKEA Halifax, NS"
-            },
-            "559": {
-                "label": "IKEA Qu\u00e9bec - Opens Aug. 22nd!"
-            }
-        }
+    "url": "https://www.ikea.com/ca/en/"
+  },
+  "ch": {
+    "label": "Schweiz",
+    "language": "en",
+    "site": "ikea.ch",
+    "stores": {
+      "078": {
+        "coord": [6.398978, 46.477088],
+        "label": "Aubonne VD"
+      },
+      "079": {
+        "coord": [8.375165, 47.422106],
+        "label": "Spreitenbach AG"
+      },
+      "101": {
+        "coord": [8.92637, 45.972987],
+        "label": "Grancia TI"
+      },
+      "275": {
+        "coord": [8.245132, 47.092945],
+        "label": "Rothenburg LU"
+      },
+      "290": {
+        "coord": [7.567778, 47.074009],
+        "label": "Lyssach BE"
+      },
+      "291": {
+        "coord": [8.622379, 47.414092],
+        "label": "Dietlikon ZH"
+      },
+      "292": {
+        "coord": [7.689443, 47.527663],
+        "label": "Pratteln BL"
+      },
+      "917": {
+        "coord": [9.306986, 47.408777],
+        "label": "St. Gallen SG"
+      },
+      "918": {
+        "coord": [6.092434, 46.219693],
+        "label": "Vernier GE"
+      }
     },
-    "ch": {
-        "label": "Switzerland",
-        "language": "en",
-        "stores": {
-            "078": {
-                "label": "IKEA Aubonne VD (fr)"
-            },
-            "079": {
-                "label": "IKEA Spreitenbach AG (de)"
-            },
-            "101": {
-                "label": "IKEA Grancia TI (it)"
-            },
-            "275": {
-                "label": "IKEA Rothenburg LU (de)"
-            },
-            "290": {
-                "label": "IKEA Lyssach BE (de)"
-            },
-            "291": {
-                "label": "IKEA Dietlikon ZH (de)"
-            },
-            "292": {
-                "label": "IKEA Pratteln BL (de)"
-            },
-            "917": {
-                "label": "IKEA St. Gallen SG (de)"
-            },
-            "918": {
-                "label": "IKEA Vernier GE (fr)"
-            }
-        }
+    "url": "https://www.ikea.com/ch/en/"
+  },
+  "cn": {
+    "label": "\u4e2d\u56fd",
+    "language": "en",
+    "site": "ikea.cn",
+    "stores": {
+      "058": {
+        "coord": null,
+        "label": "\u5929\u6d25\u5546\u573a"
+      },
+      "164": {
+        "coord": null,
+        "label": "\u65e0\u9521\u5546\u573a"
+      },
+      "214": {
+        "coord": null,
+        "label": "\u5317\u4eac\u897f\u7ea2\u95e8\u5546\u573a"
+      },
+      "247": {
+        "coord": null,
+        "label": "\u4e0a\u6d77\u5b9d\u5c71\u5546\u573a"
+      },
+      "279": {
+        "coord": null,
+        "label": "\u5b81\u6ce2\u5546\u573a"
+      },
+      "330": {
+        "coord": null,
+        "label": "\u91cd\u5e86\u5546\u573a"
+      },
+      "340": {
+        "coord": null,
+        "label": "\u6b66\u6c49\u5546\u573a"
+      },
+      "401": {
+        "coord": null,
+        "label": "\u676d\u5dde\u5546\u573a"
+      },
+      "418": {
+        "coord": null,
+        "label": "\u6210\u90fd\u6210\u534e\u5546\u573a"
+      },
+      "424": {
+        "coord": null,
+        "label": "\u897f\u5b89\u5546\u573a"
+      },
+      "459": {
+        "coord": null,
+        "label": "\u4f5b\u5c71\u5546\u573a"
+      },
+      "465": {
+        "coord": null,
+        "label": "\u5e7f\u5dde\u5546\u573a"
+      },
+      "466": {
+        "coord": null,
+        "label": "\u6210\u90fd\u9ad8\u65b0\u5546\u573a"
+      },
+      "481": {
+        "coord": null,
+        "label": "\u5357\u4eac\u5546\u573a"
+      },
+      "484": {
+        "coord": null,
+        "label": "\u82cf\u5dde\u5546\u573a"
+      },
+      "495": {
+        "coord": null,
+        "label": "\u5927\u8fde\u5546\u573a"
+      },
+      "802": {
+        "coord": null,
+        "label": "\u5317\u4eac\u56db\u5143\u6865\u5546\u573a"
+      },
+      "833": {
+        "coord": null,
+        "label": "\u6df1\u5733\u5546\u573a"
+      },
+      "856": {
+        "coord": null,
+        "label": "\u4e0a\u6d77\u5f90\u6c47\u5546\u573a"
+      },
+      "885": {
+        "coord": null,
+        "label": "\u4e0a\u6d77\u5317\u8521\u5546\u573a"
+      },
+      "886": {
+        "coord": null,
+        "label": "\u6c88\u9633\u5546\u573a"
+      }
     },
-    "cz": {
-        "label": "Czech Republic",
-        "language": "cs",
-        "stores": {
-            "178": {
-                "label": "Praha-Zli\u010d\u00edn"
-            },
-            "278": {
-                "label": "Brno"
-            },
-            "309": {
-                "label": "Ostrava"
-            },
-            "408": {
-                "label": "Praha \u010cern\u00fd Most"
-            }
-        }
+    "url": "https://www.ikea.cn/cn/en/"
+  },
+  "cz": {
+    "label": "\u010cesk\u00e1 republika",
+    "language": "cs",
+    "site": "ikea.cz",
+    "stores": {
+      "178": {
+        "coord": [14.299679, 50.057359],
+        "label": "Praha-Zli\u010d\u00edn"
+      },
+      "278": {
+        "coord": [16.627607, 49.158359],
+        "label": "Brno"
+      },
+      "309": {
+        "coord": [18.227727, 49.80027],
+        "label": "Ostrava"
+      },
+      "408": {
+        "coord": [14.587927, 50.106488],
+        "label": "Praha \u010cern\u00fd Most"
+      }
     },
-    "de": {
-        "label": "Germany",
-        "language": "de",
-        "stores": {
-            "063": {
-                "label": "IKEA M\u00fcnchen-Eching"
-            },
-            "066": {
-                "label": "IKEA Augsburg"
-            },
-            "069": {
-                "label": "IKEA Oldenburg"
-            },
-            "075": {
-                "label": "IKEA Walldorf"
-            },
-            "092": {
-                "label": "IKEA Rostock"
-            },
-            "102": {
-                "label": "IKEA K\u00f6ln-Butzweilerhof"
-            },
-            "117": {
-                "label": "IKEA Braunschweig"
-            },
-            "118": {
-                "label": "IKEA Chemnitz"
-            },
-            "119": {
-                "label": "IKEA Bielefeld"
-            },
-            "124": {
-                "label": "IKEA W\u00fcrzburg"
-            },
-            "129": {
-                "label": "IKEA Berlin-Waltersdorf"
-            },
-            "139": {
-                "label": "IKEA Halle/Leipzig"
-            },
-            "146": {
-                "label": "IKEA Hamburg-Schnelsen"
-            },
-            "147": {
-                "label": "IKEA K\u00f6ln-Godorf"
-            },
-            "148": {
-                "label": "IKEA Essen"
-            },
-            "174": {
-                "label": "IKEA Kassel"
-            },
-            "184": {
-                "label": "IKEA Osnabr\u00fcck"
-            },
-            "187": {
-                "label": "IKEA Hannover EXPO-Park"
-            },
-            "221": {
-                "label": "IKEA Dresden"
-            },
-            "222": {
-                "label": "IKEA Hanau"
-            },
-            "223": {
-                "label": "IKEA Dortmund"
-            },
-            "224": {
-                "label": "IKEA Sindelfingen"
-            },
-            "225": {
-                "label": "IKEA Ludwigsburg"
-            },
-            "226": {
-                "label": "IKEA Gro\u00dfburgwedel"
-            },
-            "227": {
-                "label": "IKEA Saarlouis"
-            },
-            "228": {
-                "label": "IKEA Brinkum"
-            },
-            "229": {
-                "label": "IKEA Regensburg"
-            },
-            "245": {
-                "label": "IKEA Hamburg-Altona"
-            },
-            "289": {
-                "label": "IKEA L\u00fcbeck"
-            },
-            "320": {
-                "label": "IKEA Freiburg"
-            },
-            "321": {
-                "label": "IKEA D\u00fcsseldorf"
-            },
-            "322": {
-                "label": "IKEA Wallau"
-            },
-            "323": {
-                "label": "IKEA Kamen"
-            },
-            "324": {
-                "label": "IKEA Berlin-Lichtenberg"
-            },
-            "325": {
-                "label": "IKEA Hamburg-Moorfleet"
-            },
-            "326": {
-                "label": "IKEA N\u00fcrnberg/F\u00fcrth"
-            },
-            "328": {
-                "label": "IKEA Ulm"
-            },
-            "332": {
-                "label": "IKEA Koblenz"
-            },
-            "333": {
-                "label": "IKEA Kiel"
-            },
-            "343": {
-                "label": "IKEA M\u00fcnchen-Brunnthal"
-            },
-            "369": {
-                "label": "IKEA Siegen"
-            },
-            "393": {
-                "label": "IKEA Frankfurt"
-            },
-            "394": {
-                "label": "IKEA Berlin-Spandau"
-            },
-            "396": {
-                "label": "IKEA Erfurt"
-            },
-            "397": {
-                "label": "IKEA Mannheim"
-            },
-            "412": {
-                "label": "IKEA Bremerhaven"
-            },
-            "421": {
-                "label": "IKEA Berlin-Tempelhof"
-            },
-            "425": {
-                "label": "IKEA Duisburg"
-            },
-            "430": {
-                "label": "IKEA Kaiserslautern"
-            },
-            "492": {
-                "label": "IKEA Wuppertal"
-            },
-            "493": {
-                "label": "IKEA Wetzlar"
-            },
-            "494": {
-                "label": "IKEA Kaarst"
-            },
-            "520": {
-                "label": "IKEA Magdeburg"
-            }
-        }
+    "url": "https://www.ikea.com/cz/cs/"
+  },
+  "de": {
+    "label": "Deutschland",
+    "language": "de",
+    "site": "ikea.de",
+    "stores": {
+      "063": {
+        "coord": [11.63362, 48.30455],
+        "label": "M\u00fcnchen-Eching"
+      },
+      "066": {
+        "coord": [10.871165, 48.404947],
+        "label": "Augsburg"
+      },
+      "069": {
+        "coord": [8.252749, 53.139292],
+        "label": "Oldenburg"
+      },
+      "075": {
+        "coord": [8.629396, 49.305916],
+        "label": "Walldorf"
+      },
+      "092": {
+        "coord": [12.048569, 54.107232],
+        "label": "Rostock"
+      },
+      "102": {
+        "coord": [6.900251, 50.982384],
+        "label": "K\u00f6ln-Butzweilerhof"
+      },
+      "117": {
+        "coord": [10.504367, 52.308754],
+        "label": "Braunschweig"
+      },
+      "118": {
+        "coord": [12.859647, 50.802463],
+        "label": "Chemnitz"
+      },
+      "119": {
+        "coord": [8.492475, 51.982224],
+        "label": "Bielefeld"
+      },
+      "124": {
+        "coord": [9.983997, 49.820985],
+        "label": "W\u00fcrzburg"
+      },
+      "129": {
+        "coord": [13.555562, 52.3669],
+        "label": "Berlin-Waltersdorf"
+      },
+      "139": {
+        "coord": [12.183044, 51.34852],
+        "label": "Halle/Leipzig"
+      },
+      "146": {
+        "coord": [9.928164, 53.64895],
+        "label": "Hamburg-Schnelsen"
+      },
+      "147": {
+        "coord": [6.971276, 50.861349],
+        "label": "K\u00f6ln-Godorf"
+      },
+      "148": {
+        "coord": [7.000179, 51.460371],
+        "label": "Essen"
+      },
+      "174": {
+        "coord": [9.525447, 51.277461],
+        "label": "Kassel"
+      },
+      "184": {
+        "coord": [7.971268, 52.263075],
+        "label": "Osnabr\u00fcck"
+      },
+      "187": {
+        "coord": [9.817421, 52.313595],
+        "label": "Hannover EXPO-Park"
+      },
+      "221": {
+        "coord": [13.695145, 51.086461],
+        "label": "Dresden"
+      },
+      "222": {
+        "coord": [8.942442, 50.149819],
+        "label": "Hanau"
+      },
+      "223": {
+        "coord": [7.368908, 51.491244],
+        "label": "Dortmund"
+      },
+      "224": {
+        "coord": [9.005785, 48.701229],
+        "label": "Sindelfingen"
+      },
+      "225": {
+        "coord": [9.15395, 48.918579],
+        "label": "Ludwigsburg"
+      },
+      "226": {
+        "coord": [9.837956, 52.492436],
+        "label": "Gro\u00dfburgwedel"
+      },
+      "227": {
+        "coord": [6.760068, 49.293841],
+        "label": "Saarlouis"
+      },
+      "228": {
+        "coord": [8.803546, 53.026271],
+        "label": "Brinkum"
+      },
+      "229": {
+        "coord": [12.177186, 49.002069],
+        "label": "Regensburg"
+      },
+      "245": {
+        "coord": [9.941504, 53.552165],
+        "label": "Hamburg-Altona"
+      },
+      "289": {
+        "coord": [10.737548, 53.914753],
+        "label": "L\u00fcbeck"
+      },
+      "320": {
+        "coord": [7.832801, 48.028882],
+        "label": "Freiburg"
+      },
+      "321": {
+        "coord": [6.848602, 51.187763],
+        "label": "D\u00fcsseldorf"
+      },
+      "322": {
+        "coord": [8.371732, 50.058819],
+        "label": "Wallau"
+      },
+      "323": {
+        "coord": [7.669101, 51.569695],
+        "label": "Kamen"
+      },
+      "324": {
+        "coord": [13.514063, 52.534041],
+        "label": "Berlin-Lichtenberg"
+      },
+      "325": {
+        "coord": [10.092938, 53.511237],
+        "label": "Hamburg-Moorfleet"
+      },
+      "326": {
+        "coord": [11.009331, 49.485231],
+        "label": "N\u00fcrnberg/F\u00fcrth"
+      },
+      "328": {
+        "coord": [9.977002, 48.404263],
+        "label": "Ulm"
+      },
+      "332": {
+        "coord": [7.564516, 50.381707],
+        "label": "Koblenz"
+      },
+      "333": {
+        "coord": [10.106971, 54.31427],
+        "label": "Kiel"
+      },
+      "343": {
+        "coord": [11.658297, 48.040648],
+        "label": "M\u00fcnchen-Brunnthal"
+      },
+      "369": {
+        "coord": [8.001995, 50.86292],
+        "label": "Siegen"
+      },
+      "393": {
+        "coord": [8.656883, 50.195515],
+        "label": "Frankfurt"
+      },
+      "394": {
+        "coord": [13.214343, 52.527997],
+        "label": "Berlin-Spandau"
+      },
+      "396": {
+        "coord": [10.949421, 50.959535],
+        "label": "Erfurt"
+      },
+      "397": {
+        "coord": [8.444066, 49.555744],
+        "label": "Mannheim"
+      },
+      "412": {
+        "coord": [8.60191, 53.493494],
+        "label": "Bremerhaven"
+      },
+      "421": {
+        "coord": [13.365855, 52.46988],
+        "label": "Berlin-Tempelhof"
+      },
+      "425": {
+        "coord": [6.764252, 51.482412],
+        "label": "Duisburg"
+      },
+      "430": {
+        "coord": [7.69536, 49.437424],
+        "label": "Kaiserslautern"
+      },
+      "492": {
+        "coord": [7.251961, 51.308316],
+        "label": "Wuppertal"
+      },
+      "493": {
+        "coord": [8.49747, 50.56793],
+        "label": "Wetzlar"
+      },
+      "494": {
+        "coord": [6.640966, 51.211061],
+        "label": "Kaarst"
+      },
+      "520": {
+        "coord": [11.61184, 52.16676],
+        "label": "Magdeburg"
+      },
+      "551": {
+        "coord": [38.925, 45.0125],
+        "label": "Karlsruhe"
+      }
     },
-    "dk": {
-        "label": "Denmark",
-        "language": "da",
-        "stores": {
-            "005": {
-                "label": "Aalborg"
-            },
-            "094": {
-                "label": "Taastrup"
-            },
-            "121": {
-                "label": "Gentofte"
-            },
-            "172": {
-                "label": "Odense"
-            },
-            "298": {
-                "label": "Aarhus"
-            }
-        }
+    "url": "https://www.ikea.com/de/de/"
+  },
+  "dk": {
+    "label": "Danmark",
+    "language": "da",
+    "site": "ikea.dk",
+    "stores": {
+      "005": {
+        "coord": [9.866555, 56.998867],
+        "label": "Aalborg"
+      },
+      "094": {
+        "coord": [12.288411, 55.659747],
+        "label": "Taastrup"
+      },
+      "121": {
+        "coord": [12.519644, 55.753781],
+        "label": "Gentofte"
+      },
+      "172": {
+        "coord": [10.429582, 55.380576],
+        "label": "Odense"
+      },
+      "298": {
+        "coord": [10.181558, 56.203697],
+        "label": "Aarhus"
+      }
     },
-    "fi": {
-        "label": "Finland",
-        "language": "fi",
-        "stores": {
-            "008": {
-                "label": "Tampere"
-            },
-            "202": {
-                "label": "Espoo"
-            },
-            "208": {
-                "label": "Kuopio"
-            },
-            "301": {
-                "label": "Raisio"
-            },
-            "422": {
-                "label": "Vantaa"
-            }
-        }
+    "url": "https://www.ikea.com/dk/da/"
+  },
+  "es": {
+    "label": "Espa\u00f1a Pen\u00ednsula",
+    "language": "es",
+    "site": "ikea.es",
+    "stores": {
+      "031": {
+        "coord": [-3.85589, 40.350288],
+        "label": "Alcorc\u00f3n"
+      },
+      "171": {
+        "coord": [2.107281, 41.51025],
+        "label": "Sabadell"
+      },
+      "276": {
+        "coord": [-3.0065, 43.2914],
+        "label": "Barakaldo"
+      },
+      "277": {
+        "coord": [-6.16488, 36.699337],
+        "label": "Jerez"
+      },
+      "283": {
+        "coord": [-6.046201, 37.383278],
+        "label": "Sevilla"
+      },
+      "304": {
+        "coord": [-4.482951, 36.656914],
+        "label": "M\u00e1laga"
+      },
+      "406": {
+        "coord": [2.123058, 41.354273],
+        "label": "Gran V\u00eda LHospitalet"
+      },
+      "497": {
+        "coord": [-0.891056, 41.608001],
+        "label": "Zaragoza"
+      },
+      "502": {
+        "coord": [-8.429947, 43.345748],
+        "label": "A Coru\u00f1a"
+      }
     },
-    "fr": {
-        "label": "France",
-        "language": "fr",
-        "stores": {
-            "018": {
-                "label": "Avignon"
-            },
-            "051": {
-                "label": "H\u00e9nin-Beaumont"
-            },
-            "060": {
-                "label": "Brest"
-            },
-            "082": {
-                "label": "Paris Sud, Evry"
-            },
-            "083": {
-                "label": "Paris Ouest, Plaisir"
-            },
-            "086": {
-                "label": "Dijon"
-            },
-            "130": {
-                "label": "Marseille - Vitrolles"
-            },
-            "131": {
-                "label": "Paris Nord, Roissy"
-            },
-            "132": {
-                "label": "St Priest"
-            },
-            "133": {
-                "label": "Lille"
-            },
-            "134": {
-                "label": "Bordeaux"
-            },
-            "163": {
-                "label": "Rouen"
-            },
-            "177": {
-                "label": "Rennes"
-            },
-            "198": {
-                "label": "Reims"
-            },
-            "199": {
-                "label": "Caen Fleury-sur-Orne"
-            },
-            "239": {
-                "label": "Strasbourg"
-            },
-            "240": {
-                "label": "Paris Est, Villiers sur Marne"
-            },
-            "242": {
-                "label": "Toulouse"
-            },
-            "260": {
-                "label": "Metz"
-            },
-            "285": {
-                "label": "Paris Ouest, V\u00e9lizy"
-            },
-            "310": {
-                "label": "Bayonne Ametzondo"
-            },
-            "315": {
-                "label": "Toulon"
-            },
-            "316": {
-                "label": "Nantes"
-            },
-            "345": {
-                "label": "Clermont-Ferrand"
-            },
-            "389": {
-                "label": "Paris N-O, Franconville"
-            },
-            "402": {
-                "label": "Montpellier"
-            },
-            "431": {
-                "label": "St Etienne"
-            },
-            "432": {
-                "label": "Paris Sud,  Thiais"
-            },
-            "433": {
-                "label": "Marseille - La Valentine"
-            },
-            "434": {
-                "label": "Tours"
-            },
-            "435": {
-                "label": "Grenoble"
-            },
-            "444": {
-                "label": "Mulhouse"
-            },
-            "487": {
-                "label": "Orl\u00e9ans Ardon"
-            }
-        }
+    "url": "https://www.ikea.es/"
+  },
+  "fi": {
+    "label": "Suomi",
+    "language": "fi",
+    "site": "ikea.fi",
+    "stores": {
+      "008": {
+        "coord": [23.775423, 61.452839],
+        "label": "Tampere"
+      },
+      "208": {
+        "coord": [27.605994, 62.823838],
+        "label": "Kuopio"
+      },
+      "422": {
+        "coord": [25.083675, 60.276717],
+        "label": "Vantaa"
+      }
     },
-    "hk": {
-        "label": "Hong Kong",
-        "language": "en",
-        "stores": {
-            "052": {
-                "label": "Shatin"
-            },
-            "062": {
-                "label": "Causeway Bay"
-            },
-            "071": {
-                "label": "Kowloon Bay"
-            },
-            "532": {
-                "label": "Tsuen Wan"
-            },
-            "538": {
-                "label": "Warehouse"
-            }
-        }
+    "url": "https://www.ikea.com/fi/fi/"
+  },
+  "fr": {
+    "label": "France",
+    "language": "fr",
+    "site": "ikea.fr",
+    "stores": {
+      "018": {
+        "coord": [4.890718, 43.978379],
+        "label": "Avignon"
+      },
+      "051": {
+        "coord": [2.9775913, 50.3920724],
+        "label": "H\u00e9nin-Beaumont"
+      },
+      "060": {
+        "coord": [-4.441609, 48.417951],
+        "label": "Brest"
+      },
+      "082": {
+        "coord": [2.439544, 48.596124],
+        "label": "Paris Sud, Evry"
+      },
+      "083": {
+        "coord": [1.9678375, 48.8293535],
+        "label": "Paris Ouest, Plaisir"
+      },
+      "086": {
+        "coord": [5.064257, 47.339154],
+        "label": "Dijon"
+      },
+      "130": {
+        "coord": [5.2679222, 43.4292027],
+        "label": "Marseille - Vitrolles"
+      },
+      "131": {
+        "coord": [2.4945436, 48.9749884],
+        "label": "Paris Nord, Roissy"
+      },
+      "133": {
+        "coord": [2.97811, 50.650039],
+        "label": "Lille"
+      },
+      "134": {
+        "coord": [-0.565732, 44.884846],
+        "label": "Bordeaux"
+      },
+      "163": {
+        "coord": [1.095639, 49.331862],
+        "label": "Rouen"
+      },
+      "177": {
+        "coord": [-1.762984, 48.138084],
+        "label": "Rennes"
+      },
+      "198": {
+        "coord": [3.9645752, 49.2583854],
+        "label": "Reims"
+      },
+      "199": {
+        "coord": [-0.367742, 49.141797],
+        "label": "Caen Fleury-sur-Orne"
+      },
+      "239": {
+        "coord": [7.730818, 48.600569],
+        "label": "Strasbourg"
+      },
+      "240": {
+        "coord": [2.529715, 48.828908],
+        "label": "Paris Est, Villiers sur Marne"
+      },
+      "242": {
+        "coord": [1.376848, 43.51656],
+        "label": "Toulouse"
+      },
+      "260": {
+        "coord": [6.1881137, 49.1499377],
+        "label": "Metz"
+      },
+      "285": {
+        "coord": [2.2242332, 48.7834461],
+        "label": "Paris Ouest, V\u00e9lizy"
+      },
+      "310": {
+        "coord": [-1.442449, 43.480218],
+        "label": "Bayonne Ametzondo"
+      },
+      "315": {
+        "coord": [6.0111228, 43.141745],
+        "label": "Toulon"
+      },
+      "316": {
+        "coord": [-1.632038, 47.222465],
+        "label": "Nantes"
+      },
+      "345": {
+        "coord": [3.138834, 45.8038],
+        "label": "Clermont-Ferrand"
+      },
+      "389": {
+        "coord": [2.2138618, 48.9864475],
+        "label": "Paris N-O, Franconville"
+      },
+      "402": {
+        "coord": [3.9244151, 43.6042288],
+        "label": "Montpellier"
+      },
+      "431": {
+        "coord": [4.41792, 45.449406],
+        "label": "St Etienne"
+      },
+      "432": {
+        "coord": [2.387858, 48.757041],
+        "label": "Paris Sud, Thiais"
+      },
+      "433": {
+        "coord": [5.481167, 43.293862],
+        "label": "Marseille - La Valentine"
+      },
+      "434": {
+        "coord": [0.717126, 47.375472],
+        "label": "Tours"
+      },
+      "435": {
+        "coord": [5.776631, 45.181311],
+        "label": "Grenoble"
+      },
+      "444": {
+        "coord": [7.283263, 47.729283],
+        "label": "Mulhouse"
+      },
+      "487": {
+        "coord": [1.9191433, 47.8280725],
+        "label": "Orl\u00e9ans Ardon"
+      },
+      "562": {
+        "coord": [4.882778, 45.720556],
+        "label": "Grand Parilly"
+      },
+      "580": {
+        "coord": [2.3253967, 48.8691255],
+        "label": "Paris La Madeleine"
+      }
     },
-    "hr": {
-        "label": "Croatia",
-        "language": "hr",
-        "stores": {
-            "021": {
-                "label": "Zagreb"
-            }
-        }
+    "url": "https://www.ikea.com/fr/fr/"
+  },
+  "gb": {
+    "label": "United Kingdom",
+    "language": "en",
+    "site": "ikea.co.uk",
+    "stores": {
+      "113": {
+        "coord": [-5.859231, 54.626391],
+        "label": "Belfast"
+      },
+      "125": {
+        "coord": [-1.411314, 50.903791],
+        "label": "Southampton"
+      },
+      "140": {
+        "coord": [-2.628479, 53.418382],
+        "label": "Warrington"
+      },
+      "141": {
+        "coord": [-0.260354, 51.553735],
+        "label": "Wembley"
+      },
+      "142": {
+        "coord": [-2.014489, 52.56876],
+        "label": "Birmingham"
+      },
+      "143": {
+        "coord": [-1.680994, 54.959236],
+        "label": "Gateshead"
+      },
+      "144": {
+        "coord": [-0.123897, 51.380071],
+        "label": "Croydon"
+      },
+      "185": {
+        "coord": [-0.729218, 52.005729],
+        "label": "Milton Keynes"
+      },
+      "186": {
+        "coord": [-2.101393, 53.491007],
+        "label": "Manchester"
+      },
+      "255": {
+        "coord": [-0.047207, 51.608716],
+        "label": "Tottenham"
+      },
+      "261": {
+        "coord": [-1.648808, 53.745462],
+        "label": "Leeds"
+      },
+      "262": {
+        "coord": [0.283134, 51.480207],
+        "label": "Lakeside"
+      },
+      "263": {
+        "coord": [-1.280723, 53.002673],
+        "label": "Nottingham"
+      },
+      "264": {
+        "coord": [-2.564943, 51.472816],
+        "label": "Bristol"
+      },
+      "265": {
+        "coord": [-3.168268, 55.88104],
+        "label": "Edinburgh"
+      },
+      "266": {
+        "coord": [-4.358525, 55.870231],
+        "label": "Glasgow"
+      },
+      "267": {
+        "coord": [-3.188267, 51.462189],
+        "label": "Cardiff"
+      },
+      "461": {
+        "coord": [-1.067257, 51.442125],
+        "label": "Reading"
+      },
+      "519": {
+        "coord": [-1.410659, 53.407182],
+        "label": "Sheffield"
+      },
+      "548": {
+        "coord": [-3.481548, 50.706806],
+        "label": "Exeter"
+      },
+      "567": {
+        "coord": [0.013971, 51.489511],
+        "label": "Greenwich"
+      }
     },
-    "hu": {
-        "label": "Hungary",
-        "language": "hu",
-        "stores": {
-            "180": {
-                "label": "IKEA \u00d6rs vez\u00e9r tere, Budapest"
-            },
-            "182": {
-                "label": "IKEA Buda\u00f6rs"
-            },
-            "507": {
-                "label": "IKEA Soroks\u00e1r, Budapest"
-            }
-        }
+    "url": "https://www.ikea.com/gb/en/"
+  },
+  "hk": {
+    "label": "Hong Kong",
+    "language": "en",
+    "site": "ikea.com/hk",
+    "stores": {
+      "052": {
+        "coord": [114.187799, 22.385446],
+        "label": "Shatin"
+      },
+      "062": {
+        "coord": [114.186342, 22.281445],
+        "label": "Causeway Bay"
+      },
+      "071": {
+        "coord": [114.209079, 22.319882],
+        "label": "Kowloon Bay"
+      },
+      "532": {
+        "coord": [114.11322, 22.375564],
+        "label": "Tsuen Wan"
+      }
     },
-    "it": {
-        "label": "Italy",
-        "language": "it",
-        "stores": {
-            "029": {
-                "label": "Chieti S.G. Teatino"
-            },
-            "098": {
-                "label": "Catania"
-            },
-            "111": {
-                "label": "Rimini"
-            },
-            "116": {
-                "label": "Gorizia_Villesse"
-            },
-            "231": {
-                "label": "Bologna Casalecchio"
-            },
-            "232": {
-                "label": "Genova"
-            },
-            "233": {
-                "label": "Milano Carugate"
-            },
-            "234": {
-                "label": "Roma Anagnina"
-            },
-            "295": {
-                "label": "Milano San Giuliano"
-            },
-            "303": {
-                "label": "Parma"
-            },
-            "314": {
-                "label": "Pisa"
-            },
-            "352": {
-                "label": "Firenze Sesto F.no"
-            },
-            "353": {
-                "label": "Napoli Afragola"
-            },
-            "354": {
-                "label": "Brescia Roncadelle"
-            },
-            "355": {
-                "label": "Padova"
-            },
-            "356": {
-                "label": "Bari"
-            },
-            "427": {
-                "label": "Roma Porta di Roma"
-            },
-            "455": {
-                "label": "Milano Corsico"
-            },
-            "456": {
-                "label": "Torino Collegno"
-            },
-            "457": {
-                "label": "Ancona"
-            },
-            "458": {
-                "label": "Salerno Baronissi"
-            }
-        }
+    "url": "https://www.ikea.com.hk/en/"
+  },
+  "hr": {
+    "label": "Hrvatska",
+    "language": "hr",
+    "site": "ikea.hr",
+    "stores": {
+      "021": {
+        "coord": [16.155517, 45.791437],
+        "label": "Zagreb"
+      }
     },
-    "jo": {
-        "label": "Jordan",
-        "language": "en",
-        "stores": {
-            "237": {
-                "label": "Amman"
-            }
-        }
+    "url": "https://www.ikea.com/hr/hr/"
+  },
+  "hu": {
+    "label": "Magyarorsz\u00e1g",
+    "language": "hu",
+    "site": "ikea.hu",
+    "stores": {
+      "180": {
+        "coord": [19.137962, 47.506592],
+        "label": "\u00d6rs vez\u00e9r tere Budapest"
+      },
+      "182": {
+        "coord": [18.940319, 47.454268],
+        "label": "Buda\u00f6rs"
+      },
+      "507": {
+        "coord": [19.159645, 47.412188],
+        "label": "Soroks\u00e1r / online h\u00e1zhozsz\u00e1ll\u00edt\u00e1s"
+      }
     },
-    "jp": {
-        "label": "Japan",
-        "language": "ja",
-        "stores": {
-            "189": {
-                "label": "\u798f\u5ca1\u65b0\u5bae"
-            },
-            "359": {
-                "label": "\u7acb\u5ddd"
-            },
-            "392": {
-                "label": "\u4ed9\u53f0"
-            },
-            "447": {
-                "label": "Tokyo-Bay"
-            },
-            "448": {
-                "label": "\u6e2f\u5317"
-            },
-            "486": {
-                "label": "\u795e\u6238"
-            },
-            "496": {
-                "label": "\u9db4\u6d5c"
-            },
-            "509": {
-                "label": "\u9577\u4e45\u624b"
-            },
-            "887": {
-                "label": "\u65b0\u4e09\u90f7"
-            }
-        }
+    "url": "https://www.ikea.com/hu/hu/"
+  },
+  "ie": {
+    "label": "Eire",
+    "language": "en",
+    "site": "ikea.ie",
+    "stores": {
+      "038": {
+        "coord": null,
+        "label": "Dublin"
+      }
     },
-    "kr": {
-        "label": "South Korea",
-        "language": "en",
-        "stores": {
-            "373": {
-                "label": "Gwangmyeong"
-            },
-            "522": {
-                "label": "Goyang"
-            }
-        }
+    "url": "https://www.ikea.com/ie/en/"
+  },
+  "it": {
+    "label": "Italia",
+    "language": "it",
+    "site": "ikea.it",
+    "stores": {
+      "029": {
+        "coord": [14.167621, 42.396587],
+        "label": "Chieti S.G. Teatino"
+      },
+      "098": {
+        "coord": [15.036871, 37.447334],
+        "label": "Catania"
+      },
+      "111": {
+        "coord": [12.477143, 44.078055],
+        "label": "Rimini"
+      },
+      "116": {
+        "coord": [13.444476, 45.87144],
+        "label": "Gorizia_Villesse"
+      },
+      "231": {
+        "coord": [11.249866, 44.488703],
+        "label": "Bologna Casalecchio"
+      },
+      "232": {
+        "coord": [8.884643, 44.423465],
+        "label": "Genova"
+      },
+      "233": {
+        "coord": [9.330008, 45.549614],
+        "label": "Milano Carugate"
+      },
+      "234": {
+        "coord": [12.592499, 41.836496],
+        "label": "Roma Anagnina"
+      },
+      "295": {
+        "coord": [9.259392, 45.38837],
+        "label": "Milano San Giuliano"
+      },
+      "303": {
+        "coord": [10.364442, 44.83075],
+        "label": "Parma"
+      },
+      "314": {
+        "coord": [10.383517, 43.692471],
+        "label": "Pisa"
+      },
+      "352": {
+        "coord": [11.187258, 43.807333],
+        "label": "Firenze Sesto F.no"
+      },
+      "353": {
+        "coord": [14.316489, 40.907502],
+        "label": "Napoli Afragola"
+      },
+      "354": {
+        "coord": [10.165572, 45.534127],
+        "label": "Brescia Roncadelle"
+      },
+      "355": {
+        "coord": [11.933877, 45.418203],
+        "label": "Padova"
+      },
+      "356": {
+        "coord": [16.897037, 41.089177],
+        "label": "Bari"
+      },
+      "427": {
+        "coord": [12.542599, 41.971783],
+        "label": "Roma Porta di Roma"
+      },
+      "455": {
+        "coord": [9.079696, 45.426769],
+        "label": "Milano Corsico"
+      },
+      "456": {
+        "coord": [7.583474, 45.097935],
+        "label": "Torino Collegno"
+      },
+      "457": {
+        "coord": [13.518961, 43.530159],
+        "label": "Ancona"
+      },
+      "458": {
+        "coord": [14.789674, 40.755234],
+        "label": "Salerno Baronissi"
+      }
     },
-    "kw": {
-        "label": "Kuwait",
-        "language": "en",
-        "stores": {
-            "219": {
-                "label": "Kuwait"
-            }
-        }
+    "url": "https://www.ikea.com/it/it/"
+  },
+  "jo": {
+    "label": "Jordan",
+    "language": "en",
+    "site": "ikea.jo",
+    "stores": {
+      "237": {
+        "coord": [35.901656, 31.826223],
+        "label": "Amman"
+      }
     },
-    "ma": {
-        "label": "Morocco",
-        "language": "fr",
-        "stores": {}
+    "url": "https://www.ikea.com/jo/en/"
+  },
+  "jp": {
+    "label": "\u65e5\u672c",
+    "language": "en",
+    "site": "ikea.jp",
+    "stores": {
+      "189": {
+        "coord": null,
+        "label": "\u798f\u5ca1\u65b0\u5bae"
+      },
+      "359": {
+        "coord": null,
+        "label": "\u7acb\u5ddd"
+      },
+      "392": {
+        "coord": null,
+        "label": "\u4ed9\u53f0"
+      },
+      "447": {
+        "coord": null,
+        "label": "Tokyo-Bay"
+      },
+      "448": {
+        "coord": null,
+        "label": "\u6e2f\u5317"
+      },
+      "486": {
+        "coord": null,
+        "label": "\u795e\u6238"
+      },
+      "496": {
+        "coord": null,
+        "label": "\u9db4\u6d5c"
+      },
+      "509": {
+        "coord": [137.075637, 35.17601],
+        "label": "\u9577\u4e45\u624b"
+      },
+      "887": {
+        "coord": null,
+        "label": "\u65b0\u4e09\u90f7"
+      }
     },
-    "my": {
-        "label": "Malaysia",
-        "language": "en",
-        "stores": {
-            "362": {
-                "label": "IKEA Cheras"
-            },
-            "438": {
-                "label": "IKEA Damansara"
-            },
-            "477": {
-                "label": "IKEA Tebrau"
-            }
-        }
+    "url": "https://www.ikea.com/jp/en/"
+  },
+  "kr": {
+    "label": "\ub300\ud55c\ubbfc\uad6d",
+    "language": "en",
+    "site": "ikea.kr",
+    "stores": {
+      "373": {
+        "coord": [126.8828, 37.42426],
+        "label": "\uad11\uba85"
+      },
+      "522": {
+        "coord": [126.86328, 37.630119],
+        "label": "\uace0\uc591"
+      },
+      "582": {
+        "coord": [127.113498, 37.222187],
+        "label": "\uae30\ud765"
+      },
+      "602": {
+        "coord": [129.210454, 35.192682],
+        "label": "\ub3d9\ubd80\uc0b0"
+      }
     },
-    "nl": {
-        "label": "Netherlands",
-        "language": "nl",
-        "stores": {
-            "087": {
-                "label": "Eindhoven"
-            },
-            "088": {
-                "label": "Amsterdam"
-            },
-            "089": {
-                "label": "Heerlen"
-            },
-            "151": {
-                "label": "Delft"
-            },
-            "270": {
-                "label": "Utrecht"
-            },
-            "272": {
-                "label": "Duiven"
-            },
-            "274": {
-                "label": "Barendrecht (Rotterdam)"
-            },
-            "312": {
-                "label": "Hengelo"
-            },
-            "378": {
-                "label": "Haarlem"
-            },
-            "391": {
-                "label": "Zwolle"
-            },
-            "403": {
-                "label": "Breda"
-            },
-            "404": {
-                "label": "Groningen"
-            },
-            "415": {
-                "label": "Amersfoort"
-            }
-        }
+    "url": "https://www.ikea.com/kr/en/"
+  },
+  "kw": {
+    "label": "Kuwait",
+    "language": "en",
+    "site": "ikea.com/kw",
+    "stores": {
+      "219": {
+        "coord": [47.929648, 29.301697],
+        "label": "Kuwait"
+      }
     },
-    "no": {
-        "label": "Norway",
-        "language": "no",
-        "stores": {
-            "007": {
-                "label": "S\u00f8rlandet"
-            },
-            "091": {
-                "label": "Slependen"
-            },
-            "095": {
-                "label": "Furuset"
-            },
-            "126": {
-                "label": "Forus"
-            },
-            "371": {
-                "label": "Leangen"
-            },
-            "390": {
-                "label": "Ringsaker"
-            },
-            "441": {
-                "label": "\u00c5sane"
-            }
-        }
+    "url": "https://www.ikea.com/kw/en/"
+  },
+  "lt": {
+    "label": "Lietuva",
+    "language": "en",
+    "site": "ikea.lt",
+    "stores": {
+      "235": {
+        "coord": null,
+        "label": "Vilnius"
+      }
     },
-    "pl": {
-        "label": "Poland",
-        "language": "pl",
-        "stores": {
-            "188": {
-                "label": "Warszawa / Janki"
-            },
-            "203": {
-                "label": "Gda\u0144sk"
-            },
-            "204": {
-                "label": "Krak\u00f3w"
-            },
-            "205": {
-                "label": "Pozna\u0144"
-            },
-            "294": {
-                "label": "Wroc\u0142aw"
-            },
-            "306": {
-                "label": "Katowice"
-            },
-            "307": {
-                "label": "Warszawa / Targ\u00f3wek"
-            },
-            "311": {
-                "label": "Lublin"
-            },
-            "329": {
-                "label": "\u0141\u00f3d\u017a"
-            },
-            "429": {
-                "label": "Bydgoszcz"
-            }
-        }
+    "url": "https://www.ikea.lt/en/"
+  },
+  "my": {
+    "label": "Malaysia",
+    "language": "en",
+    "site": "ikea.my",
+    "stores": {
+      "362": {
+        "coord": null,
+        "label": "Cheras"
+      },
+      "438": {
+        "coord": null,
+        "label": "Damansara"
+      }
     },
-    "pt": {
-        "label": "Portugal",
-        "language": "en",
-        "stores": {
-            "001": {
-                "label": "Loures"
-            },
-            "009": {
-                "label": "Matosinhos"
-            },
-            "367": {
-                "label": "Alfragide"
-            },
-            "453": {
-                "label": "Loul\u00e9"
-            },
-            "499": {
-                "label": "Braga"
-            }
-        }
+    "url": "https://www.ikea.com/my/en/"
+  },
+  "nl": {
+    "label": "Nederland",
+    "language": "en",
+    "site": "ikea.nl",
+    "stores": {
+      "087": {
+        "coord": [5.467415, 51.498057],
+        "label": "Eindhoven"
+      },
+      "088": {
+        "coord": [4.949427, 52.303782],
+        "label": "Amsterdam"
+      },
+      "089": {
+        "coord": [5.943861, 50.899433],
+        "label": "Heerlen"
+      },
+      "151": {
+        "coord": [4.379489, 52.012782],
+        "label": "Delft"
+      },
+      "270": {
+        "coord": [5.100574, 52.062504],
+        "label": "Utrecht"
+      },
+      "272": {
+        "coord": [5.995917, 51.96693],
+        "label": "Duiven"
+      },
+      "274": {
+        "coord": [4.512248, 51.849631],
+        "label": "Barendrecht (Rotterdam)"
+      },
+      "312": {
+        "coord": [6.768608, 52.289268],
+        "label": "Hengelo"
+      },
+      "378": {
+        "coord": [4.670134, 52.385266],
+        "label": "Haarlem"
+      },
+      "391": {
+        "coord": [6.162285, 52.533027],
+        "label": "Zwolle"
+      },
+      "403": {
+        "coord": [4.728928, 51.580697],
+        "label": "Breda"
+      },
+      "404": {
+        "coord": [6.587205, 53.217726],
+        "label": "Groningen"
+      },
+      "415": {
+        "coord": [5.416131, 52.186405],
+        "label": "Amersfoort"
+      }
     },
-    "qa": {
-        "label": "Qatar",
-        "language": "en",
-        "stores": {
-            "244": {
-                "label": "Qatar"
-            }
-        }
+    "url": "https://www.ikea.com/nl/en/"
+  },
+  "no": {
+    "label": "Norge",
+    "language": "no",
+    "site": "ikea.no",
+    "stores": {
+      "007": {
+        "coord": [8.158035, 58.189641],
+        "label": "S\u00f8rlandet"
+      },
+      "091": {
+        "coord": [10.497866, 59.874035],
+        "label": "Slependen"
+      },
+      "095": {
+        "coord": [10.872602, 59.933731],
+        "label": "Furuset"
+      },
+      "126": {
+        "coord": [5.720873, 58.88691],
+        "label": "Forus"
+      },
+      "371": {
+        "coord": [10.474348, 63.428595],
+        "label": "Leangen"
+      },
+      "390": {
+        "coord": [11.055361, 60.840801],
+        "label": "Ringsaker"
+      },
+      "441": {
+        "coord": [5.331609, 60.474025],
+        "label": "\u00c5sane"
+      }
     },
-    "ro": {
-        "label": "Romania",
-        "language": "ro",
-        "stores": {
-            "059": {
-                "label": "Bucuresti"
-            }
-        }
+    "url": "https://www.ikea.com/no/no/"
+  },
+  "pl": {
+    "label": "Polska",
+    "language": "pl",
+    "site": "ikea.pl",
+    "stores": {
+      "188": {
+        "coord": [20.897065, 52.132764],
+        "label": "Warszawa / Janki"
+      },
+      "203": {
+        "coord": [18.517787, 54.37334],
+        "label": "Gda\u0144sk"
+      },
+      "204": {
+        "coord": [19.898223, 50.089585],
+        "label": "Krak\u00f3w"
+      },
+      "205": {
+        "coord": [16.98837, 52.382666],
+        "label": "Pozna\u0144"
+      },
+      "294": {
+        "coord": [16.959003, 51.048571],
+        "label": "Wroc\u0142aw"
+      },
+      "306": {
+        "coord": [19.059857, 50.270677],
+        "label": "Katowice"
+      },
+      "307": {
+        "coord": [21.082417, 52.305317],
+        "label": "Warszawa / Targ\u00f3wek"
+      },
+      "311": {
+        "coord": [22.572879, 51.281585],
+        "label": "Lublin"
+      },
+      "329": {
+        "coord": [19.412817, 51.701928],
+        "label": "\u0141\u00f3d\u017a"
+      },
+      "429": {
+        "coord": [18.119955, 53.131665],
+        "label": "Bydgoszcz"
+      },
+      "623": {
+        "coord": [16.14, 56.16],
+        "label": "Warszawa / Blue City"
+      }
     },
-    "rs": {
-        "label": "Serbia",
-        "language": "sr",
-        "stores": {
-            "050": {
-                "label": "Beograd"
-            }
-        }
+    "url": "https://www.ikea.com/pl/pl/"
+  },
+  "pt": {
+    "label": "Portugal",
+    "language": "en",
+    "site": "ikea.pt",
+    "stores": {
+      "001": {
+        "coord": [-9.148468, 38.815185],
+        "label": "Loures"
+      },
+      "009": {
+        "coord": [-8.689111, 41.210348],
+        "label": "Matosinhos"
+      },
+      "367": {
+        "coord": [-9.2156, 38.72875],
+        "label": "Alfragide"
+      },
+      "453": {
+        "coord": [-7.995564, 37.096452],
+        "label": "Loul\u00e9"
+      },
+      "499": {
+        "coord": [-8.431013, 41.577704],
+        "label": "Braga"
+      }
     },
-    "ru": {
-        "label": "Russia",
-        "language": "ru",
-        "stores": {
-            "335": {
-                "label": "\u0425\u0438\u043c\u043a\u0438"
-            },
-            "336": {
-                "label": "\u0422\u0435\u043f\u043b\u044b\u0439 \u0421\u0442\u0430\u043d"
-            },
-            "338": {
-                "label": "\u041d\u043e\u0432\u043e\u0441\u0438\u0431\u0438\u0440\u0441\u043a"
-            },
-            "341": {
-                "label": "\u041a\u0430\u0437\u0430\u043d\u044c"
-            },
-            "342": {
-                "label": "\u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0431\u0443\u0440\u0433"
-            },
-            "344": {
-                "label": "\u0411\u0435\u043b\u0430\u044f \u0414\u0430\u0447\u0430"
-            },
-            "346": {
-                "label": "\u0423\u0444\u0430"
-            },
-            "351": {
-                "label": "\u041e\u043c\u0441\u043a"
-            },
-            "426": {
-                "label": "\u0414\u044b\u0431\u0435\u043d\u043a\u043e"
-            },
-            "437": {
-                "label": "\u041d\u0438\u0436\u043d\u0438\u0439 \u041d\u043e\u0432\u0433\u043e\u0440\u043e\u0434"
-            },
-            "442": {
-                "label": "\u0421\u0430\u043c\u0430\u0440\u0430"
-            },
-            "443": {
-                "label": "\u0420\u043e\u0441\u0442\u043e\u0432-\u043d\u0430-\u0414\u043e\u043d\u0443"
-            },
-            "464": {
-                "label": "\u041f\u0430\u0440\u043d\u0430\u0441"
-            },
-            "480": {
-                "label": "\u0410\u0434\u044b\u0433\u0435\u044f-\u041a\u0443\u0431\u0430\u043d\u044c"
-            },
-            "524": {
-                "label": "\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442-\u043c\u0430\u0433\u0430\u0437\u0438\u043d"
-            }
-        }
+    "url": "https://www.ikea.com/pt/en/"
+  },
+  "qa": {
+    "label": "Qatar",
+    "language": "en",
+    "site": "ikea.qa",
+    "stores": {
+      "244": {
+        "coord": [51.439325, 25.387315],
+        "label": "Qatar"
+      }
     },
-    "sa": {
-        "label": "Saudi Arabia",
-        "language": "en",
-        "stores": {
-            "065": {
-                "label": "IKEA Dhahran"
-            },
-            "110": {
-                "label": "IKEA Jeddah, Al Tahlyah"
-            },
-            "197": {
-                "label": "IKEA Riyadh"
-            },
-            "503": {
-                "label": "IKEA Jeddah, Al Salam Mall"
-            }
-        }
+    "url": "https://www.ikea.com/qa/en/"
+  },
+  "ro": {
+    "label": "Rom\u00e2nia",
+    "language": "ro",
+    "site": "ikea.ro",
+    "stores": {
+      "059": {
+        "coord": [26.086006, 44.511687],
+        "label": "Bucure\u015fti B\u0103neasa"
+      },
+      "500": {
+        "coord": [26.206361, 44.407823],
+        "label": "Bucure\u015fti Pallady"
+      }
     },
-    "se": {
-        "label": "Sweden",
-        "language": "sv",
-        "stores": {
-            "012": {
-                "label": "Stockholm Kungens Kurva"
-            },
-            "014": {
-                "label": "G\u00f6teborg K\u00e5llered"
-            },
-            "017": {
-                "label": "Link\u00f6ping"
-            },
-            "019": {
-                "label": "Stockholm Barkarby"
-            },
-            "020": {
-                "label": "V\u00e4ster\u00e5s"
-            },
-            "053": {
-                "label": "Uddevalla"
-            },
-            "070": {
-                "label": "Uppsala"
-            },
-            "106": {
-                "label": "\u00d6rebro"
-            },
-            "109": {
-                "label": "J\u00f6nk\u00f6ping"
-            },
-            "122": {
-                "label": "G\u00e4vle"
-            },
-            "248": {
-                "label": "Borl\u00e4nge"
-            },
-            "268": {
-                "label": "\u00c4lmhult"
-            },
-            "398": {
-                "label": "G\u00f6teborg B\u00e4ckebol"
-            },
-            "416": {
-                "label": "Ume\u00e5"
-            },
-            "445": {
-                "label": "Malm\u00f6"
-            },
-            "467": {
-                "label": "Sundsvall"
-            },
-            "468": {
-                "label": "Helsingborg"
-            },
-            "469": {
-                "label": "Kalmar"
-            },
-            "470": {
-                "label": "HaparandaTornio"
-            },
-            "471": {
-                "label": "Karlstad"
-            }
-        }
+    "url": "https://www.ikea.com/ro/ro/"
+  },
+  "ru": {
+    "label": "\u0420\u043e\u0441\u0441\u0438\u044f",
+    "language": "ru",
+    "site": "ikea.ru",
+    "stores": {
+      "335": {
+        "coord": [37.396957, 55.9111],
+        "label": "\u0425\u0438\u043c\u043a\u0438"
+      },
+      "336": {
+        "coord": [37.491604, 55.604071],
+        "label": "\u0422\u0435\u043f\u043b\u044b\u0439 \u0421\u0442\u0430\u043d"
+      },
+      "338": {
+        "coord": [82.936667, 54.963611],
+        "label": "\u041d\u043e\u0432\u043e\u0441\u0438\u0431\u0438\u0440\u0441\u043a"
+      },
+      "341": {
+        "coord": [49.214722, 55.780833],
+        "label": "\u041a\u0430\u0437\u0430\u043d\u044c"
+      },
+      "342": {
+        "coord": [60.505278, 56.823333],
+        "label": "\u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0431\u0443\u0440\u0433"
+      },
+      "344": {
+        "coord": [37.845883, 55.656348],
+        "label": "\u0411\u0435\u043b\u0430\u044f \u0414\u0430\u0447\u0430"
+      },
+      "346": {
+        "coord": [55.928707, 54.675051],
+        "label": "\u0423\u0444\u0430"
+      },
+      "351": {
+        "coord": [73.285278, 54.971111],
+        "label": "\u041e\u043c\u0441\u043a"
+      },
+      "426": {
+        "coord": [30.513611, 59.893056],
+        "label": "\u0414\u044b\u0431\u0435\u043d\u043a\u043e"
+      },
+      "437": {
+        "coord": [44.071389, 56.225556],
+        "label": "\u041d\u0438\u0436\u043d\u0438\u0439 \u041d\u043e\u0432\u0433\u043e\u0440\u043e\u0434"
+      },
+      "442": {
+        "coord": [50.30543, 53.325972],
+        "label": "\u0421\u0430\u043c\u0430\u0440\u0430"
+      },
+      "443": {
+        "coord": [39.887238, 47.309034],
+        "label": "\u0420\u043e\u0441\u0442\u043e\u0432-\u043d\u0430-\u0414\u043e\u043d\u0443"
+      },
+      "464": {
+        "coord": [30.379722, 60.091111],
+        "label": "\u041f\u0430\u0440\u043d\u0430\u0441"
+      },
+      "480": {
+        "coord": [38.925, 45.0125],
+        "label": "\u0410\u0434\u044b\u0433\u0435\u044f-\u041a\u0443\u0431\u0430\u043d\u044c"
+      },
+      "524": {
+        "coord": [37.089342, 56.10137],
+        "label": "\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442-\u043c\u0430\u0433\u0430\u0437\u0438\u043d"
+      },
+      "604": {
+        "coord": [38.925, 45.0125],
+        "label": "CFF \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433"
+      },
+      "609": {
+        "coord": [37.528679, 55.790618],
+        "label": "\u0425\u043e\u0434\u044b\u043d\u0441\u043a\u043e\u0435 \u043f\u043e\u043b\u0435"
+      },
+      "616": {
+        "coord": [38.925, 45.0125],
+        "label": "\u0418\u041a\u0415\u0410 \u0421\u0438\u0442\u0438 \u0432 \u0422\u0420\u0426 \"\u041c\u043e\u0437\u0430\u0438\u043a\u0430\""
+      }
     },
-    "sg": {
-        "label": "Singapore",
-        "language": "en",
-        "stores": {
-            "022": {
-                "label": "IKEA Tampines"
-            },
-            "045": {
-                "label": "IKEA Alexandra"
-            }
-        }
+    "url": "https://www.ikea.com/ru/ru/"
+  },
+  "sa": {
+    "label": "Saudi Arabia ",
+    "language": "en",
+    "site": "ikea.com/sa",
+    "stores": {
+      "065": {
+        "coord": [50.167524, 26.309661],
+        "label": "Dhahran"
+      },
+      "110": {
+        "coord": [39.183288, 21.55723],
+        "label": "Jeddah, Al Tahlyah"
+      },
+      "197": {
+        "coord": [46.787301, 24.659193],
+        "label": "Riyadh"
+      }
     },
-    "sk": {
-        "label": "Slovakia",
-        "language": "sk",
-        "stores": {
-            "489": {
-                "label": "IKEA Bratislava"
-            }
-        }
+    "url": "https://www.ikea.com/sa/en/"
+  },
+  "se": {
+    "label": "Sverige",
+    "language": "sv",
+    "site": "ikea.se",
+    "stores": {
+      "012": {
+        "coord": [17.916201, 59.271155],
+        "label": "Stockholm Kungens Kurva"
+      },
+      "014": {
+        "coord": [12.048397, 57.60379],
+        "label": "G\u00f6teborg K\u00e5llered"
+      },
+      "017": {
+        "coord": [15.58755, 58.433189],
+        "label": "Link\u00f6ping"
+      },
+      "019": {
+        "coord": [17.857064, 59.420331],
+        "label": "Stockholm Barkarby"
+      },
+      "020": {
+        "coord": [16.456017, 59.607596],
+        "label": "V\u00e4ster\u00e5s"
+      },
+      "053": {
+        "coord": [11.818371, 58.355878],
+        "label": "Uddevalla"
+      },
+      "070": {
+        "coord": [17.692156, 59.847755],
+        "label": "Uppsala"
+      },
+      "106": {
+        "coord": [15.134397, 59.211089],
+        "label": "\u00d6rebro"
+      },
+      "109": {
+        "coord": [14.205751, 57.77267],
+        "label": "J\u00f6nk\u00f6ping"
+      },
+      "122": {
+        "coord": [16.989895, 60.633906],
+        "label": "G\u00e4vle"
+      },
+      "248": {
+        "coord": [15.421457, 60.482664],
+        "label": "Borl\u00e4nge"
+      },
+      "268": {
+        "coord": [14.161674, 56.550534],
+        "label": "\u00c4lmhult"
+      },
+      "398": {
+        "coord": [11.999672, 57.771771],
+        "label": "G\u00f6teborg B\u00e4ckebol"
+      },
+      "416": {
+        "coord": [20.25501, 63.80771],
+        "label": "Ume\u00e5"
+      },
+      "445": {
+        "coord": [12.986215, 55.552634],
+        "label": "Malm\u00f6"
+      },
+      "467": {
+        "coord": [17.334119, 62.444195],
+        "label": "Sundsvall"
+      },
+      "468": {
+        "coord": [12.760899, 56.092426],
+        "label": "Helsingborg"
+      },
+      "469": {
+        "coord": [16.321199, 56.68556],
+        "label": "Kalmar"
+      },
+      "470": {
+        "coord": [24.13192, 65.842982],
+        "label": "HaparandaTornio"
+      },
+      "471": {
+        "coord": [13.41966, 59.378797],
+        "label": "Karlstad"
+      }
     },
-    "th": {
-        "label": "Thailand",
-        "language": "en",
-        "stores": {
-            "057": {
-                "label": "IKEA Bangna"
-            },
-            "479": {
-                "label": "IKEA Bang Yai"
-            }
-        }
+    "url": "https://www.ikea.com/se/sv/"
+  },
+  "sg": {
+    "label": "Singapore",
+    "language": "en",
+    "site": "ikea.sg",
+    "stores": {
+      "022": {
+        "coord": [103.93604, 1.3711],
+        "label": "Tampines"
+      },
+      "045": {
+        "coord": [103.806184, 1.292501],
+        "label": "Alexandra"
+      }
     },
-    "tw": {
-        "label": "Taiwan",
-        "language": "zh",
-        "stores": {
-            "305": {
-                "label": "\u53f0\u4e2d\u5e97"
-            },
-            "350": {
-                "label": "\u6566\u5317\u5e97"
-            },
-            "361": {
-                "label": "\u6843\u5712\u5e97"
-            },
-            "363": {
-                "label": "\u65b0\u838a\u5e97"
-            },
-            "879": {
-                "label": "\u9ad8\u96c4\u5e97"
-            }
-        }
+    "url": "https://www.ikea.com/sg/en/"
+  },
+  "sk": {
+    "label": "Slovensko",
+    "language": "sk",
+    "site": "ikea.sk",
+    "stores": {
+      "489": {
+        "coord": [17.182953, 48.168547],
+        "label": "Bratislava"
+      }
     },
-    "us": {
-        "label": "United States",
-        "language": "en",
-        "stores": {
-            "026": {
-                "label": "MI, Canton"
-            },
-            "027": {
-                "label": "TX, Round Rock"
-            },
-            "028": {
-                "label": "OR, Portland"
-            },
-            "042": {
-                "label": "FL, Tampa"
-            },
-            "064": {
-                "label": "CO, Centennial"
-            },
-            "067": {
-                "label": "NC, Charlotte"
-            },
-            "103": {
-                "label": "UT, Draper"
-            },
-            "145": {
-                "label": "FL, Orlando"
-            },
-            "152": {
-                "label": "MD, Baltimore"
-            },
-            "153": {
-                "label": "PA, Pittsburgh"
-            },
-            "154": {
-                "label": "NJ, Elizabeth"
-            },
-            "156": {
-                "label": "NY, Long Island"
-            },
-            "157": {
-                "label": "CA, West Sacramento"
-            },
-            "158": {
-                "label": "MA, Stoughton"
-            },
-            "162": {
-                "label": "CA, Carson"
-            },
-            "165": {
-                "label": "CA, Emeryville"
-            },
-            "166": {
-                "label": "CA, San Diego"
-            },
-            "167": {
-                "label": "CA, Costa Mesa"
-            },
-            "168": {
-                "label": "VA, Woodbridge"
-            },
-            "170": {
-                "label": "IL, Bolingbrook"
-            },
-            "175": {
-                "label": "OH, West Chester"
-            },
-            "183": {
-                "label": "TX, Frisco"
-            },
-            "207": {
-                "label": "FL, Sunrise"
-            },
-            "209": {
-                "label": "AZ, Tempe"
-            },
-            "210": {
-                "label": "IL, Schaumburg"
-            },
-            "211": {
-                "label": "PA, Conshohocken"
-            },
-            "212": {
-                "label": "MN, Twin Cities"
-            },
-            "213": {
-                "label": "CT, New Haven"
-            },
-            "215": {
-                "label": "PA, South Philadelphia"
-            },
-            "257": {
-                "label": "GA, Atlanta"
-            },
-            "327": {
-                "label": "FL, Miami"
-            },
-            "347": {
-                "label": "CA, East Palo Alto"
-            },
-            "374": {
-                "label": "KS, Merriam"
-            },
-            "379": {
-                "label": "TX, Houston"
-            },
-            "399": {
-                "label": "CA, Burbank"
-            },
-            "409": {
-                "label": "NJ, Paramus"
-            },
-            "410": {
-                "label": "MO, St. Louis "
-            },
-            "411": {
-                "label": "MD, College Park"
-            },
-            "413": {
-                "label": "CA, Covina"
-            },
-            "462": {
-                "label": "NV, Las Vegas"
-            },
-            "488": {
-                "label": "WA, Renton"
-            },
-            "508": {
-                "label": "TN, Memphis"
-            },
-            "511": {
-                "label": "OH, Columbus"
-            },
-            "535": {
-                "label": "TX, Grand Prairie"
-            },
-            "536": {
-                "label": "IN, Fishers"
-            },
-            "537": {
-                "label": "FL, Jacksonville"
-            },
-            "560": {
-                "label": "WI, Oak Creek"
-            },
-            "921": {
-                "label": "NY, Brooklyn"
-            }
-        }
-    }
+    "url": "https://www.ikea.com/sk/sk/"
+  },
+  "th": {
+    "label": "Thailand",
+    "language": "en",
+    "site": "ikea.com/th",
+    "stores": {
+      "057": {
+        "coord": null,
+        "label": "Bangna"
+      }
+    },
+    "url": "https://www.ikea.com/th/en/"
+  },
+  "tw": {
+    "label": "\u81fa\u7063",
+    "language": "zh",
+    "site": "ikea.com/tw",
+    "stores": {
+      "305": {
+        "coord": [120.641917, 24.147341],
+        "label": "\u53f0\u4e2d\u5e97"
+      },
+      "350": {
+        "coord": [121.548551, 25.0525],
+        "label": "\u6566\u5317\u5e97"
+      },
+      "361": {
+        "coord": [121.286729, 24.989675],
+        "label": "\u6843\u5712\u5e97"
+      },
+      "363": {
+        "coord": [121.4655, 25.0419],
+        "label": "\u65b0\u838a\u5e97"
+      },
+      "879": {
+        "coord": [120.3045, 22.6057],
+        "label": "\u9ad8\u96c4\u5e97"
+      }
+    },
+    "url": "https://www.ikea.com.tw/zh/"
+  },
+  "us": {
+    "label": "United States",
+    "language": "en",
+    "site": "ikea.us",
+    "stores": {
+      "026": {
+        "coord": [-83.417233, 42.338245],
+        "label": "MI, Canton"
+      },
+      "027": {
+        "coord": [-97.689878, 30.558455],
+        "label": "TX, Round Rock"
+      },
+      "028": {
+        "coord": [-122.555243, 45.572236],
+        "label": "OR, Portland"
+      },
+      "042": {
+        "coord": [-82.433338, 27.95923],
+        "label": "FL, Tampa"
+      },
+      "064": {
+        "coord": [-104.875237, 39.572748],
+        "label": "CO, Centennial"
+      },
+      "067": {
+        "coord": [-80.766678, 35.307281],
+        "label": "NC, Charlotte"
+      },
+      "103": {
+        "coord": [-111.893198, 40.508938],
+        "label": "UT, Draper"
+      },
+      "145": {
+        "coord": [-81.427194, 28.483743],
+        "label": "FL, Orlando"
+      },
+      "152": {
+        "coord": [-76.462466, 39.37863],
+        "label": "MD, Baltimore"
+      },
+      "153": {
+        "coord": [-80.165262, 40.454132],
+        "label": "PA, Pittsburgh"
+      },
+      "154": {
+        "coord": [-74.169909, 40.675821],
+        "label": "NJ, Elizabeth"
+      },
+      "156": {
+        "coord": [-73.536987, 40.797177],
+        "label": "NY, Long Island"
+      },
+      "157": {
+        "coord": [-121.553421, 38.59165],
+        "label": "CA, West Sacramento"
+      },
+      "158": {
+        "coord": [-71.068718, 42.138491],
+        "label": "MA, Stoughton"
+      },
+      "162": {
+        "coord": [-118.260269, 33.843829],
+        "label": "CA, Carson"
+      },
+      "165": {
+        "coord": [-122.292595, 37.832717],
+        "label": "CA, Emeryville"
+      },
+      "166": {
+        "coord": [-117.126495, 32.780961],
+        "label": "CA, San Diego"
+      },
+      "167": {
+        "coord": [-117.9142, 33.697208],
+        "label": "CA, Costa Mesa"
+      },
+      "168": {
+        "coord": [-77.288996, 38.643992],
+        "label": "VA, Woodbridge"
+      },
+      "170": {
+        "coord": [-88.03776, 41.728264],
+        "label": "IL, Bolingbrook"
+      },
+      "175": {
+        "coord": [-84.435081, 39.32155],
+        "label": "OH, West Chester"
+      },
+      "183": {
+        "coord": [-96.821823, 33.100745],
+        "label": "TX, Frisco"
+      },
+      "207": {
+        "coord": [-80.332203, 26.124078],
+        "label": "FL, Sunrise"
+      },
+      "209": {
+        "coord": [-111.971461, 33.340854],
+        "label": "AZ, Tempe"
+      },
+      "210": {
+        "coord": [-88.036243, 42.057641],
+        "label": "IL, Schaumburg"
+      },
+      "211": {
+        "coord": [-75.307546, 40.095506],
+        "label": "PA, Conshohocken"
+      },
+      "212": {
+        "coord": [-93.245825, 44.864873],
+        "label": "MN, Twin Cities"
+      },
+      "213": {
+        "coord": [-72.919184, 41.295897],
+        "label": "CT, New Haven"
+      },
+      "215": {
+        "coord": [-75.142219, 39.920533],
+        "label": "PA, South Philadelphia"
+      },
+      "257": {
+        "coord": [-84.403545, 33.789456],
+        "label": "GA, Atlanta"
+      },
+      "327": {
+        "coord": [-80.386262, 25.833631],
+        "label": "FL, Miami"
+      },
+      "347": {
+        "coord": [-122.139562, 37.461557],
+        "label": "CA, East Palo Alto"
+      },
+      "374": {
+        "coord": [-94.68993, 39.021088],
+        "label": "KS, Merriam"
+      },
+      "379": {
+        "coord": [-95.472228, 29.785051],
+        "label": "TX, Houston"
+      },
+      "399": {
+        "coord": [-118.306264, 34.17642],
+        "label": "CA, Burbank"
+      },
+      "409": {
+        "coord": [-74.073257, 40.925706],
+        "label": "NJ, Paramus"
+      },
+      "410": {
+        "coord": [-90.245614, 38.633515],
+        "label": "MO, St. Louis"
+      },
+      "411": {
+        "coord": [-76.925609, 39.024518],
+        "label": "MD, College Park"
+      },
+      "413": {
+        "coord": [-117.879795, 34.076123],
+        "label": "CA, Covina"
+      },
+      "462": {
+        "coord": [-115.280825, 36.068926],
+        "label": "NV, Las Vegas"
+      },
+      "488": {
+        "coord": [-122.22496, 47.446897],
+        "label": "WA, Renton"
+      },
+      "508": {
+        "coord": [-89.799303, 35.189991],
+        "label": "TN, Memphis"
+      },
+      "511": {
+        "coord": [-82.998794, 39.961176],
+        "label": "OH, Columbus"
+      },
+      "535": {
+        "coord": [-97.028338, 32.67942],
+        "label": "TX, Grand Prairie"
+      },
+      "536": {
+        "coord": [-86.007287, 39.953661],
+        "label": "IN, Fishers"
+      },
+      "537": {
+        "coord": [-81.655651, 30.332184],
+        "label": "FL, Jacksonville"
+      },
+      "560": {
+        "coord": [-87.938251, 42.906633],
+        "label": "WI, Oak Creek"
+      },
+      "569": {
+        "coord": [-76.200831, 36.874673],
+        "label": "VA, Norfolk"
+      },
+      "570": {
+        "coord": [-98.340573, 29.566386],
+        "label": "TX, Live Oak"
+      },
+      "921": {
+        "coord": [-74.010994, 40.672306],
+        "label": "NY, Brooklyn"
+      }
+    },
+    "url": "https://www.ikea.com/us/en/"
+  }
 }
