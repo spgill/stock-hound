@@ -1,14 +1,13 @@
 <h1>Welcome to <span style="color: #005293;">Stöck Høund</span>!</h1>
 
 <p>
-    You have created a new reminder for
+    You have created a new reminder for article number
     <a href="{{ url(ticket) }}">
-        <em>{{ info['title'] }}</em>
+        <em>{{ article(ticket) }}</em>
     </a>
-    , article number {{ article(ticket) }}
     at the {{ store_name(ticket) }} store. You will be notified at this
-    email address if this product comes back in stock within 31 days. If the
-    product does not come back in stock within 31 days, this reminder will be
+    email address if this product comes back in stock within 90 days. If the
+    product does not come back in stock within 90 days, this reminder will be
     terminated and you will receive no further emails for the product.
 </p>
 
@@ -25,8 +24,8 @@
     <small>
         If you believe you received this email in error or you no longer want a
         reminder for this product, you can terminate this reminder by clicking
-        <a href="{{ host() }}/terminate/{{ ticket.id }}">here</a>.
-        Please do not reply to this email; all responses will be ignored with no
-        exceptions.
+        <a href="{{ host() }}/api/terminate/{{ ticket.id }}">here</a>.
+        Please do not reply to this email. All responses will be ignored, without
+        exception.
     </small>
 </p>
