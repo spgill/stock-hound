@@ -20,10 +20,10 @@
   "editor.formatOnSave": true,
   "editor.detectIndentation": false,
   "javascript.validate.enable": false,
-  "python.formatting.provider": "black",
 
   "[javascript]": {
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
   "[python]": {
@@ -31,5 +31,6 @@
   },
   "python.linting.flake8Enabled": true,
   "python.linting.pylintEnabled": false,
-  "python.linting.enabled": true
+"python.linting.enabled": true,
+"python.formatting.provider": "black"
 }
