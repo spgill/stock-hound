@@ -1,8 +1,5 @@
 // IBM Plex typeface
-@import '~@ibm/plex/css/ibm-plex.css';
-
-// Material Icon Font
-@import '~material-design-icons/iconfont/material-icons.css';
+@import "~@ibm/plex/css/ibm-plex.css";
 
 // Import other top level styling components
-@import 'type';
+@import "type";
