@@ -11,7 +11,7 @@ import stockhound_mail as mail
 import stockhound_model as model
 
 # Initialize the app
-app = flask.Flask(__name__, static_folder="public", static_url_path="")
+app = flask.Flask(__name__, static_folder="build", static_url_path="")
 app.config["DEBUG"] = os.environ.get("DEBUG", False)
 app.config["MAX_CONTENT_LENGTH"] = 20 * 1024 * 1024  # 20 megabytes, fyi
 app.config["MONGODB_SETTINGS"] = {
