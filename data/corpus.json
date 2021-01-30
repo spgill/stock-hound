@@ -1774,5 +1774,17 @@
       }
     },
     "url": "https://www.ikea.com/us/en/"
+  },
+  "rs": {
+    "label": "Srbija",
+    "language": "sr",
+    "site": "ikea.rs",
+    "stores": {
+      "050": {
+        "coord": [20.562966, 44.710218],
+        "label": "Beograd"
+      }
+    },
+    "url": "https://www.ikea.com/rs/sr/"
   }
 }

@@ -19,7 +19,7 @@ import {
 
 // local imports
 // import Carousel from "./Carousel";
-// import Footer from "./Footer.jsx";
+import { Footer } from "./Footer.jsx";
 import colors from "../config/colors";
 // import theme from "../config/theme";
 import { appTheme } from "../config/theme";
@@ -454,8 +454,7 @@ export default function App() {
 
             {/* FOOTER */}
             <StyledFooter>
-              {typeof storeCountry} {storeCountry} {typeof storeLocation}{" "}
-              {storeLocation}
+              <Footer />
             </StyledFooter>
           </>
         )}

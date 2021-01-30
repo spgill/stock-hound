@@ -5,6 +5,7 @@ import jinja2
 import requests
 
 import stockhound_model as model
+import stockhound_util as util
 
 FROM_TITLE = "Stöck Høund"
 API_KEY = os.environ["MAILGUN_API_KEY"]
@@ -31,12 +32,15 @@ def store_name(tick):
 
 
 def article_text(tick):
-    return f"{tick.article[-8:-5]}.{tick.article[-5:-2]}.{tick.article[-2:]}"
+    return f"{tick.productId[-8:-5]}.{tick.productId[-5:-2]}.{tick.productId[-2:]}"
 
 
 def article_url(tick):
     localizedSite = model.corpus[tick.country]["url"]
-    return f"{localizedSite}catalog/products/{tick.article}/"
+    article = tick.productId
+    if tick.productType == util.ProductType.SPR.value:
+        article = f"S{article}"
+    return f"{localizedSite}catalog/products/{article}/"
 
 
 # DEPRECATED FOR NOW

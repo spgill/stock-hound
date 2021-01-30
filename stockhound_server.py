@@ -6,7 +6,7 @@ import flask
 from flask_mongoengine import MongoEngine
 import requests
 
-import stockhound_helper as helper
+import stockhound_util as util
 import stockhound_mail as mail
 import stockhound_model as model
 
@@ -103,36 +103,35 @@ def stockhound_submit():
         },
     ).json()
     if recaptcha["score"] < 0.5:
-        helper.api_error(message="Failed reCAPTCHA verification.")
+        util.api_error(message="Failed reCAPTCHA verification.")
 
-    # Validate the article number / url syntax
-    articleNumber = parse_article(productId)
-    if not articleNumber:
-        helper.api_error(message="Invalid article number or product URL.")
+    # Parse and validate the article number / url syntax
+    productId = parse_article(productId)
+    if not productId:
+        util.api_error(message="Invalid article number or product URL.")
 
     # Validate the email address
     if not re.match(
         r"^([A-z0-9_\.-]+)@([\dA-z\.-]+)\.([A-z\.]{2,6})$", emailAddress
     ):
-        helper.api_error(message="Invalid email address.")
+        util.api_error(message="Invalid email address.")
 
     # Verify that the article number exists (and determine its type)
-    localizedSite = model.corpus[countryCode]["url"]
-    articleNumber = resolve_article(localizedSite, articleNumber)
-    if not articleNumber:
-        helper.api_error(
-            message="Article number or product does not appear to exist."
+    productType, productId = util.validateProductId(countryCode, productId)
+    if not productId:
+        util.api_error(
+            message="Product does not appear to exist in the selected market."
         )
 
     # Make sure they don't have a reminder for the same product
     if model.ReminderTicket.objects(
         closed=False,
         address=emailAddress,
-        article=articleNumber,
+        productId=productId,
         country=countryCode,
         location=locationCode,
     ):
-        helper.api_error(
+        util.api_error(
             message="You already have an active reminder for this product."
         )
 
@@ -144,7 +143,7 @@ def stockhound_submit():
         )
         >= 5
     ):
-        return helper.api_success(
+        return util.api_success(
             payload="confirm",
             message="You have reached your limit of 5 reminders. If \
 you continue, your oldest reminder will be terminated.",
@@ -163,12 +162,20 @@ you continue, your oldest reminder will be terminated.",
 
         model.log(oldest, f"{oldest.address} closed ticket on confirmation")
 
+    print(
+        "STOCK LEVEL",
+        util.getStockInfo(
+            countryCode, ["70480483", "29332382", "70460927", "70238541"]
+        ),
+    )
+    return util.api_success()
     # Finally, create and insert a new ticket
     ticket = model.ReminderTicket(
         created=datetime.datetime.utcnow(),
         origin=flask.request.access_route[-1],
         address=emailAddress,
-        article=articleNumber,
+        productType=productType.value,
+        productId=productId,
         country=countryCode,
         location=locationCode,
     )
@@ -185,7 +192,7 @@ you continue, your oldest reminder will be terminated.",
     )
 
     # Return success message
-    return helper.api_success(payload=articleNumber)
+    return util.api_success(payload=productId)
 
 
 @app.route("/api/terminate/<ticket_id>")
@@ -201,3 +208,20 @@ def stockhound_terminate(ticket_id):
         return "Reminder not found. You may clicked an inactive link."
     return "Your reminder has been terminated! \
 You will no longer receive emails for this reminder."
+
+
+@app.route("/api/convert")
+def sh_convert():
+    for ticket in model.ReminderTicket.objects:
+        if ticket.article:
+            article = ticket.article
+            if article.lower().startswith("s"):
+                ticket.productType = "SPR"
+                ticket.productId = article[1:]
+            else:
+                ticket.productType = "ART"
+                ticket.productId = article
+            # del ticket.article
+            ticket.save()
+
+    return "Done"
