@@ -162,13 +162,6 @@ you continue, your oldest reminder will be terminated.",
 
         model.log(oldest, f"{oldest.address} closed ticket on confirmation")
 
-    print(
-        "STOCK LEVEL",
-        util.getStockInfo(
-            countryCode, ["70480483", "29332382", "70460927", "70238541"]
-        ),
-    )
-    return util.api_success()
     # Finally, create and insert a new ticket
     ticket = model.ReminderTicket(
         created=datetime.datetime.utcnow(),
