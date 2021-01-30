@@ -2,4 +2,5 @@ flask
 flask-mongoengine
 gevent
 jinja2
+more_itertools
 requests
