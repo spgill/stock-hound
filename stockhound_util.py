@@ -120,6 +120,10 @@ def getStockInfo(countryCode: str, productIds: list[str]):
             },
         )
 
+        # If the client ID is invalid, it will return 401
+        if response.status_code == 401:
+            return None
+
         # Parse through the data and extract stock levels for each product
         for i, entry in enumerate(response.json().get("availabilities", [])):
             stockProductId = entry["itemKey"]["itemNo"]

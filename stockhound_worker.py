@@ -14,17 +14,17 @@ if __name__ == "__main__":
     if simulation:
         print("SIMULATION!!!")
 
-        for ticket in model.ReminderTicket.objects:
-            if ticket.article:
-                article = ticket.article
-                if article.lower().startswith("s"):
-                    ticket.productType = "SPR"
-                    ticket.productId = article[1:]
-                else:
-                    ticket.productType = "ART"
-                    ticket.productId = article
-                del ticket.article
-                ticket.save()
+        # for ticket in model.ReminderTicket.objects:
+        #     if ticket.article:
+        #         article = ticket.article
+        #         if article.lower().startswith("s"):
+        #             ticket.productType = "SPR"
+        #             ticket.productId = article[1:]
+        #         else:
+        #             ticket.productType = "ART"
+        #             ticket.productId = article
+        #         del ticket.article
+        #         ticket.save()
 
     print("Stockhound worker starting...")
 
@@ -45,6 +45,14 @@ if __name__ == "__main__":
         # Fetch stock levels for all of the product ID's
         time.sleep(1)  # Prevent API spamming
         stockLevels = util.getStockInfo(countryCode, productIds)
+
+        # If the stock info function returns None, that means there's a problem
+        # with the IKEA API client id. Abort execution.
+        if stockLevels is None:
+            print(
+                "ERROR!! The IKEA API client ID is invalid! (env var IKEA_CLIENT_ID)"
+            )
+            exit(1)
 
         # Iterate through tickets that are looking at this country
         for ticket in model.ReminderTicket.objects(
