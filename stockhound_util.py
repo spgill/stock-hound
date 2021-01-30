@@ -105,7 +105,7 @@ def getStockInfo(countryCode: str, productIds: list[str]):
     for i, chunk in enumerate(more_itertools.grouper(productIds, 50)):
         # If there is more than one chunk, sleep between the requests
         if i > 0:
-            time.sleep(1)
+            time.sleep(2)
 
         # Request the product availability from the API
         response = requests.get(
