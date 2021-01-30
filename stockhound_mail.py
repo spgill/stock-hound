@@ -5,41 +5,45 @@ import jinja2
 import requests
 
 import stockhound_model as model
+import stockhound_util as util
 
-FROM_TITLE = 'Stöck Høund'
-API_KEY = os.environ['MAILGUN_API_KEY']
-API_DOMAIN = os.environ['MAILGUN_DOMAIN']
+FROM_TITLE = "Stöck Høund"
+API_KEY = os.environ["MAILGUN_API_KEY"]
+API_DOMAIN = os.environ["MAILGUN_DOMAIN"]
 
 
 def send(to, subject, body):
     """Send an email through the mailgun HTTP api."""
     requests.post(
-        url=f'https://api.mailgun.net/v3/{API_DOMAIN}/messages',
-        auth=('api', API_KEY),
+        url=f"https://api.mailgun.net/v3/{API_DOMAIN}/messages",
+        auth=("api", API_KEY),
         data={
-            'from': f'{FROM_TITLE} <donotreply@{API_DOMAIN}>',
-            'to': to,
-            'subject': subject,
-            'html': body
-        }
+            "from": f"{FROM_TITLE} <donotreply@{API_DOMAIN}>",
+            "to": to,
+            "subject": subject,
+            "html": body,
+        },
     )
 
 
 def store_name(tick):
     """Resolve a ticket to its store's name."""
-    return model.corpus[tick.country]['stores'][tick.location]['label']
+    return model.corpus[tick.country]["stores"][tick.location]["label"]
 
 
 def article_text(tick):
-    return f'{tick.article[-8:-5]}.{tick.article[-5:-2]}.{tick.article[-2:]}'
+    return f"{tick.productId[-8:-5]}.{tick.productId[-5:-2]}.{tick.productId[-2:]}"
 
 
 def article_url(tick):
-    lang = model.corpus[tick.country]['language']
-    return f'http://www.ikea.com/{tick.country}/{lang}/\
-catalog/products/{tick.article}/'
+    localizedSite = model.corpus[tick.country]["url"]
+    article = tick.productId
+    if tick.productType == util.ProductType.SPR.value:
+        article = f"S{article}"
+    return f"{localizedSite}catalog/products/{article}/"
 
 
+# DEPRECATED FOR NOW
 def article_info(tick):
     # First, get the product URL
     url = article_url(tick)
@@ -55,10 +59,10 @@ def article_info(tick):
     # We're looking for a specific list of meta tags in the page HTML
     results = {}
     tags = [
-        'title',
-        'product_name',
-        'price',
-        'og:image',
+        "title",
+        "product_name",
+        "price",
+        "og:image",
     ]
 
     # Iterate through each tag and regex the value
@@ -73,36 +77,37 @@ def article_info(tick):
             results[tag] = False
 
     # If 'title' was found, we need to process it some more
-    if results['title']:
-        results['title'] = re.sub(r'- IKEA$', '', results['title']).strip()
+    if results["title"]:
+        results["title"] = re.sub(r"- IKEA$", "", results["title"]).strip()
 
     # We're done here
     return results
 
 
 def send_template(to, subject, template, context={}):
-    context.update({
-        'format': lambda s: f'{s[-8:-5]}.{s[-5:-2]}.{s[-2:]}',
-        'store_name': store_name,
-        'date': lambda d: d.created.strftime('%x'),
-        'host': lambda: os.environ['PUBLIC_HOST'],
-        'url': article_url,
-        'article': article_text,
-        'info': None if 'ticket' not in context
-        else article_info(context['ticket']),
-    })
+    context.update(
+        {
+            "format": lambda s: f"{s[-8:-5]}.{s[-5:-2]}.{s[-2:]}",
+            "store_name": store_name,
+            "date": lambda d: d.created.strftime("%x"),
+            "host": lambda: os.environ["PUBLIC_HOST"],
+            "url": article_url,
+            "article": article_text,
+        }
+    )
     send(
         to=to,
         subject=subject,
         body=jinja2.Template(
-            open(f'./templates/{template}.html', 'r').read()
-        ).render(**context)
+            open(f"./templates/{template}.html", "r").read()
+        ).render(**context),
     )
 
 
-if __name__ == '__main__':
-    class Dumb:
-        country = 'us'
-        article = 'S99193603'
+if __name__ == "__main__":
 
-    print('RESULT', article_info(Dumb()))
+    class Dumb:
+        country = "us"
+        article = "S99193603"
+
+    print("RESULT", article_info(Dumb()))

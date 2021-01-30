@@ -1,11 +1,13 @@
-> This application was developed by myself, Samuel P. Gillispie II. I'm a junior
-> front-end web developer at IBM Design in Austin, working on this and other side
+# _About Stöck Høund_
+
+> This application was developed by myself, Samuel P. Gillispie II. I'm a
+> front-end web developer working for IBM in Raleigh, NC. I work on this and other side
 > projects in my spare time.
 >
 > At a high level; this project is built using [React](https://reactjs.org/) and
-> [Material-UI](https://material-ui.com/), hosted on [Heroku](https://heroku.com/),
-> with a [Python](https://www.python.org/)-powered backend and [MongoDB](https://www.mongodb.com/)
-> database.
+> [grommet](https://v2.grommet.io/), hosted on [Heroku](https://heroku.com/),
+> with a [Python](https://www.python.org/) and [MongoDB](https://www.mongodb.com/)
+> powered back-end.
 
 ---
 
@@ -21,10 +23,10 @@ application. I believe this constitutes a fair use of the services
 provided by IKEA Systems B.V.'s network.
 
 This application's source code and full list of dependencies/sources
-is openly available on <a href="https://github.com/spgill/stock-hound">GitHub</a> and is
-published under the <a href="https://tldrlegal.com/license/mit-license">MIT License</a>. I am
-not currently accepting community contributions, but it is on my radar for the future.
+is openly available on [its GitHub repo](https://github.com/spgill/stock-hound) and is
+published under [the MIT License](https://tldrlegal.com/license/mit-license). I am
+not currently looking for community contributions, but I'm always open to changing my mind.
 
-I can be contacted at any time by email at <a href="mailto:contact@spgill.me">contact@spgill.me</a>.
+I can be contacted at any time by email at [contact@spgill.me](mailto:contact@spgill.me).
 Bug reports can be emailed to me directly or filed as issues in
 the GitHub repository listed above.

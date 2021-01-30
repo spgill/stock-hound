@@ -10,13 +10,16 @@ class ReminderTicket(me.Document):
     created = me.DateTimeField()
     origin = me.StringField()
     address = me.StringField()
+    productType = me.StringField()
+    productId = me.StringField()
     article = me.StringField()
-    country = me.StringField(default='us')
+    country = me.StringField(default="us")
     location = me.StringField()
 
 
 class LogEntry(me.Document):
     """Entries logging user activity"""
+
     time = me.DateTimeField()
     ticket = me.ReferenceField(ReminderTicket)
     text = me.StringField()
@@ -31,4 +34,5 @@ def log(tick, text):
 
 
 # Load the json list of stores
-corpus = json.load(open('./data/corpus.json', 'r'))
+with open("./data/corpus.json", "r") as handle:
+    corpus = json.load(handle)
