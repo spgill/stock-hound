@@ -81,7 +81,10 @@ if __name__ == "__main__":
                 continue
 
             # Determine the stock level for this ticket's product at this
-            # ticket's chose location.
+            # ticket's chose location. If the product ID isn't in the stock
+            # level dict, then it's likely an error.
+            if not stockLevels.get(ticket.productId, None):
+                continue
             productStockLevel = stockLevels[ticket.productId].get(
                 ticket.location, None
             )
